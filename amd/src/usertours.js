@@ -34,7 +34,7 @@ define(['jquery', 'core/config', 'core/log'],function($, cfg, log) {
             e.preventDefault(true);
 
             var url = cfg.wwwroot + '/theme/klassplace/services/usertours.php';
-            url += '?url=' + that.attr('data-url');
+            url += '?url=' + encodeURIComponent(that.attr('data-url'));
 
             $.get(url);
             location.reload(true);

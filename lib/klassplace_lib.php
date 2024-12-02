@@ -224,6 +224,7 @@ function klassplace_page_location_incourse_themeconfig() {
  */
 function theme_klassplace_process_texts(&$templatecontext) {
     global $CFG, $PAGE, $OUTPUT, $SITE, $COURSE;
+    static $usertoursloaded = false;
 
     $textzones = ['footnote', 'leftfooter', 'midfooter', 'rightfooter', 'sitealternatename'];
 
@@ -248,7 +249,10 @@ function theme_klassplace_process_texts(&$templatecontext) {
             $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
         }
 
-        $PAGE->requires->js_call_amd('theme_klassplace/usertours', 'init');
+        if (!$usertoursloaded) {
+            $PAGE->requires->js_call_amd('theme_klassplace/usertours', 'init');
+            $usertoursloaded = true;
+        }
     }
 }
 
