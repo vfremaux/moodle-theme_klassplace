@@ -1,0 +1,29 @@
+/**
+ * Panel_events.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+ */
+
+.events {
+    background-image: $eventsbkgurl;
+    background-size: cover;
+}
+
+.row-fluid-event {
+    h2, h3, h4, h5, h6 {
+        color: $brandprimary;
+    }
+
+    h6:after {
+        background-color: #A83400;
+        color: #ffffff;
+    }
+
+    h3 a {
+        color: $brandprimary;
+        font-weight: 400;
+    }
+
+    h3 a:hover {
+        color: $brandsecondary;
+        font-weight: 400;
+    }
+}

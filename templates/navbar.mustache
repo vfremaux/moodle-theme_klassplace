@@ -1,0 +1,200 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    Page navbar.
+}}
+<!-- theme_klassplace/navbar -->
+<div style="width:100%;display:block;position:fixed;top:50px;z-index:100000" id="technicalsignals">
+{{{technicalsignals}}}
+</div>
+<header role="banner">
+<nav class="fixed-top navbar navbar-expand moodle-has-zindex align-items-center not-for-mobile"
+    role="navigation" aria-label="{{#str}}mainmenu, theme_klassplace{{/str}}">
+    <!-- web version -->
+    {{#hasnavdrawer}}
+    <div data-region="drawer-toggle" class="d-inline-block mr-3">
+        <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
+                aria-controls="nav-drawer"
+                type="button"
+                class="btn nav-link float-sm-left mr-1 btn-secondary"
+                data-action="toggle-drawer"
+                data-side="left"
+                data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+    </div>
+    {{/hasnavdrawer}}
+
+    {{^ output.should_display_navbar_logo }}
+    <!-- sitename -->
+    <a href="{{{ output.index_url }}}" class="navbar-brand d-xs-inline d-sm-inline">
+        {{^sitealternatename}}
+        <span class="site-name">{{{ sitename }}}</span>
+        {{/sitealternatename}}
+        {{#sitealternatename}}
+        <span class="site-name alternate-name">{{sitealternatename}}</span>
+        {{/sitealternatename}}
+    </a>
+    <!-- /sitename -->
+    {{/ output.should_display_navbar_logo }}
+
+    {{# output.should_display_navbar_logo }}
+    <!-- logo -->
+    <a href="{{{ output.index_url }}}" class="navbar-brand has-logo">
+        <span class="logo d-none d-sm-inline">
+            <img src="{{output.get_compact_logo_url}}" alt="Logo {{sitename}}">
+        </span>
+    </a>
+    <!-- /logo -->
+    {{/ output.should_display_navbar_logo }}
+
+    <!-- course_controls -->
+    <div class="coursecontrols nav-item d-flex align-items-center">
+        {{{ output.teacherdashmenu }}}
+        <div class="courseedit nav-item nav-link">
+        <!-- structure consistance with teacher dash menu -->
+        <!-- {{{ output.edit_button_fhs }}} -->
+        {{{ output.edit_switch }}}
+        </div>
+    </div>
+    <!-- /course_controls -->
+
+    {{^custommenupullright}}
+    <!-- custom menu needs to get out of right part of navbar -->
+    <div class="not-pulled-right">
+    <!-- klassplace:core_renderer:klassplace_custom_menu() -->
+    {{{ output.klassplace_custom_menu }}}
+    <!-- core_renderer:custom_menu() -->
+    {{{ output.custom_menu }}}
+    <!-- klassplace:core_renderer:page_heading_menu() -->
+    {{{ output.page_heading_menu }}}
+    </div>
+    {{/custommenupullright}}
+
+    <!-- right part of navbar -->
+    <ul class="navbar-nav d-none d-md-flex ml-auto">
+        {{#custommenupullright}}
+        <li class="pulled-right">
+            <!-- klassplace:core_renderer:klassplace_custom_menu() -->
+            {{{ output.klassplace_custom_menu }}}
+            <!-- core_renderer:custom_menu() -->
+            {{{ output.custom_menu }}}
+            <!-- klassplace:core_renderer:page_heading_menu() -->
+            {{{ output.page_heading_menu }}}
+        </li>
+        {{/custommenupullright}}
+
+        <!-- lang -->
+        {{#showlangmenu}}
+        <li class="nav-item d-flex align-items-center">
+            <div class="d-none d-lg-block lang">
+            <!-- lang_menu() -->
+            {{{ output.lang_menu }}}
+            </div>
+        </li>
+        {{/showlangmenu}}
+        <!-- /lang -->
+
+        <!-- search_box() -->
+        <li class="d-none d-lg-block not-for-mobile">
+            {{{ output.search_box }}}
+        </li>
+
+        <!-- accessibility -->
+        {{#useaccessibility}}
+        <li id="page-accessibility-switches" class="nav-item d-flex align-items-center">
+            {{> theme_klassplace/accessibilityswitches }}
+        </li>
+        {{/useaccessibility}}
+
+        <!-- navbar_plugin_output() -->
+        <li id="plugin-output" class="nav-item d-flex align-items-center">
+            {{{ output.navbar_plugin_output }}}
+        </li>
+        <!-- user_menu() -->
+        <li id="user-menu" class="nav-item d-flex align-items-center">
+            {{{ output.user_menu }}}
+        </li>
+    </ul>
+</nav>
+</header>
+
+<header role="banner">
+<nav class="fixed-top navbar navbar-expand moodle-has-zindex align-items-center for-mobile"
+    role="navigation" aria-label="{{#str}}mainmenu, theme_klassplace{{/str}}">
+
+    {{! #hasnavdrawer}}
+    <div data-region="drawer-toggle" class="d-inline-block mr-3">
+        <a aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
+                aria-controls="nav-drawer"
+                type="button"
+                class="btn float-sm-left mr-1 btn-secondary"
+                data-action="toggle-drawer"
+                data-side="left"
+                data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></a>
+    </div>
+    {{! /hasnavdrawer}}
+
+    <!-- homelink -->
+    <div class="coursecontrols nav-item align-items-center">
+        <a id="mobile-home"
+            class="btn btn-secondary fhs-tooltip"
+            href="{{{ output.index_url }}}"><i class="fa {{{ output.index_icon }}}" aria-hidden="true"></i></a>
+    </div>
+    <!-- /homelink -->
+
+    <!-- navbar logo -->
+    <!-- never display logo -->
+    <!-- /navbar logo -->
+
+    <!-- course_controls -->
+    <div class="coursecontrols nav-item d-flex align-items-center">
+        {{{ output.teacherdashmenu }}}
+        <div class="courseedit nav-item nav-link">
+        <!-- structure consistance with teacher dash menu -->
+        <!-- {{{ output.edit_button_fhs }}} -->
+        {{{ output.edit_switch }}}
+        </div>
+    </div>
+    <!-- /course_controls -->
+
+    <ul class="nav navbar-nav ml-auto align-items-center">
+        <!-- lang -->
+        {{#showlangmenu}}
+        <li class="nav-item d-flex align-items-center lang-menu">
+            <div class="d-none d-lg-block lang">
+            <!-- lang_menu() -->
+            {{{ output.lang_menu }}}
+            </div>
+        </li>
+        {{/showlangmenu}}
+        <!-- /lang -->
+
+        <!-- searchbox : not in mobile-->
+        <!-- accessibility : not in mobile-->
+
+        <!-- navbar_plugin_output() -->
+        <li class="nav-item d-flex align-items-center">
+            {{{ output.navbar_plugin_output }}}
+        </li>
+        <!-- user_menu() -->
+        <li class="nav-item d-flex align-items-center">
+            {{{ output.user_menu }}}
+        </li>
+    </ul>
+</nav>
+</header>
+<!-- /theme_klassplace/navbar -->
+

@@ -1,0 +1,116 @@
+/**
+* login on frontpage
+**/
+
+body#page-login-index, body#page-login-signup{
+    background-size: cover;
+    background-position: center;
+}
+
+.fpsignup {
+    background-color: $fploginform-bg;
+    color: $fploginform-fg;
+    padding: $spacer;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid $card-bg;
+    margin-bottom: 2rem;
+    
+    label {
+        margin: 0;
+    }
+}
+
+.col-md-4.signinform {
+    padding-left: 0;
+    padding-right: 20px;
+    margin-right: 15px;
+    float:left;
+}
+
+.sign-up-btn {
+      margin-top: 0.5rem;
+}
+
+.fpsignup .m-t-2 {
+    margin-top: 0.5rem !important;
+}
+
+.row.signin {
+      margin: 2rem 0;
+}
+
+.fpcustomtext {
+    margin: 2rem 0 4rem 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+div#klassplacelogin {
+    margin-top: 3%;
+}
+
+.fpinstructions {
+    margin-top: 15%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.loginnavicon {
+    display: inline-block;
+    padding: 1.5rem;
+    margin-bottom: $spacer;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+}
+
+.card.loginicon {
+    text-align: center;
+}
+
+.row.loginicons {
+    padding: 2rem 0;
+    color: $brandprimary;
+}
+
+.featuretext {
+    text-align: initial;
+}
+
+.logintop {
+    text-align: center;
+}
+
+.logintopimage {
+    display: inline-block;
+}
+
+.loginfeaturedimage img {
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
+    border: 1px solid #fff;
+}
+
+.featuretext h4 {
+    border-top: 4px solid $dark;
+    padding: $spacer;
+    border-bottom: 1px dashed $gray-lighter;
+    background-color: $gray-lightest;
+}
+
+#page-login-index #page, #page-login-signup #page {
+    margin-top: 0!important;
+}
+
+#page-login-signup #klassplacelogin {
+    display: none;
+}
+
+#page-my-index {
+    background-color: $body-bg;
+
+    #page-wrapper {
+        padding-bottom: 0;
+    }
+}
+
+.klassplacelogin .container {
+    max-width: 100%;
+}

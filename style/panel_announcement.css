@@ -1,0 +1,88 @@
+/* Custom Announcement CSS
+------------------*/
+
+.announcement {
+    padding: 3em 0;
+    color: #fff;
+    text-align: center;
+}
+
+.announcement h2 {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.announcement .con-buttons {
+    margin-top: 2em;
+}
+
+.announcement .con-buttons .btn-lg {
+    background-image: none;
+    filter: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 2px;
+    box-shadow: none;
+    transition: 0.5s ease;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+/* For Mobile
+----------------------*/
+
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+    .announcement h2 {
+        font-size: 2em;
+    }
+
+    .announcement .con-buttons .btn-lg {
+        letter-spacing: 0px;
+        font-size: 14px;
+        padding-left: 14px;
+        padding-right: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+.announcement .con-buttons .primary {
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    color: #333 !important;
+}
+
+.announcement .con-buttons .primary:hover,
+.announcement .con-buttons .primary:active,
+.announcement .con-buttons .primary:focus {
+    background-color: #727272 !important;
+    border-color: #727272 !important;
+    color: #fff !important;
+}
+
+.announcement .con-buttons .btn-lg:hover,
+.announcement .con-buttons .btn-lg:active,
+.announcement .con-buttons .btn-lg:focus {
+    background-color: #333;
+    color: #fff;
+    animation: bounce 0.7s ease infinite;
+}
+
+@keyframes bounce{
+    from {transform: translateY(0);}
+    25% {transform: translateY(-2px);}
+    50% {transform: translateY(-5px);}
+    75% {transform: translateY(-2px);}
+    to {transform: translateY(0);}
+}

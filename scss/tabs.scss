@@ -1,0 +1,91 @@
+
+/* TABS */
+
+/* active tab */
+.quickform-tab.active.here {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    color: $brandprimaryalt;
+    background-color: $brandprimary;
+
+    a {
+        color: $white !important;
+    }
+}
+
+#page-my-index li.nav-item a.nav-link.active,
+#page-admin-search li.nav-item a.nav-link.active,
+#page-admin-setting-themesettingklassplace li.nav-item a.nav-link.active {
+    color: $brandprimaryalt;
+    background-color: $brandprimary;
+}
+
+/* in more menus */
+
+.moremenu .nav-link.active:focus,
+.moremenu .nav-link.active:hover {
+    background-color: $brandsecondary !important;
+    color: $brandsecondaryalt;
+    transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-
+}
+
+/* nav tabs */
+
+.nav-tabs {
+    border-bottom: 1px solid $brandprimary;
+
+    :hover, :focus, .nav-link:active, .nav-item.show .nav-link {
+        border-color: $brandprimary $brandprimary $brandprimary;
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+
+    .nav-item {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: initial;
+    }
+
+    .nav-link {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        border: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .nav-link.active,
+    .nav-item.show .nav-link {
+        color: $white;
+        background-color: $brandprimary;
+        border-color: $brandprimary;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+.secondary-navigation {
+    .navigation {
+        .nav-tabs {
+            .nav-link {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+        }
+    }
+}
+
+.nav-tabs > .active > a[href],
+.nav-tabs > .active > a[href]:hover,
+.nav-tabs > .active > a[href]:focus {
+    color: $white;
+}

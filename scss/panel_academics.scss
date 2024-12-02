@@ -1,0 +1,46 @@
+/**
+* Panel_academics.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+**/
+
+.academics {
+    background-color: $academics-bg;
+}
+
+.row-fluid-academics {
+
+    h1 {
+        color: $brandsecondary;
+    }
+
+    h6, h2, h3 {
+        color:  $brandprimary;
+    }
+
+    .item_featured .item_number,
+    .item_featured .item_bullet {
+        color: $brandprimaryalt;
+        background-color: $brandprimary;
+    }
+
+    .item_featured .item_info .item_title a {
+        color:  $brandprimary;
+    }
+
+    .item_featured .item_info .item_title a:hover {
+        color: $brandsecondary;
+    }
+
+    .item_featured .item_number:hover,
+    .item_featured .item_bullet:hover {
+        background-color: $brandsecondary;
+        color: $brandsecondaryalt;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    .row-fluid-academics {
+        margin-right:0 !important;
+        margin-left:0 !important;
+    }
+}

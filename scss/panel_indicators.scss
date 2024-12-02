@@ -1,0 +1,15 @@
+/**
+* Panel_indicators.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+**/
+
+.indicators {
+    background-color: $indicators-bg;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    .row-fluid-indicators {
+        margin-right:0 !important;
+        margin-left:0 !important;
+    }
+}

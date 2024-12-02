@@ -1,0 +1,26 @@
+.sectionstyle-sample {
+    border: dashed 1px #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.sectionstyle-sample .sample-label {
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.sectionstyle-sample.currentchoice {
+    border: dashed 2px #ccc;
+    background-color: #f0f0f0;
+}
+
+.sectionstyle-sample-wrapper {
+    padding-bottom:10px;
+    border-bottom: 2px solid #444;
+    margin-bottom:10px !important;
+}
+
+.fbutton > .currentchoice {
+    background-color:#00CC00 !important;
+}

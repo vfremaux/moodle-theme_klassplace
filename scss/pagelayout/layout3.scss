@@ -1,0 +1,236 @@
+
+$bootstrap-sass-asset-helper: false !default;
+
+
+/**
+ * For background in content areas.
+ */
+
+.site-layout-3  #page {
+
+    .container-fluid {
+        padding: 0 (2 * $spacer);
+    }
+}
+
+.site-layout-3 #page-inner {
+    /* navbar then headerimage, content over header image */
+    position: relative;
+    top: $learningcontentvoffset;
+    margin-left: $learningcontenthpadding;
+    margin-right: $learningcontenthpadding;
+    box-shadow: 2px 1px 8px $brandprimary, -2px -1px 8px #fff;
+}
+
+@media all and (max-width: 560px) {
+    .site-layout-3 #page-inner {
+        /* navbar then headerimage, content over header image */
+        position: relative;
+        top: $navbar-height;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-shadow: 2px 1px 8px $brandprimary, -2px -1px 8px #fff;
+    }
+
+#page-login-index #page.container-fluid {
+    padding: 0 !important;
+    .row {
+        margin: 0;
+    }
+}
+
+.headerbkg {
+    margin-top: 48px;
+    height: $headerimagepadding;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+#page-login-index div#page-content {
+    /* let page custom image display */
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#page {
+    margin-bottom: 0;
+}
+
+/* KLASSPLACE Default Styling */
+.card {
+    border: 0;
+}
+
+// Forums
+.forumpost {
+    background-color: $gray-lightest;
+    border-radius: 0;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid $card-bg;
+    margin-bottom: 2rem;
+}
+
+.forumpost .subject {
+    font-size: 1.5rem;
+}
+
+.forumpost .content .posting {
+    background-color: $card-bg;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid $gray-lighter;
+}
+
+// Navigation
+
+.site-layout-3  .secondary-navigation .navigation {
+    margin: 0;
+}
+
+// Scrollbars
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.6);
+    border-radius: 5%;
+}
+
+#nav-drawer::-webkit-scrollbar-thumb {
+    background-color: darken($brandprimary, 15%);
+    outline: 1px solid slategrey;
+}
+
+// Blocks
+
+.block-region .card-block .card-title {
+    font-size: 1.143rem;
+    text-transform: uppercase;
+    font-weight: initial;
+    background-color: lighten($body-bg, 5%);
+    padding: 10px;
+    border-radius: $border-radius;
+}
+
+// Fixes for phone with main content area
+
+@media screen and (max-width: 576px) {
+    #page-course-view-topics .course-content ul.topics li.section {
+        padding: 2rem 0;
+    }
+    .card-block {
+        padding: .5rem;
+    }
+    .section li.activity {
+        padding: .5rem;
+    }
+    .course-content ul.section {
+        margin: 0;
+    }
+    #page.container-fluid {
+        padding: 0;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .p-a-1 {
+        padding: 0 !important;
+    }
+}
+
+// Activity navigation
+
+.course-content .single-section .section-navigation {
+    position: relative;
+    padding: $spacer;
+    border-radius: $border-radius;
+    margin: 0!important;
+    border-top: 7px solid rgba(0,0,0,.2);
+    border-radius: 0;
+}
+
+@media screen and (min-width: 576px) {
+    /* Breadcrumbs */
+    ul.breadcrumb {
+        display: inline-block;
+        overflow: hidden;
+        margin:0px;
+        padding:0px;
+        background: none;
+    }
+    ul.breadcrumb a {
+        color: $breadcrumb-text-color;
+    }
+    ul.breadcrumb li {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        float: left;
+        font-size: 14px;
+        line-height: 36px;
+        color: $breadcrumb-text-color;
+        padding: 0 15px 0 30px;
+        background-color: $breadcrumb-bg;
+        position: relative;
+    }
+    ul.breadcrumb li:first-child {
+        padding-left: 25px;
+        border-radius: $border-radius 0 0 $border-radius;
+    }
+    ul.breadcrumb li:first-child:before {
+        left: 14px;
+    }
+    ul.breadcrumb li:last-child {
+        border-radius: 0 $border-radius $border-radius 0;
+        padding-right: 20px;
+    }
+    /*hover/active styles*/
+    ul.breadcrumb li.active, .breadcrumb li:hover{
+        background-color: $breadcrumbfg;
+    }
+    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
+        background-color: $breadcrumbfg;
+    }
+    ul.breadcrumb li:after {
+        content: '';
+        position: absolute;
+        top: 0; 
+        right: -18px;
+        width: 36px; 
+        height: 36px;
+        transform: scale(0.707) rotate(45deg);
+        z-index: 1;
+        background-color: $breadcrumb-bg;
+        box-shadow:
+        2px -2px 0 2px $card-bg, 
+        3px -3px 0 2px $card-bg;
+        border-radius: 0 $border-radius 0 50px;
+    }
+    ul.breadcrumb li:last-child:after {
+        content: none;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+        display: inline-block;
+        padding: 0;
+        content: "";
+    }
+    .dir-rtl ul.breadcrumb li:after{
+        transform: scale(.707) rotate(315deg);
+        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .breadcrumb {
+        background-color:transparent;
+    }
+}

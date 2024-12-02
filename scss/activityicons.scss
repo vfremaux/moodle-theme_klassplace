@@ -1,0 +1,33 @@
+
+@if $monochrome == 1 {
+
+    .activityiconcontainer.content {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+
+    .activityiconcontainer.assessment {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+
+    .activityiconcontainer.collaboration {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+
+    .activityiconcontainer.communication {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+
+    .activityiconcontainer.administration {
+        background-color: $brandsecondary;
+        color: $brandsecondaryalt;
+    }
+
+    .activityiconcontainer.other {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+    }
+}

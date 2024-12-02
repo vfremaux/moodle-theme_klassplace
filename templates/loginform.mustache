@@ -1,0 +1,251 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template core/login
+
+    Moodle template for the login page.
+
+    Context variables required for this template:
+    * autofocusform: Auto focus on form ?,
+    * canloginasguest - Is guest login allowed?,
+    * canloginbyemail - Is login by email allowed?,
+    * cansignup - Signup allowed?,
+    * cookieshelpicon - cookies help icon details
+    * error - Any errors in the form?,
+    * forgotpasswordurl - Forgot password url,
+    * hasidentityproviders - Flag, set to true to hide identity providers,
+    * hasinstructions - Flag, set to true to show instructions,
+    * identityproviders - List of identiy providers,
+    * instructions - Instructions,
+    * instructionsformat - Format of instructions,
+    * loginurl - Login url,
+    * rememberusername - Remeber username?,
+    * signupurl - Signup url,
+    * cookieshelpiconformatted - Formatted html of cookies help icon,
+    * errorformatted - Formatted error,
+    * logourl - Flag, logo url,
+    * sitename - Name of site.
+
+    Example context (json):
+    {
+        "autofocusform": false,
+        "canloginasguest": "1",
+        "canloginbyemail": false,
+        "cansignup": true,
+        "cookieshelpicon": {
+            "heading": "Cookies must be enabled in your browser",
+            "text": "<div class=\"no-overflow\">Two cookies are used on this site. Both died..</div>",
+            "icon": {
+                "attributes": [
+                    {
+                        "name": "class",
+                        "value": "iconhelp"
+                    },
+                    {
+                        "name": "alt",
+                        "value": "Help with Cookies must be enabled in your browser"
+                    },
+                    {
+                        "name": "title",
+                        "value": "Help with Cookies must be enabled in your browser"
+                    },
+                    {
+                        "name": "src",
+                        "value": "http://localhost/stable_master/theme/image.php?theme=boost&component=core&image=help"
+                    }
+                ]
+            },
+            "linktext": null,
+            "title": "Help with Cookies must be enabled in your browser",
+            "url": "http://localhost/stable_master/help.php?component=core&identifier=cookiesenabled&lang=en",
+            "ltr": true
+        },
+        "error": "",
+        "forgotpasswordurl": "http://localhost/stable_master/login/forgot_password.php",
+        "hasidentityproviders": false,
+        "hasinstructions": true,
+        "identityproviders": [],
+        "instructions": "For full access to this site, you first need to create an account.",
+        "instructionsformat": "1",
+        "loginurl": "http://localhost/stable_master/login/index.php",
+        "rememberusername": true,
+        "signupurl": "http://localhost/stable_master/login/signup.php",
+        "cookieshelpiconformatted": "",
+        "errorformatted": "",
+        "logourl": false,
+        "sitename": "Beer & Chips"
+    }
+}}
+<!-- theme_klassplace/loginform -->
+<div class="row signin is-custom-login">
+    <div class="col-xl-3 push-xl-1 col-md-4">
+        <div class="fpsignup {{#logourl}}with-logo{{/logourl}}">
+            <div class="card-title text-xs-center">
+                {{#logintopimageurl}}
+                <h2><img src="{{logintopimageurl}}" title="{{sitename}}" alt="{{sitename}}"/></h2>
+                {{/logintopimageurl}}
+                {{^logintopimageurl}}
+                <h2>{{sitename}}</h2>
+                {{/logintopimageurl}}
+                <hr>
+            </div>
+            {{#error}}
+            <div class="loginerrors m-t-1">
+                <a href="#" id="loginerrormessage" class="accesshide">{{error}}</a>
+                <div class="alert alert-danger" role="alert">{{error}}</div>
+            </div>
+            {{/error}}
+
+            <div class="signinform">
+                <h3>{{#str}}fpsignup, theme_klassplace{{/str}}</h3>
+                {{#hasloginhelpbutton}}
+                <a target="_blank" class="btn btn-primary" role="button" href="{{{loginhelpbuttonurl}}}">{{{helpbuttontext}}}</a>
+                {{/hasloginhelpbutton}}
+                <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
+                    <input type="hidden" name="logintoken" value="{{{logintoken}}}" />
+                    <label for="username">
+                        {{^canloginbyemail}}
+                        {{#str}}username{{/str}}
+                        {{/canloginbyemail}}
+                        {{#canloginbyemail}}
+                        {{#str}}usernameemail{{/str}}
+                        {{/canloginbyemail}}
+                    </label>
+                    <div class="input-group">
+                        <div class="input-group-addon"></div>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="{{#str}}username, theme_klassplace{{/str}}" required />
+                    </div>
+                    <label for="password">{{#str}}password{{/str}}</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"></div>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="{{#str}}password{{/str}}" required />
+                        {{#hasshowtoggle}}
+                        <i class="fa fa-eye toggle-password" toggle="#password" role="button" aria-label="{{#str}}showpassword, theme_klassplace{{/str}}" tabindex="0"></i>
+                        {{/hasshowtoggle}}
+                    </div>
+                    <div class="sign-up-btn">
+                        <button type="submit" class="btn btn-primary">{{#str}}login{{/str}}</button>
+                        {{#cansignup}}
+                         <a class="btn btn-primary" href="{{{ config.wwwroot }}}/login/signup.php?">{{#str}}newaccount{{/str}}</a>
+                        {{/cansignup}}
+
+                    </div>
+                </form>
+
+                <p><a href="{{{ config.wwwroot }}}/login/forgot_password.php">{{#str}}forgotten{{/str}}</a></p> 
+                {{#hasidentityproviders}}
+                    <div class="mnet-idps">
+                        <h6 class="m-t-2">{{#str}} potentialidps, auth {{/str}}</h6>
+                        <div class="potentialidplist" class="m-t-1">
+                            {{#identityproviders}}
+                                <div class="potentialidp">
+                                    <a href="{{url}}" title={{#quote}}{{name}}{{/quote}} class="btn btn-secondary btn-block">
+                                        {{#iconurl}}
+                                            <img src="{{iconurl}}" alt="" width="24" height="24"/>
+                                        {{/iconurl}}
+                                        {{name}}
+                                    </a>
+                                </div>
+                            {{/identityproviders}}
+                        </div>
+                    </div>
+                {{/hasidentityproviders}}
+                {{#canloginasguest}}
+                    <div class="m-t-2">
+                        {{#str}}someallowguest{{/str}}
+                        <form action="{{loginurl}}" method="post" id="guestlogin">
+                            <input type="hidden" name="logintoken" value="{{{logintoken}}}" />
+                            <input type="hidden" name="username" value="guest" />
+                            <input type="hidden" name="password" value="guest" />
+                            <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
+                        </form>
+                    </div>
+                {{/canloginasguest}}
+            </div>
+        </div>
+    </div>
+
+    <div id="login-info-panel" class="col-xl-7 push-xl-1 col-md-8">
+        {{#alerttopimageurl}}
+        <div class="logintop">
+            <div class="alerttopimage">
+                <img src="{{{alerttopimageurl}}}" class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        {{/alerttopimageurl}}
+        {{#alertbox}}
+        <div class="alertbox">
+            <div class="alertmessage">
+                {{#alertboxmessage}}
+                <p style="text-align: center;">
+                    {{{alertboxmessage}}}
+                    <br>
+                    <a href="{{{alertlinkurl}}}">{{{alertlink}}}</a>
+                </p>
+                {{/alertboxmessage}}
+                {{#alertimageurl}}
+                <p style="text-align: center;">
+                    <a href="{{{alertimagelinkurl}}}" class="alertlink"> 
+                        <img src="{{{alertimageurl}}}" class="alertimage" />
+                    </a>
+                </p>
+                {{/alertimageurl}}
+            </div>
+        </div>
+        {{/alertbox}}
+        <div style="clear:both;"></div>
+    </div>
+
+</div>
+
+{{#js}}
+    {{#error}}
+        require(['jquery'], function($) {
+            $('#loginerrormessage').focus();
+        });
+    {{/error}}
+    {{^error}}
+        {{#autofocusform}}
+            require(['jquery'], function($) {
+                if ($('#username').val()) {
+                    $('#password').focus();
+                } else {
+                    $('#username').focus();
+                }
+            });
+        {{/autofocusform}}
+        {{#hasshowtoggle}}
+            require(['jquery'], function($) {
+                $(".toggle-password").on("click", function() {
+                  $(this).toggleClass("fa-eye fa-eye-slash");
+                  var input = $($(this).attr("toggle"));
+                  if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                  } else {
+                    input.attr("type", "password");
+                  }
+                });
+                $(".toggle-password").on("keypress", function(e) {
+                    if (e.which == 32 || e.which == 13) {
+                        $(".toggle-password").trigger('click');
+                    }
+                });
+            });
+        {{/hasshowtoggle}}
+    {{/error}}
+{{/js}}
+<!-- /theme_klassplace/loginform -->

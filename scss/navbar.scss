@@ -1,0 +1,196 @@
+nav.navbar {
+    background-color: $topnavbar-bg;
+    color: $topnavbar-fg;
+
+    .text-primary {
+        background-color: $topnavbar-bg;
+        color: $topnavbar-fg !important; /* overrides boost */
+    }
+
+    a,
+    a:focus,
+    a:hover {
+
+        background-color: $topnavbar-bg !important;
+        color: $topnavbar-fg !important;
+
+        i:before {
+            background-color: $topnavbar-bg !important;
+            color: $topnavbar-fg !important;
+        }
+
+        span {
+            background-color: $topnavbar-bg;
+            color: $topnavbar-fg;
+        }
+    }
+
+    a:hover,
+    a:focus {
+        i.fa-sitemap:before {
+            background-color: $brandsecondary !important;
+            color: $topnavbar-bg !important;
+        }
+    }
+
+    /* these are links in buttons */
+
+    a.btn-secondary {
+        border-radius: $border-radius;
+        background-color: $topnavbar-fg !important;
+        color: $topnavbar-bg !important;
+
+        i:before {
+            background-color: $topnavbar-fg !important;
+            color: $topnavbar-bg !important;
+        }
+
+        span {
+            background-color: $topnavbar-fg;
+            color: $topnavbar-bg;
+        }
+    }
+
+    a.btn-secondary:hover,
+    a.btn-secondary:focus {
+        border-radius: $border-radius;
+        background-color: $topnavbar-bg !important;
+        color: $topnavbar-fg !important;
+        border : 1px solid $topnavbar-fg;
+
+        i:before {
+            background-color: $topnavbar-bg !important;
+            color: $topnavbar-fg !important;
+        }
+
+        span {
+            background-color: $topnavbar-bg;
+            color: $topnavbar-fg;
+        }
+    }
+
+    #custom_menu_1 > div > ul > li > a:hover {
+        /* Do NOT affect submenus. */
+        background-color: $topnavbar-bg !important;
+        color: $topnavbar-fg !important;
+    }
+
+    .accessibility-toggle.active a {
+        color: $topnavbar-fg;
+    }
+
+    .accessibility-toggle.active {
+        background-color: $topnavbar-bg;
+    }
+
+    .userbutton {
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-control-input ~ .custom-control-label::before {
+        border-color: $topnavbar-fg;
+    }
+
+    .custom-control-input:checked ~ .custom-control-label:before {
+        color: black;
+        background-color: #00C000;
+    }
+
+}
+
+nav.navbar a.dropdown-toggle::after {
+    background-color: $topnavbar-bg;
+    color: $topnavbar-fg;
+}
+
+.navbar.fixed-top {
+    .dropdown .dropdown-menu {
+        /* defaults to brandprimary by variable if topnavbar colors not set. */
+        background-color: $topnavbar-bg;
+        color: $topnavbar-fg;
+    }
+
+    .dropdown-item:hover {
+        /* hover on items inverts contrast */
+        color: $topnavbar-bg;
+        background-color: $topnavbar-fg;
+    }
+
+    .dropdown-item:active {
+        color: $brandsecondaryalt;
+        background-color: $brandsecondary;
+    }
+
+    .yui3-menu-label,
+    .yui3-menuitem-content {
+        background-color: $topnavbar-bg;
+        color: $topnavbar-fg;
+    }
+
+    .yui3-menuitem:hover {
+        background-color: #cccccc;
+        color: #000000;
+    }
+
+    .yui3-menuitem:hover .yui3-menuitem-content {
+        color: #000000;
+    }
+
+    .yui3-menuitem-content:hover {
+        filter: brightness(85%);
+    }
+
+    .custom_menu_submenu {
+        background-color: $topnavbar-bg;
+        color: $topnavbar-fg;
+
+        .yui3-menuitem {
+            padding: 8px;
+            border-bottom: 1px solid #bbbbbb;
+        }
+
+        .yui3-menuitem-content:hover {
+            filter: brightness(85%);
+        }
+    }
+}
+
+.lang-menu-label {
+    background-color: $topnavbar-bg;
+    color: $topnavbar-fg;
+}
+
+.lang-menu-label:after {
+    color: $topnavbar-fg;
+}
+
+.lang-menu li > a {
+    color: $topnavbar-fg;
+}
+
+.lang-menu-submenu {
+    background-color: $topnavbar-bg;
+    top: $navbar-height;
+}
+
+.lang-menu-submenu > div > ul > li {
+    border-bottom: 1px solid $topnavbar-fg;
+}
+
+/* Notification popup */
+.popover-region-notifications .popover-region-container,
+.content-item-container.notification a,
+.content-item-container.notification,
+.notification-message {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.popover-region-notifications .popover-region-container:hover,
+.content-item-container.notification a:hover,
+.content-item-container.notification:hover,
+.notification-message:hover {
+    color: $brandprimaryalt;
+    background-color: $brandprimary;
+}

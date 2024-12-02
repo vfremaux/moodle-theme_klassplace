@@ -1,0 +1,19 @@
+/**
+* Panel_announcement.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+**/
+
+.announcement {
+    background-color: $announcement-bg;
+}
+
+.announcement .con-buttons .btn-lg {
+    color:  $brandsecondary;
+    background-color:  $brandsecondaryalt;
+    border: 1px solid  $brandsecondaryalt;
+}
+
+.announcement .con-buttons .btn-lg:hover{
+    color:  $brandsecondaryalt;
+    background-color:  $brandsecondary;
+    border: 1px solid  $brandsecondary;
+}

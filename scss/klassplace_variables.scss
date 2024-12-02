@@ -1,0 +1,135 @@
+// Default klassplace theme variables
+
+$brandprimary: #fff !default;
+$brandsecondary: #fff !default;
+
+$fpicon-width: 100px !default;
+$fpiconcreate-width: 150px !default;
+$fploginform: rgba(255, 255, 255, 0.9) !default;
+$fploginform-bg: #ffffff !default;
+$fploginform-fg: #000000 !default;
+
+$monochrome: 1 !default;
+$headerimagepadding: 65px !default;
+$showheadergradient: 0 !default;
+
+$courseboxheight: 250px !default;
+
+$border-radius: 4px !default;
+$border-big-radius: 15px !default;
+
+$learningcontenthpadding: 200px !default;
+$learningcontentvoffset: 125px !default;
+
+$page-content-maxwidth: 830px !default;
+
+$drawer-padding-x: 0.5rem !default;
+$drawer-padding-y: 0.5rem !default;
+$drawer-bg: darken($body-bg, 5%) !default;
+$spdrawer-bg: darken($body-bg, 5%) !default;
+$footer-bg: $gray-800 !default;
+$breadcrumb-bg: $brandprimary !default;
+$breadcrumbfg: #ffffff !default;
+$breadcrumb-bg-hov: darken($breadcrumb-bg, 15%) !default;
+$breadcrumb-text-color: #ffffff !default;
+$socialnav-bg: $gray-800 !default;
+$announcement-bg: $gray-800 !default;
+$academics-bg: $gray-800 !default;
+$custombox-image: false !default;
+$custombox-bg: $gray-800 !default;
+$customboxhover-bg: $gray-800 !default;
+$indicators-bg: $gray-600 !default;
+$circles-bg: $gray-800 !default;
+$clientlogo-bg: $gray-800 !default;
+$mydashboard-bg: #ffffff !default;
+$body-bg: #ffffff !default;
+$brandprimaryalt:  #ffffff !default;
+$brandsecondaryalt:  #ffffff !default;
+$card-bg: #ffffff !default;
+$colorsvgwave: #ffffff !default;
+$fpicon-width: 50px !default;
+$activitycustomiconwidth: 150px !default;
+$blockwidth: 180px !default;
+$topnavbarbghov: #000000 !default;
+
+$topnavbar-bg: #ffffff !default;
+$topnavbar-fg: #000000 !default;
+$topnavbar-teacher-bg: #ffffff !default;
+
+$slideshowheight: 250px !default;
+
+$activityiconsize: 36px !default;
+$activitycustomiconwidth: 20% !default;
+$activityhover: #fff6ae !default;
+
+/* $gutterwidth: 2rem !default; */
+
+$calendartoday: #fbffba !default;
+
+$sectionnamehighlight : #43d0f3 !default;
+$dpsaccentcolor: #44d4a6 !default;
+$sectionactivity-bg: #fdfdfd !default;
+$section-bg: $sectionactivity-bg !default;
+$layout5imgoverlay: rgba(0,0,0,0.5) !default;
+$spectrum-base: #3fcbda !default;
+$elearningcontent-bg: rgba(255,255,255,0.6) !default;
+
+//Preset Checks for unique styling
+$spectrumpreset: 0 !default;
+$modernmoodlepreset: 0 !default;
+$perceptionpreset: 0 !default;
+
+$footer-bg:                         $black !default;
+$footer-fg:                         $white !default;
+$footer-logininfo:                  hidden !default;
+$footer-dataprivacy:                hidden !default;
+$topnavbar-bg:                      $white !default;
+$topnavbar-fg:                      $black !default;
+$teachernavbarcolor:                $topnavbar-bg !default;
+$topnavbar-bg-hov:                  #ffffff !default;
+$topnavbarteacher-bg:               #f3e420 !default;
+$studentnavbarcolor:                $topnavbar-bg !default;
+$navbar-fhs-color:                  $black !default;
+$navbar-fhs-active-color:           $black !default;
+$navbar-fhs-hover-color:            $black !default;
+$navbar-fhs-disabled-color:         $black !default;
+$navbar-fhs-toggler-border-color:   initial !default;
+$navbar-fhs-toggler-icon-bg:        initial !default;
+
+$perceptionfontsize:                1.25rem !default;
+
+/* defaults for font handling */
+$usecustomfonts: 0 !default;
+$generalbodyfont: false !default;
+$generalaltfont: false !default;
+$titlefont: false !default;
+$altfontselector: false !default;
+
+/* Colors for texts */
+$brandsuccess: #1e9368 !default;
+$brandwarning: #F07905 !default;
+$branddanger: #F02905 !default;
+$brandinfo: #6063A8 !default;
+
+/* Std colors*/
+$white: #fff !default;
+$black: #000 !default;
+$violetgris: #665A6D !default;
+$violetnoir:#21043B !default;
+$orange : #F4A005 !default;
+$orangefonce: #F07905 !default;
+$orangepale:#FFEBA7 !default;
+$grispale:#e6e6e6 !default;
+$gris:#CCCCCC !default;
+$blanc:#FFFFFF !default;
+$danger:#F07905 !default;
+$spacer:          35px !default;
+$gray-lightest:          #f8f8f8 !default;
+$gray-lighter:          #f0f0f0 !default;
+$gray:          #e0e0e0 !default;
+$gray-dark:          #c0c0c0 !default;
+$drawer-width:          350px !default;
+$drawer-offscreen-gutter:          50px !default;
+$fixed-header-y:   50px;
+$navbar-height: 61px;
+$zindex-dropdown: 1000;

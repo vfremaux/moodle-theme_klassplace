@@ -1,0 +1,180 @@
+/*=======RENDU des QUIZ  =======*/
+
+/* look and feel des questions en paragraphes simples */
+.que .qtext {
+    text-align: center;
+    color: $brandprimary;
+    border: 1px solid $brandprimary;
+    border-radius: $border-big-radius;
+}
+
+/*boite affichage des questions dans une tentative*/
+.que .formulation, .que .outcome {
+    border-radius: $border-big-radius;
+    border: 1px solid $brandprimary;
+    background-color: $brandprimaryalt;
+}
+
+/* titre grands */
+.qtext h3 {
+    background-color: $grispale;
+    border: 1px solid $brandprimary;
+    border-radius: $border-big-radius;
+    -webkit-border-radius: $border-big-radius;
+    -moz-border-radius: $border-big-radius;
+    color: $brandprimaryalt;
+}
+
+/* titre moyens */
+.qtext h4 {
+    background-color: $grispale;
+    border: 1px solid $brandsecondary;
+    border-radius: $border-big-radius;
+    -webkit-border-radius: $border-big-radius;
+    -moz-border-radius: $border-big-radius;
+    color: $brandsecondaryalt;
+    margin: 1rem 2rem 1rem 2rem;
+    padding: .2rem .5rem .3rem .5rem;
+}
+
+/* titre moyens */
+.qtext h5 {
+    background-color: $brandprimaryalt;
+    border: 1px solid $brandprimary;
+    border-radius: $border-big-radius;
+    -webkit-border-radius: $border-big-radius;
+    -moz-border-radius: $border-big-radius;
+    color: $brandprimary;
+    margin: 1rem 4rem 1rem 4rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
+
+/*Remettre couleur standard des textes qui etaient vert (?)*/
+.que .formulation {
+    color: initial;
+}
+
+/* habillage des consignes de  la question */
+.prompt {
+    background-color: transparent;
+    max-width: 20%;
+}
+
+/* marge gauche à zéro car flag de gauche enlevé */
+.que .content {
+    margin: 0 0 0 0;
+}
+
+.que .info {
+    float: right;
+}
+
+/*fond de la zone de retour réponse orange pale*/
+.outcome.clearfix {
+    background-color: $orangepale;
+}
+
+
+/* question text */
+.qtext {
+    padding-top: 10px;
+    font-size: larger;
+    text-align: center;
+    color: $brandprimary;
+}
+
+.answer {
+    color: $black;
+}
+
+#page-mod-quiz-attempt .prompt {
+    background-color: $white;
+    max-width: 35%;
+    -webkit-border-radius: $border-radius;
+    margin-bottom: 15px;
+}
+
+.que .info {
+    background-color: $white;
+    border-color: $brandprimary;
+}
+
+/*boite des questions*/
+.formulation.clearfix {
+    border: 1px solid $brandprimary;
+    box-shadow: 5px 5px 10px 0px $gray-100;
+    border-radius: $border-radius;
+    background-color: $white;
+}
+
+/* quiz administration - teacher side */
+
+#questionscontainer {
+    border: 1px solid $gray-200;
+    border-radius: $border-radius;
+}
+
+/*en tete de colonnes des questions*/
+#categoryquestions .header {
+    text-align: left;
+    background-color: $gray-200;
+    padding-bottom: 10px;
+    border-bottom: 1px $gray-400 solid;
+}
+
+/*texte des en tete de colonnes des questions plus prononcées*/
+#categoryquestions th {
+    font-weight: 600;
+}
+
+/*aerer la liste des questions*/
+#categoryquestions td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid $gray-200;
+}
+
+/*QUIZ behaviour*/
+
+#quiz-behaviour-progress-indicator {
+    background-color: $brandprimary;
+}
+
+.quiz-behaviour-progress-bar {
+    background-color: $gray-200;
+}
+
+/* QUIZ navigation */
+
+.path-mod-quiz #mod_quiz_navblock .qnbutton {
+  color: #000;
+
+  .thispage {
+    border-width: 0;
+  }
+}
+
+.qn_buttons {
+    border: 1px solid $brandprimary;
+    -webkit-box-shadow: 5px 5px 10px 0 #f8f9fa;
+    box-shadow: 5px 5px 10px 0 #f8f9fa;
+    border-radius: $border-radius;
+    padding-left: 10px;
+    padding-top: 5px;
+
+    .notyetanswered .trafficlight {
+        background-color: $brandprimary !important;
+    }
+
+	.thispage,
+	.thispage .thispageholder {
+	  	color: #000 !important;
+	}
+}
+
+.path-mod-quiz #mod_quiz_navblock a.qnbutton:hover,
+.path-mod-quiz #mod_quiz_navblock a.qnbutton:active,
+.path-mod-quiz #mod_quiz_navblock a.qnbutton:focus {
+    box-shadow: unset;
+}

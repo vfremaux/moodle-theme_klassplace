@@ -1,0 +1,115 @@
+#format_page_content .span6 .customimage {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#format_page_content .span6 .customimage a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-height: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#format_page_content .span6 .customimage a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+}
+
+#format_page_content .span6 .customimage img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#format_page_content .span6 .content {
+    margin: 19px 20px;
+    text-align: center;
+}
+
+#format_page_content .span6 .content h3 a {
+    color: #333;
+}
+
+#format_page_content .span6 .content h3 a:hover {
+    color: #f14f4a;
+}
+
+#format_page_content .span6 .content .coursebox-summary {
+    margin-bottom: 20px;
+}
+
+#format_page_content .span6 .content .coursebox-metas {
+    margin-top: 1.2em;
+    clear: both;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.row-fluid-coursebox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-fluid-coursebox .span6 {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 35px !important;
+    width: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* For Mobile
+----------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    #format_page_content .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    
+    #format_page_content .row-fluid-coursebox {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    
+    #format_page_content .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    #format_page_content .span6 .customimage,
+    #format_page_content .span6 .content {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    #format_page_content .span6 .content {
+        padding: 2% 5%;
+        padding-bottom: 5%;
+        width: 90%;
+    }
+    
+    #format_page_content .row-fluid-coursebox {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}

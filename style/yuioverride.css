@@ -1,0 +1,46 @@
+
+
+#custom_menu_1 > .yui3-menu-content {
+    background: none !important;
+    border: none !important;
+}
+
+.yui3-menu-content ul {
+    min-width: 200px;
+    padding:5px;
+}
+
+#custom_menu_1 > div > ul > li > a {
+    background: none !important;
+    border:none !important;
+    font-size: 1.11em !important;
+    padding: 0 20px !important;
+    border: none;
+}
+
+.custom_menu_submenu0 {
+    margin-top: 10px;
+    top: 10px;
+}
+
+.custom_menu_submenu {
+    border: none;
+}
+
+.custom_menu_submenu > div > ul > li {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.custom_menu_submenu > div {
+    background: none !important;
+}
+
+.custom_menu_submenu > div > ul > li > a {
+    border: none;
+}
+
+.custom_menu_submenu > div > ul > li > a:hover {
+    border:none;
+}
+

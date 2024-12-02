@@ -1,0 +1,98 @@
+// Bootstrap variables
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$gray-base: #ccc !default;
+$black:    #000 !default;
+
+$blue:    #1177d1 !default;
+$indigo:  #6610f2 !default;
+$purple:  #613d7c !default;
+$pink:    #e83e8c !default;
+$red:     #d9534f !default;
+$orange:  #f0ad4e !default;
+$yellow:  #ff7518 !default;
+$green:   #5cb85c !default;
+$teal:    #20c997 !default;
+$cyan:    #5bc0de !default;
+
+$brandprimary:       #447198 !default;
+$brandprimaryalt:    #ffffff !default;
+$brandsecondary:     $gray-800 !default;
+$brandsecondaryalt:     $gray-100 !default;
+$success:       $teal !default;
+$info:          $cyan !default;
+$warning:       $orange !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+// Options
+$enable-rounded: false !default;
+
+// Body
+$body-color:    $gray-800 !default;
+$body-bg:       #dae6e5 !default;
+$drawer-bg:     rgba(235, 251, 255, 0.8) !default;
+$card-bg:       $white !default;
+$footer-bg:     rgba(14, 62, 70, 0.9) !default;
+
+// Fonts
+$font-size-base: 0.9375rem !default;
+$headings-font-weight:   300 !default;
+
+// Navbar
+$navbar-dark-hover-color:           rgba($white, 1) !default;
+$navbar-light-hover-color:          rgba($black, 1) !default;
+$navbarurl : #fff !default;
+
+// Breadcrumbs
+$breadcrumb-padding-y:              .25rem !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-margin-bottom:          0 !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+$breadcrumb-bg: $brandprimary !default;
+$breadcrumb-bg-hover: darken($brandprimary, 15%) !default;
+$breadcrumb-text-color: #ffffff !default;
+
+// Alerts
+$alert-border-width:                0 !default;
+
+// Colors manageable by theme settings.
+$theme-colors: (
+    primary: $brandprimary,
+    primaryalt: $brandprimaryalt,
+    secondary: $brandsecondary,
+    secondaryalt: $brandsecondaryalt,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+    light: $gray-100,
+    dark: $gray-800
+);
+
+
+// Import FontAwesome.
+@import "../../boost/scss/fontawesome";
+
+// Import All of Bootstrap
+@import "../../boost/scss/bootstrap";
+
+// Import Core moodle CSS
+@import "../../boost/scss/moodle";
+
+
+// Preset CSS
+

@@ -1,0 +1,398 @@
+/* Body height fix */
+
+body {
+    height: initial  !important;
+}
+
+.filemanager-container {
+    position: relative;
+}
+
+/* ======= USER PREFERENCES ======== */
+
+/* titre des notification largeur des colonnes corrigé */
+.preferences-container .preference-table tr td:not(:first-child) {
+    width: 250px;
+    text-align: center;
+}
+
+.preferences-container .preference-table .preference-row .preference-state .preference-state-status-container {
+    width: 70px;
+}
+
+/* je vais voir les préférence d'un autre usager, décalage des boutons sur le headerbkg */
+.page-context-header .header-button-group {
+    margin-left: 100px;
+}
+
+.logininfo, .purgecaches {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*
+#klassplacelogin img {
+    width : 100%;
+}
+*/
+
+.purgecaches {
+    border: 1px black dashed;
+    background-color: #FFFF80;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.purgecaches a {
+    color: #444 !important;
+}
+
+.tool_dataprivacy,
+.performanceinfo.pageinfo {
+    margin-left:2rem;
+}
+
+.forgotten-password {
+    padding-bottom: 20px;
+}
+
+.forgotten-password #maincontent {
+    display: none;
+}
+
+.local-my-fp-coursebox.dimmed .local-my-fp-coursename {
+    background-image: url(/theme/klassplace/pix/hidden.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+}
+
+[region="blocks-region"] h2 {
+    font-size: 1.3rem;
+}
+
+.format-page #page-region-top {
+    height: 70px;
+    margin-bottom: 0px;
+}
+
+.single-section {
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Block page_tracker */
+
+a.block-pagetracker.current {
+    text-decoration: underline;
+}
+
+.slick-dots {
+    width: 100%;
+    margin-bottom: 20px !important;
+}
+
+span.site-name.d-none.d-md-inline {
+    display:none!important;
+}
+
+[data-tooltip]::before {
+    opacity: 0;
+}
+
+#blockslider {
+    display: none;
+}
+
+#blocksliderbutton {
+    display: none;
+}
+
+.nav-link {
+    margin-left: 5px;
+}
+
+#mycontent .nav-item .nav-link {
+    padding-top: 15px;
+}
+
+#page-course-view-grid .section-navigation.navigationtitle {
+    text-align: center;
+}
+
+.felement.fgroup input[type="radio"] {
+    margin-right:10px;
+    margin-left:20px;
+}
+
+#custom_menu_1 > div > ul > li > a {
+    cursor: pointer;
+}
+
+#menu_lang > div > ul > li > a {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#page-mod-quiz-attempt .prompt {
+    background-color: #e6e6e6;
+    max-width: 30%;
+    -webkit-border-radius: 8px;
+    padding: .3rem .5rem;
+}
+
+#page-mod-quiz-attempt #region-main {
+    border:none;
+}
+
+img.activityicon {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+/* login image tuning */
+.customloginimage {
+    width: 100%;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* login form vertical gutter */
+#page-login-index #region-main {
+    top: 2em;
+}
+
+/* Dashboard panels fixes */
+.dashtitle h3 {
+    color:#fff;
+    border: 1px solid #ccc;
+    padding: .3rem;
+    font-size: 1.3rem !important;
+}
+
+.dashtitle > p {
+    display: none;
+}
+
+.staffmember img {
+    display: none;
+}
+
+.studentdashboard .list-group-item {
+    padding: .2rem .5rem;
+}
+
+.studentdashboard .fa-map::before,
+.studentdashboard .fa-check-square-o::before,
+.studentdashboard .fa-users::before,
+.studentdashboard .fa-question-circle::before,
+.studentdashboard .fa-trophy::before,
+.teacherdashboard i.dashicon {
+    display: none;
+}
+
+footer {
+    bottom:0;
+    width:100%;
+    z-index: 1000;
+}
+
+#footer-info {
+    min-height: 80px;
+}
+
+.stickyfooter {
+    z-index: 10000;
+}
+
+#page-login-index footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    z-index: 1000;
+    padding-bottom: 0;
+}
+
+#page-login-index.is-mobile footer {
+    position:relative;
+}
+
+.doclink {
+    text-align: center;
+    padding: 5px;
+}
+
+.card-text.content.calendarwrapper {
+    margin-top: 30px;
+}
+
+/* Overlapping calendar content on editing controls */
+.block_calendar_month .content {
+    margin-top: 30px;
+}
+
+#page-course-view_topics .course-content .section-summary {
+    border: none;
+}
+
+.course-content .single-section .section-navigation {
+    border-top: none;
+}
+
+.section li.activity {
+    border-bottom: none;
+}
+
+.by-theme-return-button {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.toggle-password {
+    margin-top: 8px;
+    margin-left:8px;
+}
+
+/* fix the controls on blocs for collapsend blocks */
+.block_with_controls > .card-body .header {
+    min-height: 50px;
+}
+
+/* fix footer down on forgot password page */
+#page-login-forgot_password footer {
+    position: fixed;
+}
+
+#page-login-forgot_password #maincontent {
+    height: 20%;
+}
+
+#page-login-forgot_password #page div[role="main"] {
+    width: 70%;
+    margin: auto;
+}
+
+#page-login-forgot_password .generalbox {
+    font-size: 110%;
+}
+
+#page-login-forgot_password ul.quickform,
+#page-login-forgot_password form.mform,
+#page-login-forgot_password form.mform fieldset {
+    margin-top: 2em;
+}
+
+#page-login-forgot_password form.mform .fitem {
+    margin-top: 1em;
+}
+
+/* bottom middle footer*/
+.middle-footer {
+    text-align: center;
+}
+
+/* bottom right footer*/
+.right-footer {
+    text-align: right;
+}
+
+.middle-footer,
+.left-footer,
+.right-footer {
+    padding: 10px;
+}
+
+.unlist li {
+    display: flex;
+}
+
+.hide-on-scroll {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.hide-on-scroll.show {
+    opacity: 1;
+}
+
+.moodle-dialogue-base .closebutton::after {
+    content: none;
+}
+
+/* region main fix */
+
+#region-main {
+    background-color: #fff;
+    border: none;
+}
+
+/* login form */ 
+
+.fpsignup .m-t-1 {
+    margin-top: 0 !important;
+}
+
+/* overrides courseindex original visual aspects */
+
+.local-courseindex-fp-coursebox.klassplace {
+    width: initial;
+}
+
+.form-group.fitem.btn-cancel {
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+/** FIX CALENDAR CONTROL POSITION **/
+.calendar-controls {
+    top: -12px;
+    position: relative;
+}
+
+body#page-calendar-view .maincalendar .controls .arrow_link.previous,
+body#page-calendar-view .maincalendar .controls .arrow_link.next {
+    margin: 0 !important;
+}
+
+#page-site-index #frontpage-course-list {
+    padding-left: 20px;
+}
+
+#page-site-index #page {
+    padding-top: 61px; /* let room for navbar */
+}
+
+input[type="checkbox"] {
+    margin-right: 20px;
+}
+
+#frontpage-category,
+#frontpage-category-combo {
+    padding: 2rem;
+}
+
+.course_category_tree .category > .info > .categoryname {
+    padding: 9px 15px 9px 57px !important;
+}
+
+/* grid format fixes */
+
+.format-grid .stateready {
+    display: flex;
+    flex-direction: column;
+}
+
+/* User policy content padding */
+#resourceobject {
+  padding: 30px;
+}
+
+.pagelayout-popup #page-inner {
+    margin: 10px !important;
+}
+
+.yui3-menu-content {
+    background: none !important;
+}

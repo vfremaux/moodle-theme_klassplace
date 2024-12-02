@@ -1,0 +1,43 @@
+<!-- theme_klassplace/academics -->
+<div class="academics">
+   <div class="container-fluid">
+      <div class="row-fluid-academics">
+         <div class="span5 academics-image"><img class="img-responsive" src="{{{academicsimage}}}" alt="" /></div>
+         <div class="clearfix"></div>
+         <div class="span7">
+            {{#academicstagline}}
+            <h6>{{{academicstagline}}}</h6>
+            {{/academicstagline}}
+            {{#academicsheading}}
+            <h1>{{{academicsheading}}}</h1>
+            {{/academicsheading}}
+            {{#academicsdescription}}
+            <p>{{{academicsdescription}}}</p>
+            {{/academicsdescription}}
+            {{#academics}}
+            {{#academicslist}}
+            <div class="item_featured">
+               {{#academicsusenums}}
+               <span class="item_number">{{i}}</span>
+               {{/academicsusenums}}
+               {{^academicsusenums}}
+               <span class="item_bullet">&nbsp;</span>
+               {{/academicsusenums}}
+               <div class="item_info">
+                  <div class="item_header">
+                    {{#academicslisturl}}
+                     <h4 class="item_title"><a href="{{{academicslisturl}}}" target="_blank">{{{academicslist}}}</a></h4>
+                    {{/academicslisturl}}
+                    {{^academicslisturl}}
+                     <h4 class="item_title"><span class="pl-2">{{{academicslist}}}</span></h4>
+                    {{/academicslisturl}}
+                  </div>
+               </div>
+            </div>
+            {{/academicslist}}
+            {{/academics}}
+         </div>
+      </div>
+   </div>
+</div>
+<!-- /theme_klassplace/academics -->

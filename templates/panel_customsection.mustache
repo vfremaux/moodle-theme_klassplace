@@ -1,0 +1,21 @@
+<!-- theme_klassplace/customsection -->
+<section class="customsection row-fluid">
+    {{#customsections}}
+    {{#customboxheading}}
+    <article class="span3">
+        <div class="fa-area">
+        {{#customboxicon}}
+        <i class="fa fa-{{{customboxicon}}}"></i>
+        {{/customboxicon}}
+        </div>
+        {{#customboxheading}}
+        <h1>{{{customboxheading}}}</h1>
+        {{/customboxheading}}
+        {{#customboxdescription}}
+        <p>{{{customboxdescription}}}</p>
+        {{/customboxdescription}}
+    </article>
+    {{/customboxheading}}
+    {{/customsections}}
+</section>
+<!-- /theme_klassplace/customsection -->

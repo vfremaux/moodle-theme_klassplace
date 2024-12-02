@@ -1,0 +1,37 @@
+.moodle-actionmenu[data-enhanced].show .menu,
+.dropdown-menu {
+    border-radius: 0;
+    padding: 0;
+    min-width: 20rem;
+}
+
+.navbar .nav > li > .dropdown-menu:before,
+.navbar .nav > li > .dropdown-menu:after {
+    border: none;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show .menu a,
+.dropdown-menu > li > a {
+    outline: none;
+    text-transform: initial;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu > .menu .filler {
+    display: none;
+}
+
+.block-control-actions {
+    background-color: #ccc;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show .menu a:hover,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+    background-image: none;
+    filter: none;
+    color: #fff;
+}

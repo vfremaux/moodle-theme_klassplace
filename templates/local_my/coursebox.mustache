@@ -1,0 +1,26 @@
+<!-- theme_klassplace/local_my coursebox -->
+
+            <div class="span6 {{withopacityeffect}} {{withhaloeffect}}">
+                <div class="pull-left customimage">
+                    <a href="{{{courseurl}}}">
+                <img src="{{{imgurl}}}">
+                    </a>
+            </div>
+            <div class="pull-left content">
+                <h3><a href="{{{courseurl}}}">{{{trimtitle}}}</a></h3>
+                {{{favoritectl}}}
+                <div class="coursebox-summary">
+                    <p>{{{summary}}}</p>
+                </div>
+
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="coursebox-metas">
+                    {{#hasindicators}}
+                        {{> local_my/indicators}}
+                    {{/hasindicators}}
+                </div>
+            <div class="clearfix"></div>
+            </div>
+<!-- /theme_klassplace/local_my coursebox -->

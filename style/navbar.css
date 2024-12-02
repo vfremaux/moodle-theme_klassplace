@@ -1,0 +1,156 @@
+.navbar {
+    width: 100%;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.navbar li a {
+    text-transform: none;
+}
+
+.navbar-inner {
+    background-image: none;
+    filter: none;
+    background-color: transparent;
+    border-bottom: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.navbar .nav>li>a.dropdown-toggle b.caret,
+.navbar .moodle-actionmenu[data-enhance] .toggle-display.textmenu .caret,
+.usermenu .moodle-actionmenu .toggle-display .caret {
+    display: none !important;
+}
+
+.navbar-nav .icon.shadow {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity:0.3;
+    -moz-opacity:0.3;
+}
+
+.nav.navbar-nav {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.userbutton .usertext {
+    font-size: .9375rem;
+}
+
+.jsenabled .usermenu .moodle-actionmenu .toggle-display.textmenu:after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    display: inline-block;
+    margin-left: 8px;
+    line-height: 0;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show {
+    background-color: transparent;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show .menu.align-tr-br {
+    margin-top: 0;
+}
+
+.jsenabled .usermenu .moodle-actionmenu>.menubar {
+    padding: 6px 20px;
+    display: inline-block;
+}
+
+/* hide dividers */
+.navbar.fixed-top .dropdown-divider {
+  display: none;
+}
+
+/* add border dividers */
+.navbar.fixed-top  .dropdown-item {
+    padding: 0.5rem 1.5rem;
+}
+
+.nav-link:focus {
+    /* Forces the boost value */
+    box-shadow: none !important;
+}
+
+.navbar .custom-control {
+    top: -1px;
+}
+
+.navbar .courseedit > form > div > label {
+    margin-top: 3px;
+}
+
+.navbar #menu-list-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+/* overides the boost yui3 styles. */
+.custom_menu_submenu a:hover,
+.custom_menu_submenu a:focus {
+    background-color: transparent !important;
+}
+
+.for-mobile .lang-menu {
+    width : 120px;
+}
+
+.lang-menu-label {
+    line-height: 2em;
+}
+
+.lang-menu-label:after {
+    font-family: "fontAwesome";
+}
+
+.lang-menu-label[aria-expanded="true"]:after {
+    content: "\f077";
+}
+
+.lang-menu-label[aria-expanded="false"]:after {
+    content: "\f078";
+}
+
+.lang-menu li {
+    list-style-type: none;
+}
+
+.lang-menu li > a {
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+.lang-menu > div > ul > li {
+    float: left;
+    width: auto;
+}
+
+.lang-menu-submenu {
+    position: absolute;
+    display: flex;
+}
+
+.lang-menu-submenu > div > ul > li {
+    padding: 10px 5px;
+}
+
+.lang-menu-submenu > div > ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav .d-lg-block {
+    margin-top: 0;
+}
+
+/* Let the search modal div to let pass events trough */
+.modal-backdrop {
+    pointer-events: none;
+}

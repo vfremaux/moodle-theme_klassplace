@@ -1,0 +1,194 @@
+.stage {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    box-sizing: content-box !important;
+}
+
+.stage ul {
+    margin: 0 !important;
+    box-sizing: unset;
+}
+
+.stage ul.animate {
+    -webkit-transition: -webkit-transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -moz-transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -o-transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    transition: transform 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+}
+
+.stage .sldr {
+    max-width: 825px;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
+    clear: both;
+    display: block;
+}
+
+.stage .sldr>ul>li {
+    float: left;
+    display: block;
+    width: 825px;
+}
+
+.stage div.skew {
+    max-width: 825px;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    -webkit-transform: skewX(16deg);
+    -moz-transform: skewX(16deg);
+    -ms-transform: skewX(16deg);
+    transform: skewX(16deg);
+}
+
+.stage div.skew>div.wrap {
+    display: block;
+    overflow: hidden;
+    -webkit-transform: skewX(-16deg);
+    -moz-transform: skewX(-16deg);
+    -ms-transform: skewX(-16deg);
+    transform: skewX(-16deg);
+    margin-left: -10.1%;
+    width: 122%;
+}
+
+.stage img {
+    max-width: 1000px;
+    min-width: 850px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.stage .selectors {
+    /*margin: 15px 0 0;*/
+}
+
+.stage .selectors li {
+    font-size: 46px;
+    line-height: 32px;
+    display: inline;
+    padding: 0 2px;
+}
+
+.stage .selectors li a {
+    text-decoration: none;
+}
+
+.stage .selectors li.focalPoint a {
+    color: #CCC;
+    cursor: default;
+}
+
+.stage .captions {
+    position: absolute;
+    width: 100%;
+    top: 35%;
+}
+
+.stage .captions h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #fff;
+    font-weight: normal;
+    font-size: 3em;
+}
+
+.stage .captions h1 span {
+    color: #f9a53b;
+    font-weight: bold;
+}
+
+.stage .captions p {
+    color: #fff;
+    margin: 0 auto;
+    font-size: 18px;
+    text-transform: lowercase;
+    letter-spacing: 5px;
+}
+
+.stage .captions div {
+    background-image: url([[pix:theme|tr1]]);
+    background-repeat: repeat;
+    padding: 2em 20px;
+    left: 200%;
+    position: fixed;
+    opacity: 0;
+    width: 50%;
+    margin: 0 auto;
+    -webkit-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -moz-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    -o-transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    transition: opacity 0.75s cubic-bezier(0.860, 0.000, 0.070, 1.000);
+    /* ease-in-out */
+}
+
+.stage .captions div.focalPoint {
+    opacity: 1;
+    left: inherit;
+    position: static;
+}
+
+.stage button.sldr-prv {
+    background-color: transparent;
+    background-image: url([[pix:theme|prev]]), url([[pix:theme|tr1]]);
+    background-repeat: no-repeat, repeat;
+    background-position: center center;
+    width: 50px;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.stage button.sldr-nxt {
+    background-color: transparent;
+    background-image: url([[pix:theme|next]]), url([[pix:theme|tr1]]);
+    background-repeat: no-repeat, repeat;
+    background-position: center center;
+    width: 50px;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* RTL CSS
+-----------------*/
+
+body.dir-rtl .stage div.skew>div.wrap {
+    margin-left: -16.1%;
+}
+
+
+/* For Mobile And Tab
+------------------------*/
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .stage .captions {
+        top: 2em;
+    }
+    .stage .captions p {
+        font-size: 14px;
+        line-height: normal;
+    }
+    .stage .captions h1 {
+        font-size: 1.5em;
+        line-height: normal;
+    }
+}

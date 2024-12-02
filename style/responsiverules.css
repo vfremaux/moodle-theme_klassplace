@@ -1,0 +1,313 @@
+
+@media all and (max-width: 576px) {
+
+    ul {
+        padding: 0;
+    }
+
+    .container-fluid {
+        width: 100%;
+    }
+
+    li.section {
+        padding: 1rem 0 !important;
+    }
+
+    .navbar {
+        padding: 5px 5px;
+    }
+
+    nav {
+        padding-left: 0;
+    }
+
+    nav .btn {
+        height: 40px;
+    }
+
+    #go-to-bottom,
+    #back-to-top {
+        border-radius: 20px;
+        width: 25px;
+        height: 25px;
+        padding: 3px;
+        font-size: 11px;
+        right: 10px;
+    }
+
+    /* login */
+    #page-login-index #page {
+        height: 650px;
+    }
+
+    #page-login-index #region-main {
+        top: 50px;
+    }
+
+    /* section navigation in course */
+
+    .section-navigation > .mdl-left {
+        display: none;
+    }
+
+    .section-navigation > .mdl-right {
+        display: none;
+    }
+
+    .course-content .single-section .section-navigation .mdl-left {
+        display: none;
+    }
+
+    .course-content .single-section .section-navigation .mdl-right {
+        display: none;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-left {
+        display: inline;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-right {
+        display: inline;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-left a {
+        overflow: hidden;
+        display: inline-block;
+        width: 28px;
+        height: 40px;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-right a {
+        overflow: hidden;
+        display: inline-block;
+        width: 28px;
+        height: 40px;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-left a::before {
+        content: "\f053";
+        font-family: "FontAwesome";
+        font-size: 200%;
+    }
+
+    .course-content .single-section .section-navigation.mdl-bottom .mdl-right a::before {
+        content: "\f054";
+        font-family: "FontAwesome";
+        font-size: 200%;
+    }
+
+    .single-section #sectionmenu .custom-select {
+        max-width: 180px;
+    }
+
+    #region-main {
+        padding: 0;
+    }
+
+    #region-main .card-body {
+        padding: 0 !important;
+    }
+
+    /* courses */
+
+    div#learningcontent {
+        margin-top: 2px;
+    }
+
+    #go-to-bottom {
+        right: 5px;
+    }
+
+    #page-footer,
+    .path-course-view .completionprogress,
+    .coursecontrols .editingbutton,
+    .header-pageheadingbutton .btn.btn-secondary {
+        display: none;
+    }
+
+    /*oter le padding des activités et textes sans liens*/
+
+    .section .label .contentwithoutlink, .section .label .activityinstance {
+        padding-right: 0px;
+    }
+
+    #mydashboard {
+        border: 0;
+        padding: 0;
+    }
+
+    .local-my-promowrap {
+        width: 100% !important;
+        margin: 15px 0 !important;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    #mydashboard .row-fluid-coursebox .span6, #page-site-index .row-fluid-coursebox .span6 {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin: 15px 0 !important;
+        width: 300px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    /* Guided tour */
+
+    .modal-footer {
+        flex-wrap: wrap;
+        max-width: 480px;
+        justify-content: center;
+    }
+
+    .modal-footer button {
+        margin-bottom: 10px;
+    }
+
+    .modal-dialog {
+        left: 10px;
+    }
+
+    .mform {
+        padding-left: 10px;
+    }
+
+    .nav-link {
+        padding: 5px;
+    }
+
+    /* messaging */
+
+    button[data-action="send-message"] {
+        overflow :hidden;
+        width: 36px;
+        height: 36px;
+        text-align: left;
+    }
+
+    button[data-action="show-contacts"],
+    button[data-action="start-delete-messages"] {
+        overflow: hidden;
+        width: 18px;
+        text-align: left;
+    }
+
+    button[data-action="send-message"]::before {
+        content : "\f1d8";
+        font-family: "FontAwesome";
+        font-size: 1.4em;
+    }
+
+    button[data-action="show-contacts"]::before {
+        content : "\f053";
+        font-family: "FontAwesome";
+        font-size: 20px;
+    }
+
+    button[data-action="start-delete-messages"]::before {
+        content: "\f040";
+        font-family: "FontAwesome";
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 767px) {
+
+    .row-fluid {
+        margin-right:0 !important;
+        margin-left:0 !important;
+    }
+    
+    .row-fluid-event {
+        margin-right:0 !important;
+        margin-left:0 !important;
+    }
+    
+    .row-fluid-logo-partner {
+        margin-right:0 !important;
+        margin-left:0 !important;
+    }
+    
+    .row-fluid-logo-partner .span2 {
+        width: 50% !important;
+    }
+
+    .nav {
+        flex-wrap: nowrap;
+    }
+
+    .lang {
+        display: block !important;
+        margin-top: 6px !important;
+        width: 130%;
+        height: 100%;
+    }
+
+    .lang a img {
+        width: 26px;
+        height: 20px;
+    }
+
+    .not-for-mobile {
+        display: none !important;
+    }
+
+    .usermenu .login {
+        line-height: 1rem;
+    }
+    
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    #page-local-courseindex-browser .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    #page-local-courseindex-browser .span6 .customimage, .content {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    #page-local-courseindex-browser .span6 .content {
+        padding: 2% 5%;
+        padding-bottom: 5%;
+        width: 90%;
+    }
+
+    .align-items-center {
+        width: initial;
+        padding-left: initial;
+        font-size: 9px;
+    }
+}
+
+@media all and (max-height: 800px) {
+    .ocean {
+        display: none;
+    }
+}
+
+/* Big screens */
+
+@media all and (min-width: 1500px) {
+    .container {
+        max-width: 1576px !important;
+    }
+}
+
+@media all and (min-width: 1920px) {
+    .container {
+        max-width: 1800px !important;
+    }
+}
+
+@media all and (min-width: 570px) {
+    #page.drawers .drawer-right-toggle {
+        margin-right: 0.4rem;
+    }
+}

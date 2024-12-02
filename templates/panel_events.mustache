@@ -1,0 +1,76 @@
+<!-- theme_klassplace/panel_events -->
+<div class="events">
+    <div class="container-fluid">
+        {{#eventtagline}}
+        <h6>{{{eventtagline}}}</h6>
+        {{/eventtagline}}
+
+        {{#eventheading}}
+        <h2>{{{eventheading}}}</h2>
+        {{/eventheading}}
+
+        <div class="row-fluid-event">
+            {{#events}}
+            {{#displayeventbox}}
+            {{#haseventdate}}
+            <div class="span6">
+                <div class="pull-left customimage">
+                    {{#haseventurl}}
+                    {{#eventtitleurl}}
+                    <a href="{{{eventtitleurl}}}" target="_blank">
+                    {{/eventtitleurl}}
+                    {{/haseventurl}}
+                    <img src="{{{eventimage}}}" />
+                    <span class="event-date">
+                    {{#eventday}}
+                    <span class="day">{{{eventday}}}</span>
+                    {{{eventmonthyear}}}
+                    </span>
+                    {{/eventday}}
+                    {{#eventtitleurl}}
+                    </a>
+                    {{/eventtitleurl}}
+                </div>
+                <div class="pull-left content">
+                    {{#eventtitle}}
+                    <h3>{{#eventtitleurl}}<a href="{{{eventtitleurl}}}">{{/eventtitleurl}}{{{eventtitle}}}{{#eventtitleurl}}</a>{{/eventtitleurl}}</h3>
+                    {{/eventtitle}}
+                    {{#eventlocation}}
+                    <div class="event-venue"> <i class="fa fa-location-arrow" aria-hidden="true"></i>{{{eventlocation}}}</div>
+                    {{/eventlocation}}
+                    {{#eventdescription}}
+                    <div class="event-summary">
+                        <p>{{{eventdescription}}}</p>
+                    </div>
+                    {{/eventdescription}}
+
+                </div>
+
+                <div class="event-metas">
+                    {{#eventviewmap}}
+                    <a class="event-map" href="{{{eventviewmapurl}}}" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i>{{{eventviewmap}}}</a>
+                    {{/eventviewmap}}
+                    {{#eventprice}}
+                    <span class="event-price"><i class="fa fa-buysellads" aria-hidden="true"></i>{{{eventprice}}}</span>
+                    {{/eventprice}}
+                    {{#eventshopurl}}
+                    <a href="{{{eventshopurl}}}"><input type="button" value="{{#str}}buynow, theme_klassplace{{/str}}" style="margin-bottom:0.3rem"></a>
+                    {{/eventshopurl}}
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+             </div>
+
+            {{/haseventdate}}
+            {{/displayeventbox}}
+            {{/events}}
+        </div>
+        {{#haseventurl}}
+        {{#eventlinkurl}}
+        <a class="btn" href="{{{eventlinkurl}}}" target:"_blank">{{#str}}eventlink, theme_klassplace{{/str}}<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+        {{/eventlinkurl}}
+        {{/haseventurl}}
+    </div>
+</div>
+<!-- /theme_klassplace/panel_events -->

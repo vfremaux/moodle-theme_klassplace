@@ -1,0 +1,232 @@
+/* Circles CSS
+--------------------*/
+
+.circles {
+    padding: 4em 0;
+}
+
+.circles h1 {
+    text-align: center;
+    color: #000;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 3em;
+    line-height: normal;
+    margin: 0 !important;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.circles p.tagline {
+    color: #fff;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.expert-teachers .teacher-slider {
+    width: 1320px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.teacher-slider .teacher-block .teacher-pic {
+    width: 105px;
+    height: 105px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.teacher-slider .teacher-block .teacher-info {
+    font-size: 11px;
+    color: #ffffff;
+    margin-top: 8px;
+}
+
+.teacher-slider .teacher-block .teacher-info p {
+    margin-bottom: 0;
+}
+
+.zoom .teacher-pic {
+    border-radius: 80px;
+}
+
+.zoom .teacher-info {
+    margin-top: 8px;
+}
+
+.zoom .teacher-name {
+    color: #ffffff;
+}
+
+.zoom .teacher-name span {
+    font-weight: bold !important;
+}
+
+.zoom .teacher-qualification {
+    font-size: 10px;
+    color: #666666;
+    margin-top: 2px;
+}
+
+.teacher-rating {
+    color: #ffffff;
+}
+
+.zoom .teacher-rating {
+    color: #f4a005;
+    margin: 0;
+    font-size: 11px;
+}
+
+.expert-teachers .teacher-testimonial {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    width: 400px;
+    font-size: 18px;
+    font-style: italic;
+    color: #555555;
+    padding: 25px;
+    font-weight: 300;
+    margin: 0 auto;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, .08);
+    position: relative;
+    text-align: center;
+}
+
+.expert-teachers .teacher-testimonial:before {
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #f3f3f3;
+    border-left: 10px solid transparent;
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 47%;
+}
+
+.teacher-slider .teacher-block .teacher-name,
+.teacher-slider .teacher-block-big .teacher-name {
+    text-transform: uppercase;
+}
+
+.teacher-slider .teacher-block .teacher-name,
+.teacher-slider .teacher-block-big .teacher-qualification {
+    color: #555;
+}
+
+.teacher-slider .teacher-block .teacher-name span,
+.teacher-slider .teacher-block-big .teacher-name span {
+    font-weight: bold;
+}
+
+.scroll-block-container {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    overflow: visible;
+    margin: 20px auto 5px auto;
+    border-radius: 4px;
+    width: 75%;
+}
+
+.slider:before {
+    content: '';
+    width: 60px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 29;
+}
+
+.slider:after {
+    content: '';
+    width: 60px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 999;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+    width: 840px;
+    margin: 0 auto;
+}
+
+.slider ul {
+    margin: 0;
+    padding: 50px 0 0;
+    height: 225px;
+    list-style: none;
+}
+
+.slider ul li {
+    display: inline-block;
+    padding: 0;
+    width: 155px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.expert-teachers .slider .block-transition {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+a.control_prev,
+a.control_next {
+    content: "";
+    width: 25px;
+    height: 25px;
+    border: 2px solid;
+    position: absolute;
+    top: 40%;
+    border-color: #333 #333 transparent transparent;
+    transition: ease-in .1s;
+    opacity: .3;
+    cursor: pointer;
+    z-index: 29;
+}
+
+a.control_prev:hover,
+a.control_next:hover {
+    opacity: 1;
+}
+
+a.control_prev {
+    left: -2%;
+    transform: rotateZ(-135deg);
+}
+
+a.control_next {
+    right: -2%;
+    transform: rotateZ(45deg);
+}
+
+.zoom {
+    transform: scale(1.5);
+    margin: 0 25px;
+}
+
+.zoom-out {
+    transform: scale(1);
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    
+    .circles h1{
+        font-size: 1.7em;
+    }
+    
+}

@@ -1,0 +1,48 @@
+<!-- theme_klassplace/blocks_course_ascendants coursebox -->
+
+            <div class="span6">
+                <div class="pull-left customimage">
+                    <a href="{{{courseurl}}}">
+                <img src="{{{imgurl}}}">
+                    </a>
+            </div>
+            <div class="pull-left content">
+                <h3><a href="{{{courseurl}}}">{{{trimtitle}}}</a></h3>
+                {{{favoritectl}}}
+                <div class="coursebox-summary">
+                    {{#canedit}}
+                        <a title="{{shortname}}" href="{{{courseurl}}}" target="_blank" class="coursename">({{#str}}gotocourse, block_course_ascendants{{/str}})</a>
+                    {{/canedit}}
+                    {{#arrangeinternalorder}}
+                    {{#canup}}
+                        <a class="cmd" href="{{{upurl}}}">{{{uppix}}}</a>
+                    {{/canup}}
+                    {{^canup}}
+                        <span class="course-ascendants shadow">{{{uppix}}}</span>
+                    {{/canup}}
+
+                    {{#candown}}
+                        <a class="cmd" href="{{{downurl}}}">{{{downpix}}}</a>
+                    {{/candown}}
+                     {{^candown}}
+                        <span class="course-ascendants shadow">{{{downpix}}}</span>
+                    {{/candown}}
+                    {{/arrangeinternalorder}}
+                    {{#showdescription}}
+                        <div class="block-ascendants-description">{{{description}}}</div>
+                    {{/showdescription}}
+                </div>
+
+                {{#hascompletion}}
+                <div class="coursebox-metas">
+                    {{#lockindicator}}
+                        <span class="block_ascendants-info">{{{lockindicator}}}</span>
+                    {{/lockindicator}}
+                {{{completionicon}}}
+                </div>
+                {{/hascompletion}}
+                    <div class="clearfix"></div>
+                </div>
+            <div class="clearfix"></div>
+            </div>
+<!-- /theme_klassplace/blocks_course_ascendants coursebox -->

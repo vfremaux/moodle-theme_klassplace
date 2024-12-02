@@ -1,0 +1,60 @@
+/* Addition for per module illustation */
+
+.section .activity .activityinstance, .section .activity .activityinstance div.cm-name {
+    display:table-row;
+}
+
+.section .activity .activityinstance, .section .activity .activityinstance div.cm-picture,
+.section .activity .activityinstance, .section .activity .activityinstance div.cm-label {
+    display:table-cell;
+}
+
+.cm-name {
+    width:100%;
+    vertical-align: top;
+    display:table;
+}
+
+/* @see scss/modthumb.scss for dynamic configurable injections */
+
+.cm-picture {
+    vertical-align: top;
+    display:table-cell;
+    overflow: hidden;
+}
+
+.cm-picture img {
+    padding: 8px;
+    border: solid 1px #e0dcd7;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+@media  (max-width:768px) {
+    .cm-picture {
+        display:none;
+    }
+}
+
+.cm-label {
+    vertical-align: top;
+    display:table-cell;
+    padding-left:15px;
+}
+
+.cm-label .activityinstance a span {
+    font-size: 1.4em;
+    font-weight: thin;
+}
+
+[[setting:modfixedthumbcss]]
+
+.return-button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.fullhide {
+    display: none !important;
+}

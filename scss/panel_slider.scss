@@ -1,0 +1,21 @@
+
+/* Slideshow */
+
+.stage ul,
+.stage ul li {
+    height: $slideshowheight;
+}
+
+.stage .captions p.slidercaption,
+.stage .captions p.slidercaption a {
+    color: $white;
+    text-transform: uppercase;
+}
+
+.stage .emptycaption {
+    visibility: hidden;
+}
+
+.stage .captions p.slidercaption a:hover {
+    color: $brandsecondary;
+}

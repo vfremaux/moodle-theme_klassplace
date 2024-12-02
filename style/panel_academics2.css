@@ -1,0 +1,193 @@
+/* Academics 2 Section CSS
+--------------------*/
+
+.academics2 {
+    padding-bottom: 0;
+}
+
+.academics2 .span7 {
+    padding: 3em 4em;
+}
+
+/*
+.row-fluid-academics {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-fluid-academics .item_featured {
+    min-height: 2.5em;
+}
+
+.row-fluid-academics h6 {
+    font-size: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: -0.6px;
+    line-height: 1.5em;
+    font-family: cursive, sans-serif;
+}
+
+.row-fluid-academics h1 {
+    font-family: Georgia, serif;
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.row-fluid-academics p {
+    margin-bottom: 2em;
+}
+
+.row-fluid-academics .item_featured {
+    min-height: 2.5em;
+    margin-top: 1em;
+}
+
+.row-fluid-academics .item_featured .item_number {
+    font-weight: bold;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 3.5625;
+    text-align: center;
+    float: left;
+    transition: 0.5s ease;
+}
+
+.row-fluid-academics .item_featured .item_number:hover {
+    cursor: pointer;
+}
+
+.row-fluid-academics .item_featured .item_info {
+    text-align: left;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.row-fluid-academics .item_featured .item_info .item_title {
+    margin-top: 0!important;
+    font-size: 18px;
+    line-height: 2.1em;
+    letter-spacing: -0.4px;
+}
+
+.row-fluid-academics .item_featured .item_info .item_title a {
+    padding-left: 10px;
+}
+
+.row-fluid-academics .item_featured .item_info .item_title a:hover {
+    padding-left: 10px;
+}
+
+.row-fluid-academics .span7 {
+    width: 57.26495726%;
+}
+
+.row-fluid-academics .span5 {
+    width: 40.17094017%;
+}
+
+/* For Mobile
+----------------------*/
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    
+    .academics2 {
+        padding: 0;
+    }
+    .academics2 .container-fluid {
+        padding: 0;
+    }
+    .academics2 .span7 {
+        padding: 3em 20px;
+    }
+    .academics2 .span7,
+    .academics2 .span5 {
+        width: 100%;
+        float: none;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .academics2 .span5 {
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .academics2 .span7 .item_featured .item_number,
+    .academics2 .span7 .item_featured .item_bullet {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 0.5em;
+    }
+    .academics2 .span7 .item_featured .item_info {
+        margin-left: 10px;
+    }
+    .academics2 .span7 .item_featured .item_info .item_title {
+        font-size: 12px;
+        line-height: 45px;
+    }
+    .academics2 .span7 .item_featured .item_info .item_title a{
+        padding-left: 10px
+    }
+
+    .academics2 .span7 .item_featured {
+        min-height: inherit;
+    }
+    
+    /*
+    .row-fluid-academics .span5{
+        width: 100% !important;
+        height: 45%;
+    }
+
+    .row-fluid-academics .span7{
+        width: 100% !important;
+        height: 45%;
+    }
+    */
+    
+    .academics2 h2{
+        text-align: center;
+        color: #fff;
+        font-family: Georgia, serif;
+        line-height: normal;
+        margin: 0 !important;
+        text-transform: capitalize;
+        font-weight: normal;
+        font-size: 1.7em;
+    }
+    
+    .academics2 p.tagline {
+        color: #eee;
+        margin-top: 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    
+    .academics2 {
+        padding: 0;
+    }
+    .academics2 .container-fluid {
+        padding: 0;
+    }
+    .academics2 .span7,
+    .academics2 .span5 {
+        width: 100%;
+        float: none;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .academics2 .span5 {
+        margin-bottom: 0;
+        text-align: center;
+    }
+    
+}

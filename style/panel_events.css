@@ -1,0 +1,221 @@
+/* Upcoming Events CSS
+-------------------*/
+
+.events {
+    background-color: #ededee;
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    padding: 4em 0;
+}
+
+.events h6 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1b1d38;
+    margin-top: 0;
+}
+
+.events h6:after {
+    background-color: #f14f4a;
+    content: '';
+    display: inline-block;
+    height: 2px;
+    width: 60px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+
+.events h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.events .row-fluid {
+    margin-top: 2em;
+}
+
+.events .span6 {
+    background-color: #ffffff;
+    margin: 5px !important;
+}
+
+.events .span6 .customimage {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.events .span6 .customimage a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-height: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.events .span6 .customimage a:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9;
+}
+
+.events .span6 .customimage img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.events .span6 .event-date {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    position: absolute;
+    left: 20px;
+    bottom: 12px;
+    z-index: 10;
+}
+
+.events .span6 .event-date .day {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-block;
+}
+
+.events .span6 .content {
+    margin: 19px 20px;
+}
+
+.events .span6 .content h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.events .span6 .content .event-venue {
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.events .span6 .content .event-summary {
+    margin-bottom: 20px;
+}
+
+.events .span6 .event-metas {
+    margin-top: 1.2em;
+    clear: both;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.events .span6 .event-metas .fa {
+    color: #f14f4a;
+}
+
+.events .span6 .event-metas a {
+    color: #727272;
+}
+
+.events .span6 .event-metas a:hover {
+    color: #333333;
+}
+
+.events .span6 .event-metas .event-map {
+    float: left;
+}
+
+.events .span6 .event-metas .event-price {
+    float: right;
+}
+
+.events a.btn {
+    float: left;
+    background-image: none;
+    filter: none;
+    background-color: #f9a53b;
+    padding: 10px 20px;
+    color: #fff;
+    margin: 19px 0px 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.events a.btn:hover {
+    background-color: #4c4c4c;
+}
+
+.events .event-map {
+    padding-left: 0.8rem;
+}
+
+.events .event-price {
+    padding-right: 0.8rem;
+}
+
+.row-fluid-event {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-fluid-event .span6 {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 35px !important;
+    width: 350px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+}
+
+/* For Mobile
+----------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    
+    .events .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    
+    .events .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    .events .span6 .customimage,
+    .events .span6 .content {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+    .events .span6 .content {
+        padding: 2% 5%;
+        padding-bottom: 5%;
+        width: 90%;
+    }
+}

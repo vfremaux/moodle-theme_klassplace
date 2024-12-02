@@ -1,0 +1,26 @@
+<!-- theme_klassplace/magisterecoursegrid -->
+        <div class="row-fluid-coursebox">
+            {{^hascourses}}
+                {{{nocourses}}}
+            {{/hascourses}}
+            {{#hascourses}}
+            {{#coursegridelms}}
+            <div class="span6">
+                <div class="pull-left customimage">
+                    <img src="{{{imgurl}}}">
+                </div>
+                <div class="pull-left content" title="{{fullname}}">
+                    <h3>{{{trimtitle}}}</h3>
+                    <div class="coursebox-summary">
+                        <p>{{{summary}}}</p>
+                    </div>
+                </div>
+                <div class="courseindex-readmorelink">
+                    {{#str}}readmore, local_courseindex{{/str}}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            {{/coursegridelms}}
+            {{/hascourses}}
+        </div>
+<!-- /theme_klassplace/magisterecoursegrid -->

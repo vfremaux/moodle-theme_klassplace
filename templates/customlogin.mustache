@@ -1,0 +1,62 @@
+<!-- theme_klassplace/customlogin -->
+{{#hascustomlogin}}
+
+{{#hasfpiconnav}}
+<section class="customsection row-fluid loginicons">
+    {{#fpiconnav}} {{#hasicon}}
+    <article class="span3">
+            <div class="fa-area">
+                <i class="fa fa-4x fa-{{{icon}}}"></i>
+            </div>
+                <h1>{{{title}}}</h1> 
+                <p>{{{text}}}</p>
+    </article>
+    {{/hasicon}} {{/fpiconnav}}
+</section>
+{{/hasfpiconnav}}
+
+{{#hasfeature1}}
+<div class="row fpcustomtext">
+    <div class="col-md-8">
+        <div class="featuretext">
+            {{{feature1text}}}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="loginfeaturedimage">
+            <img src="{{{ feature1image }}}" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+</div>
+{{/hasfeature1}} 
+{{#hasfeature2}}
+<div class="row fpcustomtext">
+    <div class="col-md-8">
+        <div class="featuretext">
+            {{{feature2text}}}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="loginfeaturedimage">
+            <img src="{{{ feature2image }}}" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+</div>
+{{/hasfeature2}} 
+{{#hasfeature3}}
+<div class="row fpcustomtext">
+    <div class="col-md-8">
+        <div class="featuretext">
+            {{{feature3text}}}
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="loginfeaturedimage">
+            <img src="{{{ feature3image }}}" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+</div>
+{{/hasfeature3}}
+
+{{/hascustomlogin}}
+<!-- /theme_klassplace/customlogin -->

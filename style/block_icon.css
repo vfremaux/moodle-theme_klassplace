@@ -1,0 +1,225 @@
+.block .header .title:before {
+    content: none;
+    margin-right: 10px;
+    background-color: #f9a53b;
+    color: #fff;
+    padding: 8px 10px;
+    float: left;
+    font-family: 'FontAwesome';
+}
+
+.block_navigation .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_activity_modules .header .title:before {
+    content: "\f12e";
+    font-family: 'FontAwesome';
+}
+
+.block_activity_results .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_blog_tags .header .title:before {
+    content: "\f02c";
+    font-family: 'FontAwesome';
+}
+
+.block_blog_menu .header .title:before {
+    content: "\f02d";
+    font-family: 'FontAwesome';
+}
+
+.block_course_summary .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_badges .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_myprofile .header .title:before {
+    content: "\f007";
+    font-family: 'FontAwesome';
+}
+
+.block_calendar_month .header .title:before {
+    content: "\f073";
+    font-family: 'FontAwesome';
+}
+
+.block_admin_bookmarks .header .title:before {
+    content: "\f02e";
+    font-family: 'FontAwesome';
+}
+
+.block_private_files .header .title:before {
+    content: "\f114";
+    font-family: 'FontAwesome';
+}
+
+.block_participants .header .title:before {
+    content: "\f0c0";
+    font-family: 'FontAwesome';
+}
+
+.block_tags .header .title:before {
+    content: "\f02c";
+    font-family: 'FontAwesome';
+}
+
+.block_messages .header .title:before {
+    content: "\f0e0";
+    font-family: 'FontAwesome';
+}
+
+.block_lp .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_comments .header .title:before {
+    content: "\f086";
+    font-family: 'FontAwesome';
+}
+
+.block_calendar_upcoming .header .title:before {
+    content: "\f073";
+    font-family: 'FontAwesome';
+}
+
+.block_search_forums .header .title:before {
+    content: "\f0e6";
+    font-family: 'FontAwesome';
+}
+
+.block_online_users .header .title:before {
+    content: "\f0c0";
+    font-family: 'FontAwesome';
+}
+
+.block_selfcompletion .header .title:before {
+    content: "\f0e4";
+    font-family: 'FontAwesome';
+}
+
+.block_settings .header .title:before {
+    content: "\f007";
+    font-family: 'FontAwesome';
+}
+
+.block_community .header .title:before {
+    content: "\f0ac";
+    font-family: 'FontAwesome';
+}
+
+.block_feedback .header .title:before {
+    content: "\f087";
+    font-family: 'FontAwesome';
+}
+
+.block_globalsearch .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_mentees .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_course_list .header .title:before {
+    content: "\f108";
+    font-family: 'FontAwesome';
+}
+
+.block_html .header .title:before {
+    content: "\f022";
+    font-family: 'FontAwesome';
+}
+
+.block_completionstatus .header .title:before {
+    content: "\f0e4";
+    font-family: 'FontAwesome';
+}
+
+.block_glossary_random .header .title:before {
+    content: "\f0eb";
+    font-family: 'FontAwesome';
+}
+
+.block_recent_activity .header .title:before {
+    content: "\f017";
+    font-family: 'FontAwesome';
+}
+
+.block_rss_client .header .title:before {
+    content: "\f09e";
+    font-family: 'FontAwesome';
+}
+
+.block_news_items .header .title:before {
+    content: "\f0a1";
+    font-family: 'FontAwesome';
+}
+
+.block_blog_recent .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_section_links .header .title:before {
+    content: "\f02e";
+    font-family: 'FontAwesome';
+}
+
+.block_adminblock .header .title:before {
+    content: "\f009";
+    font-family: 'FontAwesome';
+}
+
+.block_myoverview .header .title:before {
+    content: "\f0c9";
+    font-family: 'FontAwesome';
+}
+
+.block_settings .header .title:before,
+.block_site_main_menu .header .title:before,
+.block_calendar_upcoming .header .title:before,
+.block_messages .header .title:before,
+.block_mnet_hosts .header .title:before,
+.block_myprofile .header .title:before,
+.block_glossary_random .header .title:before,
+.block_completionstatus .header .title:before {
+    background-color: #02a0b7;
+}
+
+.block_online_users .header .title:before,
+.block_navigation .header .title:before,
+.block_mentees .header .title:before,
+.block_login .header .title:before,
+.block_participants .header .title:before,
+.block_blog_recent .header .title:before,
+.block_html .header .title:before {
+    background-color: #7eb34e;
+}
+
+.block_recent_activity .header .title:before,
+.block_tags,
+.block_course_list .header .title:before,
+.block_selfcompletion .header .title:before,
+.block_badges .header .title:before,
+.block_fake .header .title:before,
+.block_rss_client .header .title:before {
+    background-color: #3f4aa5;
+}
+
+.block_myoverview .header .title:before,
+.block_calendar_month .header .title:before {
+    background-color: #f14f4a;
+}

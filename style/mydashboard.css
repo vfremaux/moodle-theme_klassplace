@@ -1,0 +1,119 @@
+/*Page my coursebox section custom css*/
+
+#mydashboard .btn {
+    color: #fff;
+}
+
+#mydashboard .span6 .customimage,
+#page-site-index .span6 .customimage {
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#mydashboard .span6 .customimage a,
+#page-site-index .span6 .customimage a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-height: 200px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#mydashboard .span6 .customimage img,
+#page-site-index .span6 .customimage img {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#mydashboard .span6 .content,
+#page-site-index .span6 .content {
+    margin: 19px 20px;
+}
+
+#mydashboard .span6 .content .coursebox-summary {
+    margin-bottom: 20px;
+}
+
+#mydashboard .span6 .coursebox-metas,
+#page-site-index .span6 .coursebox-metas {
+    margin-top: 1.2em;
+    clear: both;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#mydashboard .row-fluid-coursebox,
+#page-site-index .row-fluid-coursebox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+#mydashboard .row-fluid-coursebox .span6,
+#page-site-index .row-fluid-coursebox .span6 {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin: 35px !important;
+    width: 300px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* For Mobile
+----------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    #mydashboard .span6,
+    #page-site-index .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    #mydashboard .row-fluid-coursebox,
+    #page-site-index .row-fluid-coursebox {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    #mydashboard .span6,
+    #page-site-index .span6 {
+        margin: 0 !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    #mydashboard .span6 .customimage,
+    #mydashboard .span6 .content,
+    #page-site-index .span6 .customimage,
+    #page-site-index .span6 .content {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    #mydashboard .span6 .content,
+    #page-site-index .span6 .content {
+        padding: 2% 5%;
+        padding-bottom: 5%;
+        width: 90%;
+    }
+
+    #mydashboard .row-fluid-coursebox,
+    #page-site-index .row-fluid-coursebox {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}

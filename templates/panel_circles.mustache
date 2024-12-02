@@ -1,0 +1,46 @@
+<!-- theme_klassplace/circles -->
+<div class="circles">
+   <div class="container-fluid">
+      {{#circlessectionheading}}
+      <h1>{{{circlessectionheading}}}</h1>
+      {{/circlessectionheading}}
+      {{#circlessectiontagline}}
+      <p class="tagline">{{{circlessectiontagline}}}</p>
+      {{/circlessectiontagline}}
+      <div class="expert-teachers container" id="first-section">
+         <div class="scroll-block-container slider" id="teachers-slider">
+            <a class="control_next" id="next-teacher"></a>
+            <a class="control_prev" id="prev-teacher"></a>
+            <div class="slider-wrapper" id="teacher-slider-wrapper">
+               <ul class="teacher-slider" style="width: 100%; margin-left: -155px;">
+                  {{#displaycircles}}
+                  {{#displaycircle}}
+                  <li id="teacher-{{id}}" data-comment="{{{circlecomment}}}" class="block-transition">
+                     <div class="teacher-block">
+                        <a href="{{{circleurl}}}" alt="Teacher Pic">
+                            <img class="teacher-pic" src="{{{circleimage}}}" alt="Teacher Pic">
+                        </a>
+                        <div class="teacher-info">
+                           {{#circlename}}
+                           <p class="teacher-name">{{{circlename}}}</p>
+                           {{/circlename}}
+                           {{#circledesignation}}
+                           <p class="teacher-qualification">{{{circledesignation}}}</p>
+                           {{/circledesignation}}
+                           {{#circlerating}}
+                           <p class="teacher-rating">{{{circlerating}}}</p>
+                           {{/circlerating}}
+                        </div>
+                     </div>
+                  </li>
+                  {{/displaycircle}}
+                  {{/displaycircles}}
+               </ul>
+            </div>
+         </div>
+         <div class="teacher-testimonial" id="teacher-comment"></div>
+      </div>
+   </div>
+</div>
+<!-- /theme_klassplace/circles -->
+

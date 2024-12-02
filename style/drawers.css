@@ -1,0 +1,41 @@
+
+/*===Bouton d'affichage bloc latéral droit===*/
+[data-action="toggle-spdrawer"].btn.nav-link.float-sm-left.mr-1.btn-secondary,
+.drawer-toggles .drawer-toggler .btn {
+    background-color: #86d000;
+    border-top-left-radius: $border-big-radius !important;
+    border-bottom-left-radius: $border-big-radius !important;
+    margin: 2px;
+    padding-left: 5px;
+    margin-top: 8rem;
+    font-size: 1.3rem;
+    right: -2rem;
+}
+
+@media screen and (max-device-width: 1080px) and (orientation: landscape) {
+    [data-action="toggle-spdrawer"].btn.nav-link.float-sm-left.mr-1.btn-secondary,
+    .drawer-toggles .drawer-toggler .btn {
+        margin-top: 0;
+    }
+}
+
+/* SP right drawer toggle button */
+@media screen and (min-width: 1080px) {
+    [data-region="spdrawer-toggle"].d-inline-block.mr-3 {
+        width: 5px;
+    }
+}
+
+#nav-spdrawer .block .header,
+#nav-spdrawer .block .header h2 {
+    border-radius: 0;
+}
+
+.drawer {
+    z-index: 1021;
+}
+
+/* boost override @see style/moodle.css§20473 */
+.drawer-toggles .drawer-toggler {
+    top: calc(150px + 0.7rem);
+}

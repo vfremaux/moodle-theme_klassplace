@@ -1,0 +1,13 @@
+{{!
+    @template theme_klassplace/nav-spdrawer
+
+
+    Example context (json): {}
+}}
+<!-- theme_klassplace:sidepostdrawer -->
+<div id="nav-spdrawer" data-region="spdrawer" class="d-print-none moodle-has-zindex {{^navspdraweropen}}closed{{/navspdraweropen}}" aria-hidden="{{#navspdraweropen}}false{{/navspdraweropen}}{{^navspdraweropen}}true{{/navspdraweropen}}" tabindex="-1">
+    <section id="region-side-post" region="blocks-region" class="hidden-print">
+        {{{sidepostblocks}}}
+    </section>
+</div>
+<!-- /theme_klassplace:sidepostdrawer -->

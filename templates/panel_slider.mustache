@@ -1,0 +1,102 @@
+<!-- theme_klassplace/slider -->
+<div class="stage" dir="ltr">
+    <div id="slider-panel-slider" class="sldr">
+        <ul class="wrp animate">
+            {{#slides}}
+            <li class="elmnt-{{elmix}}">
+                <div class="skew">
+                    <div class="wrap"><img src="{{{sliderimage}}}" width="1000" height="563"></div>
+                </div>
+            </li>
+            {{/slides}}
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="captions">
+        {{#slides}}
+        <div class="{{#isfirst}}focalPoint{{/isfirst}}">
+            {{#slidercaption}}
+            <p class="slidercaption">{{#slidercaptionurl}}<a href="{{{slidercaptionurl}}}" target="{{target}}">{{/slidercaptionurl}}{{{slidercaption}}}{{#slidercaptionurl}}</a>{{/slidercaptionurl}}</p>
+            {{/slidercaption}}
+            {{#sliderheading}}
+            {{{sliderheading}}}
+            {{/sliderheading}}
+        </div>
+        {{/slides}}
+   </div>
+   <button class="sldr-prv sldr-nav prev"></button>
+   <button class="sldr-nxt sldr-nav next"></button>
+</div>
+<div class="clearfix"></div>
+<script>
+    jQuery(document).ready(function($) {
+
+       $('#slider-panel-slider').each( function() {
+   		var th = $( this );
+   		th.sldr({
+   			focalClass    : 'focalPoint',
+   			offset        : th.width() / 2,
+   			sldrWidth     : 'responsive',
+   			nextSlide     : th.nextAll( '.sldr-nav.next:first' ),
+   			previousSlide : th.nextAll( '.sldr-nav.prev:first' ),
+   			selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
+   			toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
+   			sldrInit      : sliderPanelSliderInit,
+   			sldrStart     : sliderPanelSlideStart,
+   			sldrComplete  : sliderPanelSlideComplete,
+   			sldrLoaded    : sliderPanelSliderLoaded,
+   			sldrAuto      : true,
+   			sldrTime      : 5000,
+   			hasChange     : true
+   		});
+   	});
+   });
+       
+   
+   /**
+    * Sldr Callbacks
+    */
+   
+   /**
+    * When the sldr is initiated, before the DOM is manipulated
+    * @param {object} args the slides, callback, and config of the slider
+    * @return null
+    */
+   function sliderPanelSliderInit( args ) {
+   }
+   
+   /**
+    * When individual slides are loaded
+    * @param {object} args the slides, callback, and config of the slider
+    * @return null
+    */
+   function sliderPanelSlideLoaded( args ) {
+   }
+   
+   /**
+    * When the full slider is loaded, after the DOM is manipulated
+    * @param {object} args the slides, callback, and config of the slider
+    * @return null
+    */
+   function sliderPanelSliderLoaded( args ) {
+   }
+   
+   /**
+    * Before the slides change focal points
+    * @param {object} args the slides, callback, and config of the slider
+    * @return null
+    */
+   function sliderPanelSlideStart( args ) {
+   }
+   
+   /**
+    * After the slides are done changing focal points
+    * @param {object} args the slides, callback, and config of the slider
+    * @return null
+    */
+   function sliderPanelSlideComplete( args ) {
+   }
+   
+</script>
+
+<!-- /theme_klassplace/slider -->

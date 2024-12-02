@@ -1,0 +1,111 @@
+/*
+* Style 0 gives a standard slashed breadcrumb
+* Style 1 and 4 have breadcrumb backgrounded
+* Style 2 and 3 have no background and styled separator
+* Style 3 has uppercased items.
+*/
+
+nav[role="navigation"] ol.breadcrumb.style1 li a,
+nav[role="navigation"] ol.breadcrumb.style4 li a {
+    color: $breadcrumb-fg !important;
+    background-color: $breadcrumb-bg;
+}
+
+nav[role="navigation"] ol.breadcrumb.style2 li a,
+nav[role="navigation"] ol.breadcrumb.style3 li a {
+    color: $breadcrumb-bg !important;
+    background-color: transparent;
+}
+
+nav[role="navigation"] ol.breadcrumb.style1 li:hover a,
+nav[role="navigation"] ol.breadcrumb.style2 li:hover a,
+nav[role="navigation"] ol.breadcrumb.style3 li:hover a,
+nav[role="navigation"] ol.breadcrumb.style4 li:hover a {
+    background-color: transparent;
+    transition: none;
+}
+
+nav[role="navigation"] ol.breadcrumb.style1 li::after,
+nav[role="navigation"] ol.breadcrumb.style2 li::after,
+nav[role="navigation"] ol.breadcrumb.style3 li::after,
+nav[role="navigation"] ol.breadcrumb.style4 li::after {
+    border-left-color: $breadcrumb-bg;
+}
+
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style1 li::after,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style2 li::after,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style3 li::after,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style4 li::after {
+    border-right-color: $breadcrumb-bg;
+}
+
+nav[role="navigation"] ol.breadcrumb.style2 li:after,
+nav[role="navigation"] ol.breadcrumb.style3 li:after {
+    /* alternative is possible, with brandprimary to differeciate the separator from the 
+    breadcrum item */
+    /* color: $black; */ 
+    /* color: $breadcrumb-bg; */ 
+    color: $brandprimary;
+}
+
+nav[role="navigation"] ol.breadcrumb.style1 li,
+nav[role="navigation"] ol.breadcrumb.style4 li {
+    color: $breadcrumb-fg;
+    background-color: $breadcrumb-bg;
+    border-color: $breadcrumb-bg;
+}
+
+nav[role="navigation"] ol.breadcrumb.style2 li,
+nav[role="navigation"] ol.breadcrumb.style3 li {
+    color: $breadcrumb-fg;
+    border-color: $breadcrumb-bg;
+}
+
+nav[role="navigation"] ol.breadcrumb.style1 li::before,
+nav[role="navigation"] ol.breadcrumb.style2 li::before,
+nav[role="navigation"] ol.breadcrumb.style3 li::before,
+nav[role="navigation"] ol.breadcrumb.style4 li::before {
+    border-left-color: $breadcrumb-fg;
+}
+
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style1 li::before,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style2 li::before,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style3 li::before,
+.dir-rtl nav[role="navigation"] ol.breadcrumb.style4 li::before {
+    border-right-color: $breadcrumb-fg;
+}
+
+ul.breadcrumb.style1 li.active, .breadcrumb.style1 li:hover,
+ul.breadcrumb.style4 li.active, .breadcrumb.style2 li:hover {
+    background-color: $breadcrumb-fg;
+}
+
+ul.breadcrumb.style2 li.active, .breadcrumb.style3 li:hover,
+ul.breadcrumb.style3 li.active, .breadcrumb.style4 li:hover {
+    color: $breadcrumb-fg;
+}
+
+.breadcrumb.style1 li:hover a,
+.breadcrumb.style4 li:hover a {
+    color: $breadcrumb-bg;
+    background-color: $breadcrumb-fg;
+    border-color: $breadcrumb-fg;
+    transition: none;
+}
+
+.breadcrumb.style2 li:hover a,
+.breadcrumb.style3 li:hover a {
+    color: $breadcrumb-fg;
+    border-color: $breadcrumb-fg;
+    transition: none;
+}
+
+ul.breadcrumb.style1 li.active:after, .breadcrumb.style1 li:hover:after,
+ul.breadcrumb.style4 li.active:after, .breadcrumb.style4 li:hover:after {
+    /* background-color: $breadcrumb-fg; */
+    background-color: $breadcrumb-bg;
+}
+
+ul.breadcrumb.style2 li.active:after, .breadcrumb.style2 li:hover:after,
+ul.breadcrumb.style3 li.active:after, .breadcrumb.style3 li:hover:after {
+}

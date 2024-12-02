@@ -1,0 +1,209 @@
+/* indicators Section CSS --------------------*/
+
+.indicators {
+    padding-bottom: 0;
+}
+
+.indicators .span7 {
+    padding: 3em 4em;
+}
+
+.indicators .span7 h6 {
+    font-size: 1.6em;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    letter-spacing: -0.6px;
+    line-height: 1.5em;
+    font-family: cursive, sans-serif;
+    color: #5f6a72;
+}
+
+.indicators .span7 h1 {
+    color: #333;
+    font-family: Georgia, serif;
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.indicators .span7 p {
+    margin-bottom: 2em;
+}
+
+.indicators .span7 .item_featured {
+    min-height: 3.8em;
+    margin-top: 1em;
+}
+
+.indicators .span7 .item_featured .item_number {
+    color: #fff;
+    background-color: #02a0b7;
+    font-weight: bold;
+    display: inline-block;
+    width: 3.5625em;
+    height: 3.5625em;
+    line-height: 3.5625;
+    text-align: center;
+    float: left;
+    transition: 0.5s ease;
+}
+
+.indicators .span7 .item_featured .item_number:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+.indicators .span7 .item_featured .item_info {
+    text-align: left;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.indicators .span7 .indicator_featured .item_info .item_title {
+    margin-top: 0!important;
+    font-size: 18px;
+    line-height: 2.9em;
+    letter-spacing: -0.4px;
+}
+
+.indicators .span7 .item_featured .item_info .item_title a {
+    color: #02a0b7;
+    padding-left: 10px;
+}
+
+.indicators .span7 .item_featured .item_info .item_title a:hover {
+    color: #333;
+    padding-left: 10px;
+}
+
+.row-fluid-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.row-fluid-indicators .span7 {
+    width: 57.26495726%;
+}
+
+.row-fluid-indicators .span5 {
+    width: 40.17094017%;
+}
+
+
+.indicators_output {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.indicator_graph {
+    max-width: 300px;
+}
+
+/* For Mobile ----------------------*/
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+
+    .indicators {
+        padding: 0;
+    }
+
+    .indicators .container-fluid {
+        padding: 0;
+    }
+
+    .indicators .span7 {
+        padding: 3em 20px;
+    }
+
+    .indicators .span7,
+    .indicators .span5 {
+        width: 100%;
+        float: none;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .indicators .span5 {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .indicators .span7 .item_featured .item_number {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .indicators .span7 .item_featured .item_info {
+        margin-left: 10px;
+    }
+
+    .indicators .span7 .item_featured .item_info .item_title {
+        font-size: 12px;
+        line-height: 45px;
+    }
+
+    .indicators .span7 .item_featured .item_info .item_title a {
+        padding-left: 10px
+    }
+
+    .indicators .span7 .item_featured {
+        min-height: inherit;
+    }
+    
+    .row-fluid-indicators .span5 {
+        width: 100% !important;
+        height: 45%;
+    }
+
+    .row-fluid-indicators .span7 {
+        width: 100% !important;
+        height: 45%;
+    }
+
+    .indicators h2 {
+        text-align: center;
+        color: #fff;
+        font-family: Georgia, serif;
+        line-height: normal;
+        margin: 0 !important;
+        text-transform: capitalize;
+        font-weight: normal;
+        font-size: 1.7em;
+    }
+
+    .indicators p.tagline {
+        color: #eee;
+        margin-top: 5px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    .indicators {
+        padding: 0;
+    }
+
+    .indicators .container-fluid {
+        padding: 0;
+    }
+
+    .indicators .span7,
+    .indicators .span5 {
+        width: 100%;
+        float: none;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .indicators .span5 {
+        margin-bottom: 0;
+        text-align: center;
+    }
+}

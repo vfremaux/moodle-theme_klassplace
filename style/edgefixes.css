@@ -1,0 +1,5 @@
+@supports (-ms-ime-align: auto) {
+    #page-wrapper {
+        height: auto;
+    }
+}

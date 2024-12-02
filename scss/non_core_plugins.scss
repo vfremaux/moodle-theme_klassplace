@@ -1,0 +1,681 @@
+
+/* FORMAT PAGE */
+
+#format-page-editing-block {
+    background-color: $grispale;
+    border-radius: $border-radius;
+}
+
+/*enlever bandeau de marquage section active */
+#page-course-view-page .course-content .current::before {
+    border-left: 0;
+}
+
+/* page tracker */
+
+/** may be OBSOLETE **/
+.block-pagetracker.is-current-page {
+    background-color: $brandprimary !important;
+    line-height: 22px;
+    color: $brandprimaryalt !important;
+    border-radius: $border-radius;
+    text-decoration: none;
+
+    a {
+        background-color: $brandprimary !important;
+        color: $brandprimaryalt !important;
+    }
+}
+
+.pagetracker-page.is-current-page {
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt !important;
+    box-shadow: 0 0 0 0 $brandsecondary;
+
+    a {
+        background-color: $brandprimary !important;
+        color: $brandprimaryalt !important;
+    }
+}
+
+.pagetracker-page:hover {
+    background-color: $brandsecondary;
+    color: $brandsecondaryalt;
+    box-shadow: 0 0 0 0 $brandsecondary;
+
+    a {
+        color: $brandsecondaryalt;
+        text-decoration: none;
+    }
+}
+
+.pagetracker-name a.is-current-page {
+    color: $brandprimaryalt;
+    text-decoration: none;
+}
+
+/* customlabels */
+
+@media screen and (max-width: 576px) {
+    .is-mobile #page-region-main .custombox-header-thumb.flatstyle,
+    .is-mobile #region-main .custombox-header-thumb.flatstyle {
+        background-position: 10px 8px;
+        background-size: 70%;
+    }
+
+    .custombox-content.coursedata,
+    .custombox-content.authordata,
+    .custombox-content.courseclassifier {
+        padding-left: 0;
+    }
+}
+
+.custombox-caption.sectionheading {
+    font-weight: 300;
+    border-bottom: 1px solid $brandprimary !important;
+}
+
+.custombox-caption.sequenceheading {
+    font-weight: 300;
+    color: $brandprimary !important;
+}
+
+.custombox-caption.unitheading {
+    border-bottom: 1px solid $brandsecondary !important;
+    color: $brandsecondary !important;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.custombox-title.courseclassifier,
+.custombox-title.coursedata,
+.custombox-title.authordata {
+    color: $brandprimaryalt !important;
+    background-color: $brandprimary !important;
+}
+
+.custombox-param.courseclassifier,
+.custombox-param.coursedata,
+.custombox-param.courseheading,
+.custombox-param.authordata {
+    color: $brandsecondaryalt !important;
+    background-color: $brandsecondary !important;
+}
+
+.custombox-heading.courseheading {
+    font-size: 2.2em;
+}
+
+.custombox-collapsedtext-handle h4 {
+    margin-bottom: 0 !important;
+    border: 1px solid $brandprimary !important;
+    border-radius: $border-big-radius;
+    padding: 5px !important;
+}
+
+.custombox-text.readmorelink {
+    text-align: left;
+    background-color: $grispale;
+    padding-left: 10px;
+    width: 150px;
+    border-radius: $border-radius;
+}
+
+/* local_course_index */
+
+.local-courseindex-fp-coursethumb {
+    min-height: 300px;
+    background-color: $white;
+    border-top-left-radius: $border-big-radius;
+    border-top-right-radius: $border-big-radius;
+}
+
+.courseindex-readmorelink {
+    background-color: $brandsecondary;
+    color: $brandsecondaryalt;
+
+    a {
+        color: $brandsecondaryalt;
+    }
+}
+
+#courseindex-nav {
+    background-color: $brandprimary;
+}
+
+#courseindex-courses-panel h2 {
+    background-color: $brandprimary;
+    color: $white;
+    border-radius: $border-radius;
+    padding-left: 20px;
+}
+
+#courseindex-nav {
+    .category-name {
+        background-color: $brandprimary;
+
+        a {
+            color: $brandprimaryalt;
+        }
+    }
+
+    .category-name:hover {
+        background-color: $brandprimaryalt !important;
+
+        > a {
+            color: $brandprimary !important;
+        }
+
+        .subcats {
+            background-color: $brandprimary;
+
+            a {
+                color: $brandprimaryalt;
+            }
+        }
+    }
+
+    .category-name.is-current {
+        background-color: $brandsecondary;
+
+        a {
+            color: $brandsecondaryalt;
+        }
+
+        .subcats {
+            .category-name {
+                background-color: $brandprimary;
+
+                > a {
+                    color: $brandprimaryalt;
+                }
+            }
+            .category-name:hover {
+                background-color: $brandprimaryalt;
+
+                > a {
+                    color: $brandprimary;
+                }
+            }
+        }
+    }
+
+}
+
+#courseindex-nav a {
+    text-decoration: none;
+}
+
+/* local_my */
+
+#page-my-index h2 {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+#mydashboard,
+#page-site-index {
+
+    background-color: $mydashboard-bg;
+
+    .block .header h2 {
+        border-radius: 0;
+    }
+
+    .span6 {
+        background-color: #fff;
+        box-shadow: 2px 1px 8px $brandprimary, -2px -1px 8px #fff;
+        position: relative;
+    }
+
+    .area-button .singlebutton .btn {
+        background-color: $brandsecondary;
+    }
+
+    .area-button .singlebutton .btn:hover {
+        background-color: $brandprimary;
+    }
+
+    .block .header {
+        border-radius: 0;
+    }
+}
+
+td.course-category {
+    background-color: $gray-100;
+    border-radius: $border-radius;
+    color: $brandprimary;
+}
+
+.local-my-promowrap {
+    background-color: transparent;
+    background-color: #fff;
+    box-shadow: 2px 1px 8px $brandprimary,-2px -1px 8px #fff;
+}
+
+/*texte des boites de tris*/
+.local-my-sortsandfilters {
+    color: $brandprimaryalt;
+}
+
+.local-my-course-sortanddisplay i {
+    color: $brandprimaryalt;
+}
+
+.slick-dots li button {
+    border-radius: $border-radius;
+    background-color: $brandprimary !important;
+    border: none;
+    color: $brandprimaryalt !important;
+}
+
+/*on intervertit les couleur du bouton actif*/
+a[title="J'administre"].nav-link.active,
+a[title="Administrator"].nav-link.active,
+a[title="Je coordonne"].nav-link.active,
+a[title="Course manager"].nav-link.active,
+a[title="J'enseigne"].nav-link.active,
+a[title="Teacher"].nav-link.active,
+a[title="J'apprends"].nav-link.active,
+a[title="Student"].nav-link.active {
+    color: $brandprimaryalt;
+    background-color: $brandprimary;
+}
+
+a[title="J'administre"]::before,
+a[title="Administrator"]::before {
+    font-family: "fontawesome";
+    display: block;
+    text-align:center;
+    content: "\f108";
+    font-size: 35px;
+}
+
+a[title="Je coordonne"]::before,
+a[title="Course manager"]::before {
+    display: block;
+    text-align:center;
+    font-family: "fontawesome";
+    content: "\f005";
+    font-size: 35px;
+}
+
+a[title="J'enseigne"]::before,
+a[title="Je forme"]::before,
+a[title="Teacher"]::before {
+    font-family: "fontawesome";
+    display: block;
+    text-align:center;
+    content: "\f0d0";
+    font-size: 35px;
+}
+
+a[title="J'apprends"]::before,
+a[title="Student"]::before {
+    display: block;
+    text-align:center;
+    font-family: "fontawesome";
+    content: "\f02d";
+    font-size: 35px;
+}
+
+a[title="Plan du site"]::before {
+    display: block;
+    text-align: center;
+    font-family: "fontawesome";
+    content: "\f276";
+    font-size: 35px;
+}
+
+/* sharedresources */
+/* onglet actif notice */
+.path-mod-sharedresource .tabrow0 .here a span {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+/* reduire les images */
+.sharedresource-picture img {
+    width: 100%;
+}
+
+.sharedresource-item-container {
+    border: 1px solid $grispale;
+    border-radius: $border-big-radius;
+    min-height: 220px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/*rétablir taille image notice*/
+.sharedresource-user-controls img {
+    width: 69px;
+    height: 16px;
+}
+
+/*icones des ressources à droite ds la boite*/
+.sharedresource-librarian-controls {
+    text-align: right;
+    padding-right: 5px;
+}
+
+
+/* bouton et illustrations centrées */
+.sharedresource-user-controls,
+.sharedresource-picture {
+    text-align: center;
+} 
+
+.sharedresource-user-controls {
+    padding-left: 0px;
+} 
+
+#sharedresources-link-to-browser {
+    margin-bottom: 10px;
+}
+
+/* titre dans notice métadonnées */
+#page-mod-sharedresource-metadatanotice h2 {
+    background-color: $brandprimaryalt;
+    border: 1px solid $brandprimary;
+    border-radius: $border-big-radius;
+    padding: 10px;
+}
+
+/* oter liserai cadre d'origine */
+#mtd-form-content {
+    border:none;
+}
+
+/* notice métadonnées */
+#page-mod-sharedresource-metadatanotice {
+    .mtd-content.active.on h2 {
+        font-size: 1.5rem;
+        background-color: $blanc;
+    }
+
+     footer {
+        display: none;
+    }
+
+     .tabtree a {
+        margin-right: 10px;
+        background-color: $brandsecondary;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: $border-radius;
+        border: 1px solid $brandprimary;
+    }
+}
+
+/*onglet actif notice*/
+.path-mod-sharedresource .tabrow0 .here a span {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+.browser-sub-category-count {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+.sharedresources-pager {
+    a {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+        border-radius: $border-radius;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-right: 20px;
+        text-decoration: none;
+    }
+}
+
+#sharedresources-link-to-search input[type=button],
+#sharedresources-link-to-browser input[type=button] {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+/* titrage des widgets */
+#page-local-sharedresources-explore .header h2,
+#page-local-sharedresources-browse  .header h2 {
+    font-size: 1rem;
+}
+
+#mtd-form-schema {
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+}
+
+/*autres onglets*/
+#mtd-form-menu.tabrow0 {
+    a span {
+        background-color: $grispale;
+    }
+
+    li {
+        border-bottom: solid 0px $grispale;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+/* bouton d'actions */
+a.sharedresource-actionlink {
+    background-color: $violetgris;
+    color: $blanc!important;
+    margin-bottom: 20px;
+    padding: 3px 10px;
+    border-radius: $border-radius;
+    text-decoration: none;
+    font-size: 85%;
+}
+
+#sharedresources-link-to-search input[type=button],
+#sharedresources-link-to-browser input[type=button] {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+    border-radius: $border-radius;
+    padding: .375rem .75rem;
+}
+
+/* ==== block quiz behaviour ==== */
+
+.quiz-behaviour-progress-bar {
+    background-color: $brandprimary;
+}
+
+#quiz-behaviour-progress-indicator {
+    background-color: #eee;
+}
+
+/* ==== block userquiz monitor ==== */
+
+.userquiz-monitor-bg {
+    background-color: #eee;
+    color: $brandprimary;
+    border-radius: $border-radius;
+}
+
+.block_userquiz_monitor h1 {
+    color: $brandprimary;
+}
+
+.block_page_tracker {
+    border-radius: $border-big-radius !important;
+}
+
+/* flascard mode tirage libre */
+.flashcard-question {
+    height: 400px;
+}
+
+/* ==== block userquiz monitor ==== */
+
+.userquiz-monitor-trainingcontainer {
+    border: 0px solid #e8e8e8;
+}
+
+.userquiz-monitor-main-item {
+   background-color: initial; 
+    border: 1px solid $brandprimary;
+  border-radius: $border-big-radius;
+}
+
+.userquiz-monitor-bg {
+    background-color: initial;
+}
+
+.is-userquiz-monitor-training .quizreviewsummary {
+    display: none;
+}
+
+.block_userquiz_monitor h1 {
+    color: $brandprimary;
+    border-bottom : 2px solid $brandsecondary;
+}
+
+.userquiz-monitor-bg {
+    background-color: $grispale;
+    color: $violetgris;
+    border-radius: $border-radius;
+}
+
+.block_userquiz_monitor h1 {
+    color: $violetgris;
+}
+
+/* === block course recycle === */
+
+/* icones du block course recycle  taille 16 modifiee */
+div#block-recycle-state img {
+    width: 128px;
+    height: 128px;
+}
+
+/* === Block Couse ascendant === */
+
+/* boites block course ascendant */
+
+.coursebox {
+    padding: .5rem;
+    border: 1px solid $gris;
+    border-radius: $border-radius;
+    margin-bottom: 2px;
+}
+
+.course-ascendant-coursebox.coursebox:hover {
+    background-color: $grispale;
+}
+
+.coursebox-title.coursedata {
+    background-color: $brandprimary !important;
+}
+
+.custombox-param.coursedata {
+    background-color: $brandsecondary !important;
+}
+
+.coursebox .course-info .name a.coursename {
+    color: $violetgris;
+    font-weight: bold;
+}
+
+.block-ascendants-module-completion img.icon{
+    width: 32px;
+    height: 32px;
+}
+
+/* ==== Local Shop ==== */
+
+.shop-front-price {
+    font-weight: 100 !important;
+}
+
+.shop-front-price-container {
+    background-color: $brandsecondary;
+    width: 75px;
+    height: 75px;
+    box-shadow: 4px 4px 10px -2px $brandprimary;
+}
+
+.shop-article.product {
+    border: 1px solid $brandprimary;
+}
+
+/* ==== Local course index ==== */
+/* pour degager du float right les filtres */
+.browser-current-category-info {
+    width: 82%;
+    clear: right;
+}
+
+.browser-current-category-info, .browser-sub-category-info {
+    color: $brandprimary;
+    background-color: $brandprimaryalt;
+}
+
+.browser-sub-category-info {
+    border-bottom: solid 1px $brandprimary;
+}
+
+.browser-sub-category-count,
+.browser-current-category-count  {
+    background-color: $brandsecondary;
+    color: $brandsecondaryalt;
+    border-radius: $border-big-radius;
+    text-align: right;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.browser-current-category-label {
+    background-color: transparent;
+    text-align: right;
+}
+
+/* ==== grid course format ==== */
+
+/* Remettre au centre les titre de section format grid */
+#page-course-view-grid .section-navigation.navigationtitle {
+    text-align: center;
+}
+
+/* ==== Training sessions ==== */
+
+.sessionlevel1 > td {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+}
+
+/* ==== Collapsed Topic Format Fixes ==== */
+ul.ctopics {
+    width: 100%;
+}
+
+/* local shop */
+
+#page-local-shop-front-view {
+
+    a.nav-link{
+        color: black;
+    }
+
+    a.nav-link:hover {
+        color: black;
+    }
+
+    a.active {
+        color: white;
+    }
+
+    a.nav-link.active:hover {
+        color: white;
+    }
+
+    nav {
+        position: absolute;
+    }
+}

@@ -1,0 +1,102 @@
+
+
+<!-- theme_klassplace/langmenu -->
+
+{{^asmenu}}
+<div id="lang_choice" class="not-for-mobile">
+{{#withicons}}
+{{#langs}}
+{{#isotherlang}}
+<a role="menuitem" href="{{{langurl}}}">
+    {{{langicon}}}
+</a>
+{{/isotherlang}}
+{{^isotherlang}}
+{{{langicon}}}
+{{/isotherlang}}
+{{/langs}}
+{{/withicons}}
+</div>
+{{/asmenu}}
+
+{{#asmenu}}
+<div id="menu_lang" class="lang-menu not-for-mobile">
+    <div class="lang-menu-content">
+        <ul role="presentation">
+            <li>
+                {{^withicons}}
+                <a id="lang-menu-handle" class="lang-menu-label" aria-haspopup="true" aria-expanded="false" href="#cm_submenu_lang">{{currentlang}}</a>
+                {{/withicons}}
+                {{#withicons}}
+                <a id="lang-menu-handle" class="lang-menu-label" aria-haspopup="true" aria-expanded="false" href="#cm_submenu_lang">
+                    {{{currentlangicon}}}
+                </a>
+                {{/withicons}}
+                <div id="cm_submenu_lang" class="lang-menu-submenu" style="display:none" role="menu">
+                    <div class="lang-menu-content">
+                        <ul role="menubar">
+                            {{#langs}}
+                            {{#isotherlang}}
+                            {{#withicons}}
+                            <li class="lang-menuitem" role="none">
+                                <a role="menuitem" href="{{{langurl}}}" alt="{{langname}}">
+                                    {{{langicon}}}
+                                </a>
+                            </li>
+                            {{/withicons}}
+                            {{^withicons}}
+                            <li class="lang-menuitem" role="none">
+                                <a role="menuitem" class="lang-menuitem-content" tabindex="0" href="{{{langurl}}}">{{langname}}</a>
+                            </li>
+                            {{/withicons}}
+                            {{/isotherlang}}
+                            {{/langs}}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+         </ul>
+     </div>
+</div>
+{{/asmenu}}
+
+<div id="menu_lang" class="lang-menu for-mobile">
+    <!-- forced mobile mode -->
+    <div class="lang-menu-content">
+        <ul role="presentation">
+            <li>
+                {{^withicons}}
+                <a id="lang-menu-handle" class="lang-menu-label" aria-haspopup="true" aria-expanded="false" href="#cm_submenu_lang">{{currentlang}}</a>
+                {{/withicons}}
+                {{#withicons}}
+                <a id="lang-menu-handle" class="lang-menu-label" aria-haspopup="true" aria-expanded="false" href="#cm_submenu_lang">
+                    {{{currentlangicon}}}
+                </a>
+                {{/withicons}}
+                <div id="cm_submenu_lang" class="lang-menu-submenu" style="display:none" role="menu">
+                    <div class="lang-menu-content">
+                        <ul role="menubar">
+                            {{#langs}}
+                            {{#isotherlang}}
+                            {{#withicons}}
+                            <li class="lang-menuitem" role="none">
+                                <a role="menuitem" href="{{{langurl}}}" alt="{{langname}}">
+                                    {{{langicon}}}
+                                </a>
+                            </li>
+                            {{/withicons}}
+                            {{^withicons}}
+                            <li class="lang-menuitem" role="none">
+                                <a role="menuitem" class="lang-menuitem-content" tabindex="0" href="{{{langurl}}}">{{langname}}</a>
+                            </li>
+                            {{/withicons}}
+                            {{/isotherlang}}
+                            {{/langs}}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+         </ul>
+     </div>
+</div>
+<!-- /theme_klassplace/langmenu -->

@@ -1,0 +1,29 @@
+<!-- theme_klassplace/panel_indicator_elms -->
+ <div class="span7">
+    {{#indicatorstagline}}
+    <h6>{{{indicatorstagline}}}</h6>
+    {{/indicatorstagline}}
+    {{#indicatorsheading}}
+    <h1>{{{indicatorsheading}}}</h1>
+    {{/indicatorsheading}}
+    {{#indicatorsdescription}}
+    <p>{{{indicatorsdescription}}}</p>
+    {{/indicatorsdescription}}
+    <div class="indicators_output">
+        {{#indicators}}
+        <div class="indicator_featured">
+           <!-- span class="indicator_number">{{i}}</span -->
+
+           <div class="indicator_info">
+              <div class="indicator_header">
+                 <h4 class="indicator_title">{{{indicatortitle}}}</h4>
+              </div>
+              <div class="indicator_graph">
+                 {{{indicatorgraph}}}
+              </div>
+           </div>
+        </div>
+        {{/indicators}}
+    </div>
+ </div>
+<!-- /theme_klassplace/panel_indicator_elms -->

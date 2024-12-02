@@ -1,0 +1,95 @@
+
+
+
+<!-- theme_klassplace/flexsection_layout -->
+
+{{#istopfirst}}
+{{#hascancelmovingcontrols}}
+    {{{cancelmovingcontrols}}}
+{{/hascancelmovingcontrols}}
+{{/istopfirst}}
+
+<ul class="flexsections flexsections-level-{{level}}" role="presentation">
+
+    {{#ismoving}}
+    {{{preinsertsection}}}
+    {{/ismoving}}
+
+    <li class="section {{main}} {{isleafclass}} flexsections-level-{{level}}
+               {{ismovingclass}} {{currentclass}} {{hiddenclass}} {{collapsedclass}}" id="section-{{sectionnum}}" >
+
+        {{#hascontrols}}
+            <div class="controls">{{{controls}}}</div>
+        {{/hascontrols}}
+
+        {{#hastitle}}
+        <div class="section-caption" tabindex="0">
+        <a name="section-{{sectionnum}}"></a>
+        <h{{hlevel}} id="section-title-{{sectionnum}}" aria-expanded="{{ariaexpanded}}" class="sectionname
+            section-title {{customclasses}}" style="{{customstyle}}"
+            aria-labelledby="sectioname-{{sectionid}}-section-{{sectionnum}}">{{{title}}}</h{{hlevel}}>
+        </div>
+        {{/hastitle}}
+
+        <div class="content {{highlight}} {{hideactivityclass}}">
+
+            {{{sectionavailability}}}
+
+            {{#iscontentvisible}}
+
+            <div class="section-content {{contentcollapsedclass}}">
+
+                {{#summary}}
+                <div class="summary">{{{summary}}}</div>
+                {{/summary}}
+
+                {{{coursemodulelist}}}
+
+                {{#isediting}}
+                {{#emptysection}}
+                <ul class="section img-text"></ul>
+                {{/emptysection}}
+
+                {{{coursemodulecontrols}}}
+                {{/isediting}}
+            </div>
+
+            {{#hassubs}}
+
+            {{#istopfirst}}
+            <div class="globalcontrols">
+                {{{globalcontrols}}}
+            </div>
+            {{/istopfirst}}
+
+            {{#subs}}
+                {{> theme_klassplace/flexsections_layout}}
+            {{/subs}}
+
+            {{/hassubs}}
+
+            {{^hassubs}}
+            {{#ismoving}}
+            <ul class="emptyinsertsection-empty-subs">
+                {{{emptyinsertsection}}}
+            </ul>
+            {{/ismoving}}
+            {{/hassubs}}
+
+            <div class="addsectioncontrols">
+                {{{addsectioncontrol}}}
+            </div>
+
+            {{/iscontentvisible}}
+        </div>
+    </li>
+</ul>
+
+{{#islastchild}}
+{{#ismoving}}
+<ul class="preinsertsection-empty-subs">
+    {{{postinsertsection}}}
+</ul>
+{{/ismoving}}
+{{/islastchild}}
+<!-- /theme_klassplace/flexsection_layout -->

@@ -1,0 +1,25 @@
+
+@font-face {
+    font-family: 'mainfont';
+    src: [[settings:bodyfont]];
+}
+
+@font-face {
+    font-family: 'titlefont';
+    src: [[settings:titlefont]];
+}
+
+@font-face {
+    font-family: 'altfont';
+    src: [[settings:altfont]];
+}
+
+body {
+    font-family: [[settings:fontfamily]] !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: [[settings:titlefontfamily]] !important;
+}
+
+[[settings:specialaltfontcss]]

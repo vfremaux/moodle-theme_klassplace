@@ -1,0 +1,15 @@
+/**
+* Panel_customsection.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+**/
+
+.customsection .span3 {
+    background-image: $custombox-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $custombox-bg;
+}
+
+.customsection .span3:hover {
+    background-blend-mode: multiply;
+    background-color: $customboxhover-bg;
+}

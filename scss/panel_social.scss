@@ -1,0 +1,61 @@
+/**
+* Panel_academics.scss : Klassplace CUSTOMIZATIONS FOR NEW ELEMENTS
+**/
+
+#socialnav {
+    background-color: $socialnav-bg;
+
+    .contact {
+        color: $brandprimaryalt;
+        font-size: 20px;
+        padding: 16px 15px;
+    }
+
+    .contact a {
+        color: $brandprimaryalt;
+    }
+}
+
+.top-header .pull-left ul {
+    margin: 0;
+}
+
+.top-header .pull-left ul li {
+    list-style: none;
+    float: left;
+    padding: 20px 15px;
+}
+
+ul.social a {
+    color: $brandprimaryalt;
+}
+
+ul.social {
+    margin: 0;
+}
+
+ul.social li {
+    display: inline-block;
+    list-style: none;
+    font-size: 17px;
+    border-right: 1px solid $brandprimary;
+}
+
+ul.social li .fa {
+    font-size: 20px;
+}
+
+ul.social li:first-child {
+    border-left: 1px solid $brandprimary;
+}
+
+ul.social li a {
+    padding: 16px 15px;
+    display: inline-block;
+}
+
+ul.social li a:hover {
+    background-color: $brandprimaryalt;
+    color: $socialnav-bg;
+}
+

@@ -1,0 +1,108 @@
+/* indent non customlabels */
+
+@media (min-width: 480px) {
+    .path-course-view .activity:not(.customlabel):not(.label) {
+        margin-left: 95px !important;
+    }
+}
+
+/* General rules */
+
+td.custombox-header-thumb,
+td.custombox-header-thumb,
+td.custombox-thumb,
+td.custombox-thumb {
+    padding-top: 1.2em;
+}
+
+.custombox-text.readmorelink {
+    text-align: left !important;
+    background-color: #aaa;
+    padding: 5px !important;
+    width: 100px;
+    border-radius: 4px;
+    margin-bottom: 10p !important;
+}
+
+#page-region-main td.custombox-header-thumb,
+#region-main td.custombox-header-thumb,
+#page-region-main td.custombox-thumb,
+#region-main td.custombox-thumb {
+    padding-top:0.8em;
+}
+
+/* disables module indent */
+li.customlabel .mod-indent-outer {
+    padding-left:0px !important;
+}
+
+#page-region-main .custombox-content-caption,
+#region-main .custombox-content-caption {
+    font-size:20px !important;
+}
+
+/* Course heading */
+
+tr.custombox-icon.courseheading {
+    min-height:0px !important;
+    height:initial !important;
+}
+
+div.custombox-preheading.courseheading {
+    font-size:1.5em;
+}
+
+div.custombox-heading.courseheading {
+    color:#23A7C1;
+    font-size: 3.2em;
+    line-height: 1.3em;
+    font-weight:100;
+    font-family:"gothic", sans-serif;
+}
+
+/*  course classifier */
+
+.custombox-courseclassifier {
+    /* border: 1px solid #FFFFFF !important; */
+    width: 100% !important;
+}
+
+table.custombox-courseclassifier {
+    border: none !important;
+    border-collapse:separate;
+    margin:10px 0px 10px 0px;
+}
+
+.custombox-courseclassifier p {
+    padding-top:0px;
+    margin-top:0px;
+}
+
+.custombox-title.courseclassifier {
+    background-color: #23A7C1 !important;
+    color: #ffffff !important;
+    font-size: 15px !important;
+    padding: 5px !important;
+    text-align: left !important;
+}
+
+.custombox-param.courseclassifier {
+    background-color: #88ABC6 !important;
+    border: solid 1px #ffffff !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    text-transform: uppercase;
+    padding: 10px !important;
+}
+
+.custombox-value.courseclassifier {
+    background-color: #ffffff !important;
+    border: none !important;
+    color: #666666 !important;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    padding: 10px !important;
+}
+
+

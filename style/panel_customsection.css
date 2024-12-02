@@ -1,0 +1,92 @@
+/* Customsection CSS
+-----------------------*/
+
+.customsection {
+    display: flex;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.is-mobile .customsection {
+    flex-direction: column;
+}
+
+.customsection .span3 {
+    padding: 50px;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    width: 25%;
+    margin: 0;
+    transition: 0.5s ease;
+}
+
+.customsection .span3:first-child {
+    border-top: 1px solid #eee;
+}
+
+.customsection .span3 .fa {
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #fff;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+    border: 2px solid #fff;
+    padding: 15px;
+}
+
+.customsection .span3 h1 {
+    font-size: 16px;
+    color: #232323;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.customsection .span3:hover {
+    cursor: pointer;
+}
+
+.customsection .span3:hover h1{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.customsection .span3:hover .fa,
+.customsection .span3:hover p {
+    color: #fff;
+}
+
+.customsection .span3:hover .fa {
+    border-color: #fff;
+}
+
+.customsection .span3 p {
+    color: #fff;
+}
+
+.customsection .span3 .fa-area {
+    height: 70.7px;
+    margin-bottom: 1em;
+}
+
+/* For Mobile
+----------------------*/
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    
+    .customsection .span3 {
+        padding: 40px 20px;
+        width: 50%;
+    }
+    
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    
+    .customsection .span3 {
+        padding: 40px 20px;
+        width: 100%;
+    }
+    
+}

@@ -1,0 +1,231 @@
+/*=== Site wide buttons and side effects ===*/
+
+nav .btn {
+    border-radius: $border-radius !important;
+}
+
+body:not(.path-message) button,
+body:not(.navbar) button,
+body:not(.path-message) [type="button"],
+body:not(.navbar) [type="button"],
+body:not(.path-message)  [type="reset"],
+body:not(.navbar)  [type="reset"],
+body:not(.path-message)  [type="submit"],
+body:not(.navbar)  [type="submit"],
+body:not(.path-message) .btn-primary,
+body:not(.navbar) .btn-primary,
+body:not(.path-message)  .btn-secondary,
+body:not(.navbar) .btn-secondary,
+ body:not(.path-message) .btn:not(:disabled):not(.disabled)
+ body:not(.navbar)  .btn:not(:disabled):not(.disabled) {
+    background-color: $brandprimary;
+    border: 1px solid transparent;
+    border-radius: $border-big-radius;
+    color: $brandprimaryalt;
+    cursor: pointer;
+    margin: 0 3px;
+    padding: .375rem .75rem;
+}
+
+body.is-mobile:not(.path-message) button,
+body.is-mobile:not(.navbar) button,
+body.is-mobile:not(.path-message) [type="button"],
+body.is-mobile:not(.navbar) [type="button"],
+body.is-mobile:not(.path-message)  [type="reset"],
+body.is-mobile:not(.navbar)  [type="reset"],
+body.is-mobile:not(.path-message)  [type="submit"],
+body.is-mobile:not(.navbar)  [type="submit"],
+body.is-mobile:not(.path-message) .btn-primary,
+body.is-mobile:not(.navbar) .btn-primary,
+body.is-mobile:not(.path-message)  .btn-secondary,
+body.is-mobile:not(.navbar) .btn-secondary,
+body.is-mobile:not(.path-message) .btn:not(:disabled):not(.disabled)
+body.is-mobile:not(.navbar)  .btn:not(:disabled):not(.disabled) {
+    padding: .75rem .75rem;
+}
+
+
+body:not(.path-message)  button:hover,
+body:not(.path-message)  html [type="button"]:hover,
+body:not(.path-message)  html [type="reset"]:hover,
+body:not(.path-message)  html [type="submit"]:hover,
+body:not(.path-message)  .btn-primary:hover,
+body:not(.path-message)  .btn-secondary:hover { 
+    background-color: $brandsecondary !important;
+    box-shadow: 0 0 .2rem  $brandprimary;
+    color: $brandsecondaryalt;
+    transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-
+}
+
+body:not(.path-message) .btn-secondary:not(:disabled):not(.disabled):active,
+body:not(.path-message) .btn-default:not(:disabled):not(.disabled):active,
+body:not(.path-message) .btn-secondary:not(:disabled):not(.disabled).active,
+body:not(.path-message) button:active,
+body:not(.path-message) buttons:focus,
+body:not(.path-message) [type="button"]:active,
+body:not(.path-message) [type="button"]:focus,
+body:not(.path-message) [type="reset"]:active,
+body:not(.path-message) [type="reset"]:focus,
+body:not(.path-message) [type="submit"]:active,
+body:not(.path-message) [type="submit"]:focus,
+body:not(.path-message) .btn-secondary:active,
+body:not(.path-message) .btn-secondary:focus,
+body:not(.path-message) .btn-primary:active,
+body:not(.path-message) .btn-primary:focus {
+    background-color: $brandsecondary !important;
+    border-color: $brandprimary;
+    color: $brandsecondaryalt;
+}
+
+body:not(.path-message) button:focus,
+body:not(.path-message) [type="button"]:focus, 
+body:not(.path-message) [type="reset"]:focus,
+body:not(.path-message) [type="submit"]:focus,
+body:not(.path-message) .btn-secondary:focus,
+body:not(.path-message) .btn-primary:focus {
+    box-shadow: 0 0 .2rem  $brandprimary;
+    transition: color 0.5s ease-in-out,background-color 0.5s ease-in-out,border-color 0.5s ease-in-out;
+}
+
+.btn-default {
+    background-color: $brandprimary;
+}
+
+.aalink.focus,
+.arrow_link.focus, 
+a:not([class]).focus, 
+.activityinstance > a.focus, 
+.aalink:focus, 
+.arrow_link:focus, 
+a:not([class]):focus, 
+.activityinstance > a:focus {
+    background-color: transparent;
+    box-shadow: none;
+    /* background-color: $footer-bg;
+    color: $footer-fg; */
+    border: solid 2px $brandprimary;
+    border-radius: $border-radius;
+}
+
+#page-footer a:not([class]).focus, 
+#page-footer a:not([class]):focus {
+    background-color: transparent;
+    box-shadow: none;
+    background-color: $footer-bg;
+    color: $footer-fg;
+}
+
+.btn.btn-link.p-0, .btn.btn-link {
+    background-color: transparent;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    background-color: $brandsecondary;
+}
+
+.section-modchooser-link.btn.btn-link {
+    background-color: $brandprimary;
+}
+
+.btn-success {
+    background-color: $brandsuccess;
+}
+
+span.section-modchooser-link
+
+#mobile-home > .fa{
+    color: $white !important;
+}
+
+.close{
+   text-shadow: none;
+   opacity: 1;
+}
+
+div.editor_atto_toolbar button .icon {
+    color: $brandprimaryalt;
+    background-color: $brandprimary;
+}
+
+div.editor_atto_toolbar button:hover .icon {
+    background-color: $brandprimaryalt;
+    color: $brandprimary;
+}
+
+div.editor_atto_toolbar button.atto_collpase_button.highlight .icon {
+    background-color: $brandprimaryalt;
+    color: $brandprimary;
+}
+
+.atto_equation_groups button {
+    background-color: $brandprimaryalt !important;
+    color: $brandprimary !important;
+    border: $brandprimary solid 1px !important;
+    border-radius: $border-radius;
+}
+
+.text-reset {
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt !important;
+}
+
+.proceedbutton{
+    border: 1px solid transparent !important;
+    border-radius: $border-radius;
+    background-color: $brandprimary !important;
+}
+
+.proceedbutton:hover, .proceedbutton:focus, .proceedbutton:active{
+    border: 1px solid transparent !important;
+    border-radius: $border-radius;
+    background-color: $brandsecondary !important;
+}
+
+.shop-front-label {
+    margin-right: 15px;
+    padding-top: 20px;
+}
+
+.shop-front-price-container {
+    background-color: $brandsecondary;
+    border-radius: 50%;
+    width:65px;
+    height:65px;
+    box-shadow: 4px 4px 10px -2px $gris;
+}
+
+.shop-front-price {
+    position: relative;
+    font-weight: 700;
+    top: calc(35%);
+    text-align: center;
+    margin-right: 0em;
+    display: block;
+}
+
+
+.modchoosercontainer .optionscontainer .option .optionactions .optionaction, 
+.modchoosercontainer .searchresultitemscontainer .option .optionactions .optionaction {
+    background-color: transparent;
+}
+
+/* search nav button */
+
+#searchbutton {
+    background-color: transparent;
+    color: #000;
+}
+
+#searchbutton:hover, #searchbutton:active, #searchbutton:focus {
+    background-color: transparent !important;
+}
+
+a.local-my-area-ctls {
+    background-color: $brandprimary;
+    color: $brandprimaryalt;
+} 
+
+.course_category_tree .category>.info>.categoryname:before{
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt;
+}

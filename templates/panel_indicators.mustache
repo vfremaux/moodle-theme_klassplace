@@ -1,0 +1,21 @@
+<!-- theme_klassplace/indicators -->
+<div class="indicators">
+   <div class="container-fluid">
+      <div class="row-fluid-indicators">
+
+         {{^mirrored}}
+         <div class="span5 indicators-image"><img class="img-responsive" src="{{{indicatorsimage}}}" alt="" /></div>
+         <div class="clearfix"></div>
+         {{> theme_klassplace/panel_indicators_elms }}
+         {{/mirrored}}
+
+         {{#mirrored}}
+         {{> theme_klassplace/panel_indicators_elms }}
+         <div class="clearfix"></div>
+         <div class="span5 indicators-image"><img class="img-responsive" src="{{{indicatorsimage}}}" alt="" /></div>
+         {{/mirrored}}
+
+      </div>
+   </div>
+</div>
+<!-- /theme_klassplace/indicators -->
