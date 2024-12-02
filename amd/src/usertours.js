@@ -37,6 +37,7 @@ define(['jquery', 'core/config', 'core/log'],function($, cfg, log) {
             url += '?url=' + encodeURIComponent(that.attr('data-url'));
 
             $.get(url);
+            window.scrollTo(0, 0);
             location.reload(true);
 
             log.debug("Reset page usertours ");

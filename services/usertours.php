@@ -18,7 +18,7 @@ define('AJAX_SCRIPT', true);
 
 include('../../../config.php');
 
-$tourcontexturl = required_param('url', MOODLE_URL);
+$tourcontexturl = required_param('url', PARAM_LOCALURL);
 
 require_login();
 // We get current $USER logged in.
@@ -30,8 +30,8 @@ $tours = $manager->get_matching_tours($moodleurl);
 
 if (!empty($tours)) {
     foreach($tours as $tour) {
-        $tourname = 'tool_usertours_tour_completion_time_'.$tour->id;
-        $DB->delete_records('user_preferences', ['userid' => $USER->id, 'name' = $tourname]);
+        $tourname = 'tool_usertours_tour_completion_time_'.$tour->get_id();
+        $DB->delete_records('user_preferences', ['userid' => $USER->id, 'name' => $tourname]);
     }
 }
 
