@@ -25,6 +25,7 @@ define(['jquery', 'core/config', 'core/log'],function($, cfg, log) {
 
         init: function() {
             $('[data-action="tool_usertours/resetpagetour"]').bind('click', this.resetcurrenttours);
+            log.debug("AMD theme klassplace usertours init");
         },
 
         resetcurrenttours: function(e) {

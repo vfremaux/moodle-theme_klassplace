@@ -16,7 +16,7 @@
 /**
  * Contain the logic for a drawer.
  *
- * @package    theme_fordson_fel"
+ * @package    theme_klassplace
  * @copyright  2016 Damyon Wiese
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,7 +30,7 @@ define(['jquery', 'core/log'], function($, log) {
             setTimeout( function() {
                 $('#custom_menu_1').attr('style', '');
             }, 800);
-            log.debug("AMD custommenu init");
+            log.debug("AMD theme klassplace custommenu init");
         }
 
     };
