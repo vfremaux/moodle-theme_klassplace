@@ -229,3 +229,22 @@ a.local-my-area-ctls {
     background-color: $brandprimary !important;
     color: $brandprimaryalt;
 }
+
+/* Moodle 4.4 Boost */
+.btn[name='cancel'],
+.btn-cancel {
+    background-color: transparent !important;
+    background-image: none !important;
+    filter: none !important;
+    border: none !important;
+    border-radius: $border-big-radius !important;
+}
+
+.btn-primary,
+.btn-secondary {
+    border-radius: $border-big-radius !important;
+}
+
+.proceedbutton {
+    background-color: transparent !important;
+}

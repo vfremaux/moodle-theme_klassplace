@@ -25,7 +25,20 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
+$flag = 'drawer-open-nav';
+$PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+    const flag = '$flag';
+    const n = document.querySelector('.block-xp-rocks');
+    if (!n) return;
+    n.addEventListener('click', function(e) {
+        e.preventDefault();
+        UserRepo.setUserPreference(flag, true);
+        const notice = document.querySelector('.block-xp-notices');
+        if (!notice) return;
+        notice.style.display = 'none';
+    });
+});");
+
 require_once($CFG->libdir . '/behat/lib.php');
 
 // Add block button in editing mode. M4

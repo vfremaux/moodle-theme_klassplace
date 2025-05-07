@@ -25,15 +25,15 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024022800;
-$plugin->release  = 'Moodle 4.1 klassplace v4.1 release 1';
+$plugin->version   = 2025041400;
+$plugin->release  = 'Moodle 4.5 klassplace v4.5 release 1';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->requires  = 2022112801;
-$plugin->supported = [401, 402];
+$plugin->supported = [403, 405];
 $plugin->component = 'theme_klassplace';
 $plugin->dependencies = array(
     'theme_boost'  => 2018051400,
 );
 
 // Non moodle attributes.
-$plugin->codeincrement = '4.1.0001';
+$plugin->codeincrement = '4.5.0001';

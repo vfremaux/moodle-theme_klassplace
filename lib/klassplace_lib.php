@@ -244,6 +244,7 @@ function theme_klassplace_process_texts(&$templatecontext) {
                 $link = \html_writer::link('', get_string('resettouronpage', 'tool_usertours'), [
                         'data-action'   => 'tool_usertours/resetpagetour',
                         'data-url' => $PAGE->url,
+                        'id' => 'resetpagetour'
                     ]);
                 $templatecontext[$tz] = str_replace('{{resettourlink}}', $link, $templatecontext[$tz]);
             } else {
@@ -386,9 +387,7 @@ function theme_klassplace_load_academics_settings(&$templatecontext) {
             $condkey = 'academicsdispcondition'.$i;
             $cond = @$PAGE->theme->settings->$condkey;
             if (!local_moodlescript_evaluate_expression($cond)) {
-                if (function_exists('debug_trace')) {
-                    debug_trace("$condkey check failed. Hiding theme element...", TRACE_DEBUG);
-                }
+                theme_klassplace_debug_trace("$condkey check failed. Hiding theme element...", THEME_KLASSPLACE_TRACE_DEBUG);
                 continue;
             }
         }
@@ -423,9 +422,7 @@ function theme_klassplace_load_academics2_settings(&$templatecontext) {
             $condkey = 'academicsdispcondition2_'.$i;
             $cond = @$PAGE->theme->settings->$condkey;
             if (!local_moodlescript_evaluate_expression($cond)) {
-                if (function_exists('debug_trace')) {
-                    debug_trace("$condkey check failed. Hiding theme element...", TRACE_DEBUG);
-                }
+                theme_klassplace_debug_trace("$condkey check failed. Hiding theme element...", THEME_KLASSPLACE_TRACE_DEBUG);
                 continue;
             }
         }
@@ -521,7 +518,7 @@ function theme_klassplace_get_indicator($index, $format = 'graph', $override = n
             $indicatorcode = $funcname($slotindex, $format, $override, ['notitle' => true]);
             return $indicatorcode;
         } else {
-            debug_trace("Indicator xlib.php file not found at : ".$root.'/'.$pluginname.'/xlib.php', TRACE_DEBUG);
+            theme_klassplace_debug_trace("Indicator xlib.php file not found at : ".$root.'/'.$pluginname.'/xlib.php', THEME_KLASSPLACE_TRACE_DEBUG);
         }
     } else {
         throw new moodle_exception("Bad graphindex syntax. Should be <pluginname>:<index>");
@@ -609,9 +606,7 @@ function theme_klassplace_load_events_settings(&$templatecontext) {
             $condkey = 'eventdispcondition'.$i;
             $cond = @$PAGE->theme->settings->$condkey;
             if (!local_moodlescript_evaluate_expression($cond)) {
-                if (function_exists('debug_trace')) {
-                    debug_trace("$condkey check failed. Hiding theme element...");
-                }
+                theme_klassplace_debug_trace("$condkey check failed. Hiding theme element...", THEME_KLASSPLACE_TRACE_DEBUG);
                 continue;
             }
         }
@@ -672,9 +667,7 @@ function theme_klassplace_load_circles_settings(&$templatecontext) {
             $condkey = 'circledispcondition'.$i;
             $cond = @$PAGE->theme->settings->$condkey;
             if (!local_moodlescript_evaluate_expression($cond)) {
-                if (function_exists('debug_trace')) {
-                    debug_trace("$condkey check failed. Hiding theme element...");
-                }
+                theme_klassplace_debug_trace("$condkey check failed. Hiding theme element...", THEME_KLASSPLACE_TRACE_DEBUG);
                 continue;
             }
         }
@@ -713,9 +706,7 @@ function theme_klassplace_load_clientlogos_settings(&$templatecontext) {
             $condkey = 'logosdispcondition'.$i;
             $cond = @$PAGE->theme->settings->$condkey;
             if (!local_moodlescript_evaluate_expression($cond)) {
-                if (function_exists('debug_trace')) {
-                    debug_trace("$condkey check failed. Hiding theme element...");
-                }
+                theme_klassplace_debug_trace("$condkey check failed. Hiding theme element...", THEME_KLASSPLACE_TRACE_DEBUG);
                 continue;
             }
         }
@@ -861,9 +852,7 @@ function theme_klassplace_render_slots($pagekey, &$templatecontext) {
                     $condkey = $slotdef.'dispcondition';
                     $cond = @$PAGE->theme->settings->$condkey;
                     if (!local_moodlescript_evaluate_expression($cond)) {
-                        if (function_exists('debug_trace')) {
-                            debug_trace("$condkey check failed. Hiding theme section $slotdef...");
-                        }
+                        theme_klassplace_debug_trace("$condkey check failed. Hiding theme section $slotdef...", THEME_KLASSPLACE_TRACE_DEBUG);
                         continue;
                     }
                 }

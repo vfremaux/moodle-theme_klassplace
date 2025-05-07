@@ -290,4 +290,18 @@ if (!empty($PAGE) && !$PAGE->state) {
 }
 
 // Whitelist the preference for drwoer to be recorded
-user_preference_allow_ajax_update('spdrawer-open-nav', PARAM_BOOL);
+$flag = 'spdrawer-open-nav';
+if (isset($PAGE->requires)) {
+    $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+        const flag = '$flag';
+        const n = document.querySelector('.block-xp-rocks');
+        if (!n) return;
+        n.addEventListener('click', function(e) {
+            e.preventDefault();
+            UserRepo.setUserPreference(flag, true);
+            const notice = document.querySelector('.block-xp-notices');
+            if (!notice) return;
+            notice.style.display = 'none';
+        });
+    });");
+}

@@ -360,10 +360,6 @@ body#page-calendar-view .maincalendar .controls .arrow_link.next {
     padding-left: 20px;
 }
 
-#page-site-index #page {
-    /* padding-top: 61px; let room for navbar */
-}
-
 input[type="checkbox"] {
     margin-right: 20px;
 }
@@ -423,4 +419,23 @@ div.jqplot-table-legend-swatch-outline {
 
 .jqplot-event-canvas {
     display:none !important;
+}
+
+/*  boost dumb invert */
+.activityiconcontainer.content:not(.isbranded) .activityicon:not(.nofilter), .activityiconcontainer.content:not(.isbranded) .icon:not(.nofilter) {
+    filter: none;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+  width: 80px;
+  height: 80px;
+}
+
+.activityiconcontainer.smaller {
+    padding: 20px !important;
+}
+
+.page-header-image {
+    margin-right: 20px;
 }

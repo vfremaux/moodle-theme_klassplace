@@ -892,15 +892,21 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'class' => 'yui3-menu custom_menu_submenu custom_menu_submenu'.$level
             );
             $content .= html_writer::start_tag('div', $attrs);
-            $content .= html_writer::start_tag('div', array('class'=>'yui3-menu-content'));
-            $content .= html_writer::start_tag('ul', array('id' => 'submenu-list-'.$submenucount));
+            $content .= html_writer::start_tag('div', ['class'=>'yui3-menu-content']);
+            $content .= html_writer::start_tag('ul', ['id' => 'submenu-list-'.$submenucount]);
+            $subcontent = '';
             foreach ($menunode->get_children() as $menunode) {
-                $content .= $this->render_custom_menu_item($menunode, $level + 1);
+                $subcontent .= $this->render_custom_menu_item($menunode, $level + 1);
             }
-            $content .= html_writer::end_tag('ul');
-            $content .= html_writer::end_tag('div');
-            $content .= html_writer::end_tag('div');
-            $content .= html_writer::end_tag('li');
+            if (!empty($subcontent)) {
+                $content .= $subcontent;
+                $content .= html_writer::end_tag('ul');
+                $content .= html_writer::end_tag('div');
+                $content .= html_writer::end_tag('div');
+                $content .= html_writer::end_tag('li');
+            } else {
+                $content = '';
+            }
         } else {
             // The node doesn't have children so produce a final menuitem.
             // Also, if the node's text matches '####', add a class so we can treat it as a divider.
@@ -908,9 +914,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             if (preg_match("/^#+$/", $menunode->get_text())) {
 
                 // This is a divider.
-                $content = html_writer::start_tag('li', array('class' => 'yui3-menuitem divider'));
+                $content = html_writer::start_tag('li', ['class' => 'yui3-menuitem divider']);
             } else {
-                $content = html_writer::start_tag('li', array('class' => 'yui3-menuitem', 'tabindex' => 0));
+                $content = html_writer::start_tag('li', ['class' => 'yui3-menuitem', 'tabindex' => 0]);
                 if ($menunode->get_url() !== null) {
                     $url = $menunode->get_url();
                     if ($url != '') {
@@ -1391,7 +1397,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'id' => $PAGE->course->id
         ));
         (empty($participantstitle)) ? false : get_string('participants', 'moodle');
-        $activitycompletiontitle = get_string('activitycompletion', 'completion');
+        $activitycompletiontitle = get_string('activitiescompleted', 'completion');
         $activitycompletionlink = new moodle_url('/report/progress/index.php', array(
             'course' => $PAGE->course->id
         ));
@@ -1470,7 +1476,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $courseadminlink = new moodle_url('/course/admin.php', array(
             'courseid' => $PAGE->course->id
         ));
-        $coursecompletiontitle = get_string('editcoursecompletionsettings', 'completion');
+        $coursecompletiontitle = get_string('editcoursecompletionsettings', 'theme_klassplace');
         $coursecompletionlink = new moodle_url('/course/completion.php', array(
             'id' => $PAGE->course->id
         ));
@@ -1727,9 +1733,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             );
         }
         $dashlinks['dashlinks'][] = array(
-            'hasuserlinks' => $gradestitle,
-            'title' => $gradestitle,
-            'url' => $gradeslink
+            'hasuserlinks' => $gradebooktitle,
+            'title' => $gradebooktitle,
+            'url' => $gradebooklink
         );
         $dashlinks['dashlinks'][] = array(
             'hasuserlinks' => $participantstitle,

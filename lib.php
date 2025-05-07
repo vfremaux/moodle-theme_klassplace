@@ -35,6 +35,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+define('THEME_KLASSPLACE_TRACE_DEBUG', 5);
+
 require_once($CFG->dirroot.'/theme/klassplace/lib/scss_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib/filesettings_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib/klassplace_lib.php');
@@ -133,19 +135,8 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
     return [$hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen];
 }
 
-/**
- * Fixes an XSS risk on login form by sanitizing the received token.
- */
-function theme_klassplace_after_config() {
-    if (array_key_exists('token', $_POST)) {
-        $_POST['token'] = clean_param($_POST['token'], PARAM_ALPHANUMEXT);
-    }
-    if (array_key_exists('token', $_GET)) {
-        $_GET['token'] = clean_param($_GET['token'], PARAM_ALPHANUMEXT);
-    }
-    if (array_key_exists('logintoken', $_POST)) {
-        $_POST['logintoken'] = clean_param($_POST['logintoken'], PARAM_ALPHANUMEXT);
-        // $_POST['username'] = clean_param($_POST['username'] ?? '', PARAM_ALPHANUMEXT);
-        $_POST['password'] = clean_param($_POST['password'] ?? '', PARAM_NOTAGS);
+function theme_klassplace_debug_trace($msg, $level = THEME_KLASSPLACE_TRACE_DEBUG, $label = '', $stacktracelevel = 1) {
+    if (function_exists('debug_trace')) {
+        debug_trace($msg, $level, $label, $stacktracelevel);
     }
 }

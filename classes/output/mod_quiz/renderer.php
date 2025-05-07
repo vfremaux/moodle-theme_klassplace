@@ -21,11 +21,10 @@
  * @copyright 2011 The Open University
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
+namespace theme_klassplace\output\mod_quiz;
 
 defined('MOODLE_INTERNAL') || die();
 
-// CHANGE
 if (is_dir($CFG->dirroot.'/blocks/quiz_behaviour')) {
     require_once($CFG->dirroot.'/blocks/quiz_behaviour/xlib.php');
 }
@@ -37,7 +36,7 @@ if (is_dir($CFG->dirroot.'/blocks/quiz_behaviour')) {
  * @copyright  2016 Valery Fremaux (modified version)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_klassplace_mod_quiz_renderer extends mod_quiz_renderer {
+class renderer extends mod_quiz\output\renderer {
 
     protected static $attemptobj;
 

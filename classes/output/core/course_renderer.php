@@ -520,7 +520,7 @@ trait course_renderer_commons {
      */
     protected function coursecat_subcategories(coursecat_helper $chelper, $coursecat, $depth) {
 
-        debug_trace("Klassplace course_renderer : coursecat_subcategories");
+        theme_klassplace_debug_trace("Klassplace course_renderer : coursecat_subcategories", THEME_KLASSPLACE_TRACE_DEBUG);
         if (!theme_klassplace_get_setting('enablecategoryicon')) {
             return parent::coursecat_subcategories($chelper, $coursecat, $depth);
         }
@@ -581,7 +581,7 @@ trait course_renderer_commons {
             $content .= $pagingbar;
         }
         foreach ($subcategories as $subcategory) {
-            debug_trace("Klassplace course_renderer : calling coursecat_category ");
+            theme_klassplace_debug_trace("Klassplace course_renderer : calling coursecat_category ", THEME_KLASSPLACE_TRACE_DEBUG);
             $content .= $this->coursecat_category($chelper, $subcategory, $depth + 1);
         }
         if (!empty($pagingbar)) {
@@ -679,12 +679,12 @@ trait course_renderer_commons {
     public function view_available_courses($chelper, $id, $courses = null, $totalcount = null) {
         global $CFG, $USER, $DB, $OUTPUT, $PAGE;
 
-		if (is_dir($CFG->dirroot.'/local/my')) {
-	        include_once($CFG->dirroot.'/local/my/classes/modules/module.class.php');
-	        include_once($CFG->dirroot.'/local/my/classes/modules/courses_grid.class.php');
-	        $config = get_config('local_my');
-	        $PAGE->requires->js_call_amd('local_my/local_my', 'init');
-	    }
+        if (is_dir($CFG->dirroot.'/local/my')) {
+            include_once($CFG->dirroot.'/local/my/classes/modules/module.class.php');
+            include_once($CFG->dirroot.'/local/my/classes/modules/courses_grid.class.php');
+            $config = get_config('local_my');
+            $PAGE->requires->js_call_amd('local_my/local_my', 'init');
+        }
 
         $template = new StdClass;
         $options = array();
@@ -760,9 +760,9 @@ trait course_renderer_commons {
         $content = '<div class="' . join(' ', $classes) . '" data-categoryid="' . $coursecat->id . '" data-depth="' . $depth . '" data-showcourses="' . $chelper->get_show_courses() . '" data-type="' . self::COURSECAT_TYPE_CATEGORY . '">';
         $content .= '<div class="cat-icon">';
         $val = $PAGE->theme->settings->catsicon;
-        $url = new moodle_url('/course/index.php', array(
+        $url = new moodle_url('/course/index.php', [
             'categoryid' => $coursecat->id
-        ));
+        ]);
         $content .= '<a href="' . $url . '">';
         $content .= '<i class="fa fa-5x fa-' . $val . '"></i>';
         $categoryname = $coursecat->get_formatted_name();
@@ -850,9 +850,9 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
                         $summary = theme_klassplace_course_trim_char($summary, $trimsummaryvalue);
 
                         $noimgurl = $OUTPUT->image_url('noimg', 'theme');
-                        $courseurl = new moodle_url('/course/view.php', array(
+                        $courseurl = new moodle_url('/course/view.php', [
                             'id' => $courseid
-                        ));
+                        ]);
 
                         if ($course instanceof stdClass) {
                             $course = theme_klassplace_course_in_list($course);
@@ -910,9 +910,9 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
                                     ';
                             if ($course->has_course_contacts()) {
 
-                                $rowcontent .= html_writer::start_tag('ul', array(
+                                $rowcontent .= html_writer::start_tag('ul', [
                                     'class' => 'teacherscourseview'
-                                ));
+                                ]);
                                 foreach ($course->get_course_contacts() as $userid => $coursecontact) {
 
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
@@ -955,9 +955,9 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
                                     ';
                             if ($course->has_course_contacts()) {
 
-                                $rowcontent .= html_writer::start_tag('ul', array(
+                                $rowcontent .= html_writer::start_tag('ul', [
                                     'class' => 'teacherscourseview'
-                                ));
+                                ]);
                                 foreach ($course->get_course_contacts() as $userid => $coursecontact) {
 
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
@@ -990,9 +990,9 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
                         <div class="tilecontainer">
                             <div class="class-box-fp" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
-                            $rowcontent .= html_writer::start_tag('div', array(
+                            $rowcontent .= html_writer::start_tag('div', [
                                 'class' => $course->visible ? '' : 'coursedimmed3'
-                            ));
+                            ]);
                             $rowcontent .= '
                                     <div class="course-title">
                                     <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
@@ -1506,14 +1506,14 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
 
                 foreach ($modules as $module) {
                     // Note : ue config may be null !
-                	// PATCH+ : User equipment : Loop on modules and filter them.
+                    // PATCH+ : User equipment : Loop on modules and filter them.
                     if (!empty($ueconfig->enabled)) {
                         if (!$uemanager->check_user_equipment('mod', $module->name)) {
                             unset($modules[$module->name]);
                             continue;
                         }
                     }
-                	// PATCH-.
+                    // PATCH-.
                     $activityclass = MOD_CLASS_ACTIVITY;
                     if ($module->archetype == MOD_ARCHETYPE_RESOURCE) {
                         $activityclass = MOD_CLASS_RESOURCE;
@@ -1618,7 +1618,7 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
             global $COURSE;
 
             //M4
-        	throw new coding_exception('course_modchooser() can not be used anymore, please use course_activitychooser() instead.');
+            throw new coding_exception('course_modchooser() can not be used anymore, please use course_activitychooser() instead.');
 
             // This HILLBROOK function is overridden here to refer to the local theme's copy of modchooser to render a modified.
             // Activity chooser for Hillbrook.

@@ -34,6 +34,7 @@
     * groups array The list of groups.
     * members array The list of members, grouped based on roles.
     * undeletablegroups string A JSON string containing an array of group IDs that a user cannot delete.
+    * messagingsettingsvisible bool Wether the messaging settings buttons should be visible.
 
     Example context (json):
     {
@@ -42,6 +43,7 @@
         "editgroupsettingsdisabled": false,
         "deletegroupdisabled": false,
         "addmembersdisabled": false,
+        "messagingenabled": true,
         "groups": [
             {
                 "value": "1",

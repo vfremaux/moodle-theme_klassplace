@@ -36,7 +36,19 @@ if ($PAGE->theme->settings->breadcrumbstyle == '1') {
     $PAGE->requires->js_call_amd('theme_klassplace/jBreadCrumb', 'init');
 }
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
+$flag = 'drawer-open-nav';
+$PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+    const flag = '$flag';
+    const n = document.querySelector('.block-xp-rocks');
+    if (!n) return;
+    n.addEventListener('click', function(e) {
+        e.preventDefault();
+        UserRepo.setUserPreference(flag, true);
+        const notice = document.querySelector('.block-xp-notices');
+        if (!notice) return;
+        notice.style.display = 'none';
+    });
+});");
 require_once($CFG->libdir . '/behat/lib.php');
 
 $extraclasses = [];

@@ -56,6 +56,7 @@ $string['courses_settings'] = 'Courses settings';
 $string['customlabelskin'] = 'Base skin for customlabels';
 $string['customlabelskin_desc'] = 'Theme override of the general customlabel base skin';
 $string['customloginheading'] = 'Custom Login Page';
+$string['editcoursecompletionsettings'] = 'Edit course completion settings';
 $string['general_settings'] = 'General settings';
 $string['generalsettings'] = 'General settings';
 $string['gotobottom'] = 'Go to page bottom';

@@ -31,9 +31,47 @@ if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     require_once($CFG->dirroot.'/local/technicalsignals/lib.php');
 }
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
-user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
-user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
+$flag = 'drawer-open-nav';
+$PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+    const flag = '$flag';
+    const n = document.querySelector('.block-xp-rocks');
+    if (!n) return;
+    n.addEventListener('click', function(e) {
+        e.preventDefault();
+        UserRepo.setUserPreference(flag, true);
+        const notice = document.querySelector('.block-xp-notices');
+        if (!notice) return;
+        notice.style.display = 'none';
+    });
+});");
+
+$flag = 'drawer-open-index';
+$PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+    const flag = '$flag';
+    const n = document.querySelector('.block-xp-rocks');
+    if (!n) return;
+    n.addEventListener('click', function(e) {
+        e.preventDefault();
+        UserRepo.setUserPreference(flag, true);
+        const notice = document.querySelector('.block-xp-notices');
+        if (!notice) return;
+        notice.style.display = 'none';
+    });
+});");
+
+$flag = 'drawer-open-block';
+$PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
+    const flag = '$flag';
+    const n = document.querySelector('.block-xp-rocks');
+    if (!n) return;
+    n.addEventListener('click', function(e) {
+        e.preventDefault();
+        UserRepo.setUserPreference(flag, true);
+        const notice = document.querySelector('.block-xp-notices');
+        if (!notice) return;
+        notice.style.display = 'none';
+    });
+});");
 
 require_once($CFG->libdir . '/behat/lib.php');
 
