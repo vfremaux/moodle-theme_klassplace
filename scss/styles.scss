@@ -17,10 +17,17 @@ body {
     max-width: none;
 }
 
+.secondary-navigation .navigation {
+    margin: 0;
+}
+
 /* Overrides Boost value */
 #page.drawers {
     /* Find better . Alters footer */
-    /* overflow-y: initial; */
+    padding-right : 0;
+    padding-left : 0;
+    overflow-y: initial;
+    height: initial;
     .main-inner {
         background-color: transparent;
     }
@@ -57,7 +64,7 @@ body.mediumwidth #page.drawers .main-inner {
     }
 
     #page.forgotten-password {
-        padding-top: 80px;
+        padding-top: 61px;
     }
 }
 

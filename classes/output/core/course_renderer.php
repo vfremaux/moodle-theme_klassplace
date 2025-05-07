@@ -1241,7 +1241,7 @@ if (!empty($PAGE->theme->settings->coursetilestyle) && $PAGE->theme->settings->c
         public function frontpage_my_courses() {
             global $USER, $CFG, $DB;
 
-            if (!isloggedin() or isguestuser()) {
+            if (!isloggedin() || isguestuser()) {
                 return '';
             }
 

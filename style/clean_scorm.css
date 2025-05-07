@@ -1,0 +1,37 @@
+/*centrer le bouton d'entrée ds le scorm*/
+#scormviewform {
+    text-align: center;
+}
+
+/*center le bouton terminer l'activité scrom*/
+ #page-mod-scorm-player .flex-row-reverse {
+    justify-content: center;
+}
+
+#page-mod-scorm-player #page-header {
+   display: none;
+}
+
+#page-mod-scorm-player #scormpage {
+   height: initial;
+}
+#page-mod-scorm-player #tocbox {
+   height: initial;
+}
+
+#page-mod-scorm-player #page {
+   overflow-y: visible;
+   padding-top: 0;
+}
+#page-mod-scorm-player #page-content > div > section > h2 {
+   display: none;
+}
+
+#page-mod-scorm-player header[role="banner"] {
+   display: none;
+}
+
+#page-mod-scorm-player .activity-navigation,
+#page-mod-scorm-player footer {
+   display: none;
+}

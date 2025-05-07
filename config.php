@@ -220,7 +220,7 @@ $THEME->layouts = [
 if (@$THEME->settings->enhancedmydashboard == 1 && @$THEME->settings->blockdisplay == 1) {
     $THEME->layouts['mydashboard'] = [
         'file' => 'mydashboard.php',
-        'regions' => ['fp-a', 'fp-b', 'fp-c', 'side-pre'],
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
         'options' => ['nonavbar' => true, 'langmenu' => true],
     ];

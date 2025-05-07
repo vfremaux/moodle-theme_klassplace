@@ -41,7 +41,7 @@ $name = $themename.'/generalbodyfont';
 $title = get_string ('generalbodyfont', 'theme_klassplace');
 $description = get_string ('generalbodyfont_desc', 'theme_klassplace');
 $setting = new admin_setting_configstoredfile( $name, $title, $description, 'generalbodyfont', 0,
-    array('maxfiles' => 5, 'accepted_types' => array('ttf', 'woff', 'woff2', 'eot')));
+    ['maxfiles' => 5, 'accepted_types' => ['ttf', 'woff', 'woff2', 'eot']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -49,8 +49,8 @@ $page->add($setting);
 $name = $themename.'/generalaltfont';
 $title = get_string ('generalaltfont', 'theme_klassplace');
 $description = get_string ('generalaltfont_desc', 'theme_klassplace');
-$setting = new admin_setting_configstoredfile( $name, $title, $description, 'generalaltfont', 0,
-    array('maxfiles' => 5, 'accepted_types' => array('ttf', 'woff', 'woff2', 'eot')));
+$setting = new admin_setting_configstoredfile($name, $title, $description, 'generalaltfont', 0,
+    ['maxfiles' => 5, 'accepted_types' => ['ttf', 'woff', 'woff2', 'eot']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -58,7 +58,7 @@ $page->add($setting);
 $name = $themename.'/generalaltccsselector';
 $title = get_string ('generalaltccsselector', 'theme_klassplace');
 $description = get_string ('generalaltccsselector_desc', 'theme_klassplace');
-$setting = new admin_setting_configtextarea( $name, $title, $description, 'generalaltfontcss', 0, ' rows="5" cols="80" ');
+$setting = new admin_setting_configtextarea($name, $title, $description, 'generalaltfontcss', PARAM_TEXT, 80, 5);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -67,7 +67,7 @@ $name = $themename.'/titlefont';
 $title = get_string ('titlefont', 'theme_klassplace');
 $description = get_string ('titlefont_desc', 'theme_klassplace');
 $setting = new admin_setting_configstoredfile( $name, $title, $description, 'titlefont', 0,
-    array('maxfiles' => 5, 'accepted_types' => array('ttf', 'woff', 'woff2', 'eot')));
+    ['maxfiles' => 5, 'accepted_types' => ['ttf', 'woff', 'woff2', 'eot']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -84,7 +84,7 @@ $name = $themename.'/altdyslexicfont';
 $title = get_string ('dyslexicfont', 'theme_klassplace');
 $description = get_string ('dyslexicfont_desc', 'theme_klassplace');
 $setting = new admin_setting_configstoredfile( $name, $title, $description, 'dyslexicfont', 0,
-    array('maxfiles' => 5, 'accepted_types' => array('ttf', 'woff', 'woff2', 'eot')));
+    ['maxfiles' => 5, 'accepted_types' => ['ttf', 'woff', 'woff2', 'eot']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -101,7 +101,7 @@ $name = $themename.'/althighcontrastfont';
 $title = get_string ('highcontrastfont', 'theme_klassplace');
 $description = get_string ('highcontrastfont_desc', 'theme_klassplace');
 $setting = new admin_setting_configstoredfile( $name, $title, $description, 'highconstrastfont', 0,
-    array('maxfiles' => 5, 'accepted_types' => array('ttf', 'woff', 'woff2', 'eot')));
+    ['maxfiles' => 5, 'accepted_types' => ['ttf', 'woff', 'woff2', 'eot']]);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

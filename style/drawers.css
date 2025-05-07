@@ -1,11 +1,12 @@
 
 /*===Bouton d'affichage bloc latéral droit===*/
+
 [data-action="toggle-spdrawer"].btn.nav-link.float-sm-left.mr-1.btn-secondary,
 .drawer-toggles .drawer-toggler .btn {
     background-color: #86d000;
     border-top-left-radius: $border-big-radius !important;
     border-bottom-left-radius: $border-big-radius !important;
-    margin: 2px;
+    margin: 2px -5px;
     padding-left: 5px;
     margin-top: 8rem;
     font-size: 1.3rem;

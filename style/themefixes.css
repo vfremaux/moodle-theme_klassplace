@@ -361,7 +361,7 @@ body#page-calendar-view .maincalendar .controls .arrow_link.next {
 }
 
 #page-site-index #page {
-    padding-top: 61px; /* let room for navbar */
+    /* padding-top: 61px; let room for navbar */
 }
 
 input[type="checkbox"] {
@@ -395,4 +395,32 @@ input[type="checkbox"] {
 
 .yui3-menu-content {
     background: none !important;
+}
+
+/* some jqplot fixes */
+
+table.jqplot-table-legend {
+    border: 1px solid #cccccc !important;
+    padding: 1px !important;
+}
+
+td.jqplot-table-legend {
+    border: 0 !important;
+}
+
+div.jqplot-table-legend-swatch-outline {
+    border: 0 !important;
+}
+
+.jqplot-point-label {
+    font-size: 1.02em !important;
+}
+
+.jqplot-target {
+    color: #000 !important;
+    font-size: 1.2em !important;
+}
+
+.jqplot-event-canvas {
+    display:none !important;
 }

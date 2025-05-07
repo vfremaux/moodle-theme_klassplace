@@ -194,3 +194,21 @@ nav.navbar a.dropdown-toggle::after {
     color: $brandprimaryalt;
     background-color: $brandprimary;
 }
+
+.popover-region-container .popover-region-header-actions a,
+.popover-region-container .popover-region-header-actions a span {
+    background-color: transparent !important;
+}
+
+.popover-region-container:hover .popover-region-header-actions a,
+.popover-region-container:hover .popover-region-header-actions a:hover,
+.popover-region-container:hover .popover-region-header-actions a span,
+.popover-region-container:hover .popover-region-header-actions a span:hover {
+    background-color: transparent !important;
+    color: $brandprimaryalt !important;
+}
+
+.popover-region-container:hover .popover-region-header-actions i:before {
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt !important;
+}

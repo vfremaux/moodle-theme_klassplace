@@ -31,6 +31,7 @@ $bootstrap-sass-asset-helper: false !default;
         margin-right: 10px;
         box-shadow: 2px 1px 8px $brandprimary, -2px -1px 8px #fff;
     }
+}
 
 #page-login-index #page.container-fluid {
     padding: 0 !important;
@@ -67,7 +68,8 @@ $bootstrap-sass-asset-helper: false !default;
     border: 0;
 }
 
-// Forums
+// Forums.
+
 .forumpost {
     background-color: $gray-lightest;
     border-radius: 0;
@@ -88,10 +90,6 @@ $bootstrap-sass-asset-helper: false !default;
 }
 
 // Navigation
-
-.site-layout-3  .secondary-navigation .navigation {
-    margin: 0;
-}
 
 // Scrollbars
 

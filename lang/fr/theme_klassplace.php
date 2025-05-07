@@ -294,7 +294,7 @@ $string['layoutinfo'] = 'Paramètres d\'affichage';
 $string['layoutinfo_desc'] = 'Gérer la disposition de la page en choisissant divers réglages.';
 $string['customlayout'] = "Agencement personnalisé";
 
-$string['learningcontentvoffset'] = 'Offset vertical du contenu d\'apprentissage';
+$string['learningcontentvoffset'] = 'Décalage vertical du contenu d\'apprentissage';
 $string['learningcontentvoffset_desc'] = '
 Cette option contrôle l\'espacement entre le haut de la page et le contenu du cours. généralement, vous voulez que la valeur de cette
 option soit inférieure à la hauteur de l\'image de l\'entête. La hauteur de la barre de navigation n\'est pas prise en compte dans le 

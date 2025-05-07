@@ -238,15 +238,17 @@ function theme_klassplace_process_texts(&$templatecontext) {
         $templatecontext[$tz] = str_replace('%COURSE%', @$COURSE->fullname, $templatecontext[$tz]);
         $templatecontext[$tz] = str_replace('{{COURSEID}}', @$COURSE->id, $templatecontext[$tz]);
         $templatecontext[$tz] = str_replace('%COURSEID%', @$COURSE->id, $templatecontext[$tz]);
-        $tour = \tool_usertours\manager::get_current_tours();
-        if ($tour) {
-            $link = \html_writer::link('', get_string('resettouronpage', 'tool_usertours'), [
-                    'data-action'   => 'tool_usertours/resetpagetour',
-                    'data-url' => $PAGE->url,
-                ]);
-            $templatecontext[$tz] = str_replace('{{resettourlink}}', $link, $templatecontext[$tz]);
-        } else {
-            $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
+        if (isloggedin() && !isguestuser()) {
+            $tour = \tool_usertours\manager::get_current_tours();
+            if ($tour) {
+                $link = \html_writer::link('', get_string('resettouronpage', 'tool_usertours'), [
+                        'data-action'   => 'tool_usertours/resetpagetour',
+                        'data-url' => $PAGE->url,
+                    ]);
+                $templatecontext[$tz] = str_replace('{{resettourlink}}', $link, $templatecontext[$tz]);
+            } else {
+                $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
+            }
         }
 
         if (!$usertoursloaded) {

@@ -18,15 +18,13 @@
  * Library to detect mobile and device types.
  *
  * @package    theme_klassplace
- * @copyright  2016 Chris Kenniburg
- * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once($CFG->dirroot.'/theme/klassplace/lib/Mobile-Detect-2.8/Mobile_Detect.php');
-require_once($CFG->dirroot.'/theme/klassplace/lib/Mobile-Detect-2.8/namespaced/Detection/MobileDetect.php');
+require_once($CFG->dirroot.'/theme/klassplace/lib/Mobile-Detect/Mobile_Detect.php');
+// require_once($CFG->dirroot.'/theme/klassplace/lib/Mobile-Detect/namespaced/Detection/MobileDetect.php');
 
 use theme_klassplace\Mobile_Detect;
 

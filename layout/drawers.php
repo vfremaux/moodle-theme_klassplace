@@ -92,7 +92,8 @@ if (!$hasblocks) {
 }
 $forceblockdraweropen = $spdraweropen;
 
-$courseindex = core_course_drawer();
+$courseindex = core_course_drawer() && $hasnavdrawer;
+$courseindexopen = $navdraweropen;
 
 if (!$courseindex) {
     $courseindexopen = false;
