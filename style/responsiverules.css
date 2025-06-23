@@ -86,13 +86,13 @@
 
     .course-content .single-section .section-navigation.mdl-bottom .mdl-left a::before {
         content: "\f053";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 6 Free";
         font-size: 200%;
     }
 
     .course-content .single-section .section-navigation.mdl-bottom .mdl-right a::before {
         content: "\f054";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 6 Free";
         font-size: 200%;
     }
 
@@ -195,19 +195,19 @@
 
     button[data-action="send-message"]::before {
         content : "\f1d8";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 6 Free";
         font-size: 1.4em;
     }
 
     button[data-action="show-contacts"]::before {
         content : "\f053";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 6 Free";
         font-size: 20px;
     }
 
     button[data-action="start-delete-messages"]::before {
         content: "\f040";
-        font-family: "FontAwesome";
+        font-family: "Font Awesome 6 Free";
         font-size: 20px;
     }
 }

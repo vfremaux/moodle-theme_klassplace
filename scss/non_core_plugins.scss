@@ -284,47 +284,52 @@ a[title="Student"].nav-link.active {
 
 a[title="J'administre"]::before,
 a[title="Administrator"]::before {
-    font-family: "fontawesome";
+    font-family: 'Font Awesome 6 Free';
     display: block;
     text-align:center;
     content: "\f108";
     font-size: 35px;
+    font-weight: 900;
 }
 
 a[title="Je coordonne"]::before,
 a[title="Course manager"]::before {
     display: block;
     text-align:center;
-    font-family: "fontawesome";
+    font-family: 'Font Awesome 6 Free';
     content: "\f005";
     font-size: 35px;
+    font-weight: 900;
 }
 
 a[title="J'enseigne"]::before,
 a[title="Je forme"]::before,
 a[title="Teacher"]::before {
-    font-family: "fontawesome";
+    font-family: "Font Awesome 6 Free";
     display: block;
     text-align:center;
     content: "\f0d0";
     font-size: 35px;
+    font-weight: 900;
 }
 
 a[title="J'apprends"]::before,
 a[title="Student"]::before {
     display: block;
     text-align:center;
-    font-family: "fontawesome";
+    font-family: "Font Awesome 6 Free";
     content: "\f02d";
     font-size: 35px;
+    font-weight: 900;
 }
 
 a[title="Plan du site"]::before {
     display: block;
     text-align: center;
-    font-family: "fontawesome";
+    font-family: 'Font Awesome 6 Free';
     content: "\f276";
     font-size: 35px;
+    font-weight: 900;
 }
 
 /* sharedresources */

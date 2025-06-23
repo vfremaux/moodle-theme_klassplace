@@ -49,6 +49,9 @@ function theme_klassplace_get_main_scss_content($theme) {
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
     $fs = get_file_storage();
 
+    // Start with fontawesome and variables before everything runs.
+    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/fontawesome.scss');
+
     $context = context_system::instance();
     $iterator = new DirectoryIterator($CFG->dirroot . '/theme/klassplace/scss/preset/');
     $presetisset = '';
@@ -73,24 +76,29 @@ function theme_klassplace_get_main_scss_content($theme) {
         }
     }
 
+    // Needs a preset for gray-XXX
     $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/klassplace_variables.scss');
 
     // Page Layout
+    /*
     if (@$theme->settings->pagelayout == 1) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/pagelayout/layout1.scss');
     }
+    */
     if (@$theme->settings->pagelayout == 2) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/pagelayout/layout2.scss');
     }
     if (@$theme->settings->pagelayout == 3) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/pagelayout/layout3.scss');
     }
+    /*
     if (@$theme->settings->pagelayout == 4) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/pagelayout/layout4.scss');
     }
     if (@$theme->settings->pagelayout == 5) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/pagelayout/layout5.scss');
     }
+    */
 
     // Section Style
     if (@$theme->settings->sectionlayout == 1) {

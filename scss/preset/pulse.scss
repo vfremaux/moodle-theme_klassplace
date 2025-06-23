@@ -108,9 +108,6 @@ $list-group-active-bg:              $list-group-bg;
 $list-group-disabled-color:         lighten($list-group-bg, 30%);
 
 
-// Import FontAwesome.
-@import "../../boost/scss/fontawesome";
-
 // Import All of Bootstrap
 @import "../../boost/scss/bootstrap";
 

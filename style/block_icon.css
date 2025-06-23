@@ -5,187 +5,187 @@
     color: #fff;
     padding: 8px 10px;
     float: left;
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_navigation .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_activity_modules .header .title:before {
     content: "\f12e";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_activity_results .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_blog_tags .header .title:before {
     content: "\f02c";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_blog_menu .header .title:before {
     content: "\f02d";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_course_summary .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_badges .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_myprofile .header .title:before {
     content: "\f007";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_calendar_month .header .title:before {
     content: "\f073";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_admin_bookmarks .header .title:before {
     content: "\f02e";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_private_files .header .title:before {
     content: "\f114";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_participants .header .title:before {
     content: "\f0c0";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_tags .header .title:before {
     content: "\f02c";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_messages .header .title:before {
     content: "\f0e0";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_lp .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_comments .header .title:before {
     content: "\f086";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_calendar_upcoming .header .title:before {
     content: "\f073";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_search_forums .header .title:before {
     content: "\f0e6";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_online_users .header .title:before {
     content: "\f0c0";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_selfcompletion .header .title:before {
     content: "\f0e4";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_settings .header .title:before {
     content: "\f007";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_community .header .title:before {
     content: "\f0ac";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_feedback .header .title:before {
     content: "\f087";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_globalsearch .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_mentees .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_course_list .header .title:before {
     content: "\f108";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_html .header .title:before {
     content: "\f022";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_completionstatus .header .title:before {
     content: "\f0e4";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_glossary_random .header .title:before {
     content: "\f0eb";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_recent_activity .header .title:before {
     content: "\f017";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_rss_client .header .title:before {
     content: "\f09e";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_news_items .header .title:before {
     content: "\f0a1";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_blog_recent .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_section_links .header .title:before {
     content: "\f02e";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_adminblock .header .title:before {
     content: "\f009";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_myoverview .header .title:before {
     content: "\f0c9";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 .block_settings .header .title:before,

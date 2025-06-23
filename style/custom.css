@@ -606,7 +606,7 @@ body.dir-rtl .customcategories #owl-demo1 .owl-controls .owl-buttons div.owl-nex
 
 .course_category_tree .category>.info>.categoryname:before {
     content: "\f067";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     display: block;
     position: absolute;
     top: 0;
@@ -1112,7 +1112,7 @@ table.wrapper tr td span.tst-wrap {
 
 .forumpost .author .content:before {
     content: "\f017";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     color: #727272;
     margin-right: 10px;
     font-size: 18px;
@@ -1142,7 +1142,7 @@ table.wrapper tr td span.tst-wrap {
 
 #page-site-index .subscribelink:before {
     content: "\f0a4";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     font-size: 17px;
     color: #f9a53b;
     margin-right: 5px;
@@ -1175,7 +1175,7 @@ table.wrapper tr td span.tst-wrap {
 
 #page-site-index .forumaddnew div:before {
     content: "\f055";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     font-size: 17px;
     color: #f9a53b;
     margin-right: 5px;
@@ -2483,7 +2483,7 @@ form#coursesearchnavbar input#navsearchbox {
 #page-footer ul li li a:before {
     color: #eee;
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     margin-right: 5px;
 }
 
@@ -2520,7 +2520,7 @@ body.dir-rtl #page-footer ul li li a:before {
 body.dir-rtl #page-footer ul li li a:after {
     color: #eee;
     content: "\f104";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     margin-left: 5px;
 }
 
@@ -2690,7 +2690,7 @@ body.dir-rtl #page-footer ul li li a:hover:after {
 
 .moodle-dialogue-base .closebutton:before {
     content: "\f00d";
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     color: #ff3b30;
 }
 
@@ -3009,7 +3009,7 @@ body#page-calendar-view .maincalendar .controls span.arrow {
 }
 
 body#page-calendar-view .maincalendar .controls .arrow_link.previous .arrow_text:before {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     content: "\f0a8";
     font-size: 16px;
     color: #fff;
@@ -3017,7 +3017,7 @@ body#page-calendar-view .maincalendar .controls .arrow_link.previous .arrow_text
 }
 
 body#page-calendar-view .maincalendar .controls .arrow_link.next .arrow_text:after {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
     content: "\f0a9";
     font-size: 16px;
     color: #fff;

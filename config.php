@@ -54,7 +54,6 @@ $THEME->sheets = [
     'mydashboard',
     'format_page',
     'custom',
-    'font-awesome',
     'slider',
     'navbar',
     'drawers',
@@ -289,7 +288,7 @@ if (!empty($PAGE) && !$PAGE->state) {
     $PAGE->requires->js_call_amd('theme_klassplace/custommenu', 'init');
 }
 
-// Whitelist the preference for drwoer to be recorded
+// Whitelist the preference for drawer to be recorded
 $flag = 'spdrawer-open-nav';
 if (isset($PAGE->requires)) {
     $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {

@@ -45,7 +45,7 @@
 
 .jsenabled .usermenu .moodle-actionmenu .toggle-display.textmenu:after {
     content: "\f107";
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 6 Free";
     display: inline-block;
     margin-left: 8px;
     line-height: 0;
@@ -107,7 +107,7 @@
 }
 
 .lang-menu-label:after {
-    font-family: "fontAwesome";
+    font-family: "Font Awesome 6 Free";
 }
 
 .lang-menu-label[aria-expanded="true"]:after {

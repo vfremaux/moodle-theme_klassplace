@@ -130,8 +130,10 @@ if (!$hasblocks) {
 }
 $forceblockdraweropen = $spdraweropen;
 
-$courseindex = core_course_drawer() && $hasnavdrawer;
-$courseindexopen = $navdraweropen;
+if ($hasnavdrawer) {
+    $courseindex = core_course_drawer();
+    $courseindexopen = $navdraweropen;
+}
 
 if (!$courseindex) {
     $courseindexopen = false;

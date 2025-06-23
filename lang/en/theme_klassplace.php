@@ -1017,7 +1017,8 @@ $string['naviconbuttonurl_desc'] = 'URL the button will point to.';
 $string['editon'] = 'Turn Edit On';
 $string['editoff'] = 'Turn Edit Off';
 
-//Marketing Tiles
+//Marketing Tiles. Not any more in klassplace
+/*
 $string['marketingheading'] = 'Marketing Tiles';
 $string['marketinginfo_desc'] = 'Enter the settings for your marketing spot.  You must include a title in order for the Marketing Spot to appear.  The title will activate the individual Marketing Spots.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
@@ -1062,6 +1063,7 @@ $string['displaytop'] = 'Display at Top of Page';
 $string['displaybottom'] = 'Display at Bottom of Page';
 $string['markettextbkg'] = 'Marketing Tile Text Background';
 $string['markettextbkg_desc'] = 'Background colour for the text area of the marketing tiles.';
+*/
 
 // Alerts
 $string['alert'] = 'Homepage Alert';

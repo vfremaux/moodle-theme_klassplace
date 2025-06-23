@@ -114,6 +114,7 @@ span.site-name.d-none.d-md-inline {
 
 #mycontent .nav-item .nav-link {
     padding-top: 15px;
+    line-height: 2.5em;
 }
 
 #page-course-view-grid .section-navigation.navigationtitle {

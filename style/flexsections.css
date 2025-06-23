@@ -51,24 +51,17 @@ li.section.expanded  > div.section-caption > .sectionname > .flexcontrol > img {
 li.section.collapsed  > div.section-caption > .sectionname > .flexcontrol > .overlay::before {
     color: black;
     content: '\f078';
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 6 Free';
 }
 
 li.section.expanded > div.section-caption > .sectionname > .flexcontrol > .overlay::before {
     color: black;
     content: '\f077';
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 6 Free";
 }
-
-/*
-li.section .sectionname > span.flexcontrol {
-    position: relative;
-    left: -36px;
-}
-*/
 
 .flexsection-handle::before {
-    font-family: "FontAwesome";
+    font-family: 'Font Awesome 6 Free';
     font-size: 0.9em;
     font-style: normal;
     color: white;
