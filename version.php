@@ -37,3 +37,4 @@ $plugin->dependencies = array(
 
 // Non moodle attributes.
 $plugin->codeincrement = '4.5.0001';
+$plugin->privacy = 'public';

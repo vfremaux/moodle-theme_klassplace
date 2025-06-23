@@ -26,7 +26,7 @@ class after_config {
     /**
      * Fixes an XSS risk on login form by sanitizing the received token.
      */
-    public static function callback(\core\hook\output\after_config $hook): void) {
+    public static function callback(\core\hook\output\after_config $hook): void {
         if (array_key_exists('logintoken', $_POST)) {
             $_POST['logintoken'] = clean_param($_POST['logintoken'], PARAM_ALPHANUMEXT);
             $_POST['username'] = clean_param($_POST['username'], PARAM_ALPHANUMEXT);
