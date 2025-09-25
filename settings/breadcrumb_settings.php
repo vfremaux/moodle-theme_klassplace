@@ -52,6 +52,19 @@ $setting = new klassplace_admin_setting_configradio($name, $heading, $descriptio
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = $themename.'/coursenavbarhide';
+$heading = get_string('coursenavbarhide', 'theme_klassplace');
+$description = get_string('coursenavbarhide_desc', 'theme_klassplace');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $heading, $description, $default);
+$page->add($setting);
+
+$name = $themename.'_breadcrumbbehaviour';
+$title = get_string('breadcrumbbehaviour', 'theme_klassplace');
+$description = '';
+$headersetting = new admin_setting_heading($name, $title, $description);
+$page->add($headersetting);
+
 $name = $themename.'/breadcrumbskiprootnode';
 $heading = get_string('breadcrumbskiprootnode', 'theme_klassplace');
 $description = get_string('breadcrumbskiprootnode_desc', 'theme_klassplace');

@@ -269,7 +269,7 @@ td.course-category {
     color: $brandprimaryalt !important;
 }
 
-/*on intervertit les couleur du bouton actif*/
+/* on intervertit les couleurs du bouton actif */
 a[title="J'administre"].nav-link.active,
 a[title="Administrator"].nav-link.active,
 a[title="Je coordonne"].nav-link.active,
@@ -290,6 +290,7 @@ a[title="Administrator"]::before {
     content: "\f108";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="Je coordonne"]::before,
@@ -300,6 +301,7 @@ a[title="Course manager"]::before {
     content: "\f005";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="J'enseigne"]::before,
@@ -311,6 +313,7 @@ a[title="Teacher"]::before {
     content: "\f0d0";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="J'apprends"]::before,
@@ -321,6 +324,7 @@ a[title="Student"]::before {
     content: "\f02d";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="Plan du site"]::before {
@@ -330,6 +334,7 @@ a[title="Plan du site"]::before {
     content: "\f276";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 /* sharedresources */

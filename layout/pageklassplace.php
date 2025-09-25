@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/theme/klassplace/lib/mobile_detect_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     require_once($CFG->dirroot.'/local/technicalsignals/lib.php');
@@ -56,8 +57,10 @@ require_once($CFG->libdir . '/behat/lib.php');
 
 $extraclasses = [];
 
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $extraclasses[] = 'is-mobile mobiletheme';
+    $hasmobilenav = true;
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -78,7 +81,32 @@ $footnote = $OUTPUT->footnote();
 $pagedoclink = $OUTPUT->page_doc_link();
 $coursefooter = $OUTPUT->course_footer();
 
-$regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
+// Menu elements.
+$secondarynavigation = false;
+$overflow = '';
+if ($PAGE->has_secondary_navigation()) {
+    $tablistnav = $PAGE->has_tablist_secondary_navigation();
+    $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs', true, $tablistnav);
+    $secondarynavigation = $moremenu->export_for_template($OUTPUT);
+    $overflowdata = $PAGE->secondarynav->get_overflow_menu_data();
+    if (!is_null($overflowdata)) {
+        $overflow = $overflowdata->export_for_template($OUTPUT);
+    }
+}
+
+$primary = new core\navigation\output\primary($PAGE);
+$renderer = $PAGE->get_renderer('core');
+$primarymenu = $primary->export_for_template($renderer);
+$buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions()  && !$PAGE->has_secondary_navigation();
+// If the settings menu will be included in the header then don't add it here.
+$regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settings_menu() : false;
+
+$header = $PAGE->activityheader;
+$headercontent = $header->export_for_template($renderer);
+
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
+
 $page = course_page::get_current_page($COURSE->id);
 $OUTPUT->check_dyslexic_state();
 $OUTPUT->check_highcontrast_state();
@@ -88,35 +116,47 @@ $hcstate = $OUTPUT->get_highcontrast_state();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]),
     'searchaction' => '/local/search/query.php',
+    'bodyattributes' => $bodyattributes,
     'output' => $OUTPUT,
+    'sitealternatename' => @$PAGE->theme->settings->sitealternatename,
     'sectionid' => $page->get_section_id(),
     'showbacktotop' => isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1,
+
+    // Blocks.
     'hasfpblockregion' => $hasfpblockregion,
     'hasblocks' => $hasblocks,
     'haspostblocks' => $haspostblocks,
-    'bodyattributes' => $bodyattributes,
+
+    // Drawers.
     'navdraweropen' => $navdraweropen,
     'hasnavdrawer' => $hasnavdrawer,
     'hasspdrawer' => false,
     'navspdraweropen' => $navspdraweropen && ($checkpostblocks || $PAGE->user_is_editing()),
+
+    // Navigation.
+    'primarymoremenu' => $primarymenu['moremenu'],
+    'secondarymoremenu' => $secondarynavigation ?: false,
+    'mobileprimarynav' => $primarymenu['mobileprimarynav'],
+    'usermenu' => $primarymenu['user'],
+    'langmenu' => $primarymenu['lang'],
+    'showlangmenu' => $CFG->langmenu ?? false,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'custommenupullright' => $PAGE->theme->settings->custommenupullright,
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
+
+    // Footer elements.
     'hascoursefooter' => !empty($coursefooter) && (preg_match('/[a-zA-Z0-9]/', strip_tags($coursefooter))),
     'coursefooter' => $coursefooter,
     'hasdoclink' => !empty($pagedoclink) && (preg_match('/[a-zA-Z0-9]/', strip_tags($pagedoclink))),
     'pagedoclink' => $pagedoclink,
-
-    /* Footer control */
     'hasfootnote' => !empty($footnote) && (preg_match('/[A-Za-z0-9]/', preg_replace('/<\\/?(p|div|span|br)*?>/', '', $footnote))),
     'footnote' => $footnote,
     'hasfooterelements' => !empty($PAGE->theme->settings->leftfooter) || !empty($PAGE->theme->settings->midfooter) || !empty($PAGE->theme->settings->rightfooter),
     'leftfooter' => @$PAGE->theme->settings->leftfooter,
     'midfooter' => @$PAGE->theme->settings->midfooter,
     'rightfooter' => @$PAGE->theme->settings->rightfooter,
-
-    'showlangmenu' => @$CFG->langmenu,
-    'sitealternatename' => @$PAGE->theme->settings->sitealternatename,
 
     /* Accessibility and dynamic fonts */
     'useaccessibility' => @$PAGE->theme->settings->usedyslexicfont || @$PAGE->theme->settings->usehighcontrastfont,

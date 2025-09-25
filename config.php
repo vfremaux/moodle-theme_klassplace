@@ -66,7 +66,8 @@ $THEME->sheets = [
     'themefixes',
     'mobilecontrol',
     'accessibility',
-    /*, 'yuioverride', 'modthumb', 'flexsections', 'edgefixes'*/];
+    'yuioverride',
+    /*,  'modthumb', 'flexsections', 'edgefixes'*/];
 $THEME->editor_sheets = [''];
 
 // Toggle display of blocks
@@ -102,7 +103,7 @@ $THEME->layouts = [
     'incourse' => [
         'file' => 'drawers.php',
         'regions' => ['side-pre', 'side-post'],
-        'defaultregion' => 'side-post',
+        'defaultregion' => 'side-pre',
     ],
 
     'coursecategory' => [
@@ -182,6 +183,14 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
     ],
 
+    // My courses page.
+    'mycourses' => array(
+        'file' => 'drawers.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true, 'nonavdrawer' => true],
+    ),
+
     // The pagelayout used for reports.
     'report' => [
         'file' => 'columns2.php',
@@ -199,7 +208,7 @@ $THEME->layouts = [
         'file' => 'pageklassplace.php',
         'regions' => array('side-pre', 'main', 'side-post'),
         'defaultregion' => 'side-post', // avoid putting in main, or standard course will fail showing the new block menu
-        'options' => array('langmenu' => true)
+        'options' => array('langmenu' => true, 'nonavbar' => true),
     ],
 
     'format_page_single' => [

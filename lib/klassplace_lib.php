@@ -18,8 +18,7 @@
  * FileSettings Lib file.
  *
  * @package    theme_klassplace
- * @copyright  2016 Chris Kenniburg
- * @credits    theme_boost - MoodleHQ
+ * @author     valery.fremaux <valery.fremaux@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

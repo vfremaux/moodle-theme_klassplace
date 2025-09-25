@@ -26,6 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot.'/theme/klassplace/lib/mobile_detect_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     require_once($CFG->dirroot.'/local/technicalsignals/lib.php');
@@ -77,8 +78,10 @@ require_once($CFG->libdir . '/behat/lib.php');
 
 $extraclasses = [];
 
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $hasmobilenav = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -107,6 +110,9 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 
 $hasfpblockregion = isset($PAGE->theme->settings->showblockregions) !== false;
 
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
+
 $topheader = $OUTPUT->topheader();
 $footnote = $OUTPUT->footnote();
 $pagedoclink = $OUTPUT->page_doc_link();
@@ -122,14 +128,14 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'output' => $OUTPUT,
 
-    'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
-    'sitealternatename' => @$PAGE->theme->settings->sitealternatename,
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID)]),
+    'sitealternatename' => $PAGE->theme->settings->sitealternatename ?? '',
     'homepage' => $homepage,
     'bodyattributes' => $bodyattributes,
 
     'searchaction' => '/local/search/query.php',
     'headerlogo' => $headerlogo,
-    'showlangmenu' => @$CFG->langmenu,
+    'showlangmenu' => $CFG->langmenu ?? '',
 
     'haseventurl' => !empty($haseventurl),
     'sidepreblocks' => $blockshtml,
@@ -137,10 +143,12 @@ $templatecontext = [
     'hasfpblockregion' => $hasfpblockregion,
     'navdraweropen' => $navdraweropen,
     'hasnavdrawer' => $hasnavdrawer,
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'enrolform' => $enrolform,
-    'custommenupullright' => $PAGE->theme->settings->custommenupullright,
+    'custommenupullright' => $PAGE->theme->settings->custommenupullright ?? '',
 
     /* footer control */
     'hasfootnote' => !empty($footnote) && (preg_match('/[A-Za-z0-9]/', preg_replace('/<\\/?(p|div|span|br)*?>/', '', $footnote))),
@@ -148,15 +156,15 @@ $templatecontext = [
     'hascoursefooter' => !empty($coursefooter) && (preg_match('/[a-z]/', strip_tags($coursefooter))),
     'coursefooter' => $coursefooter,
     'hasfooterelements' => !empty($PAGE->theme->settings->leftfooter) || !empty($PAGE->theme->settings->midfooter) || !empty($PAGE->theme->settings->rightfooter),
-    'leftfooter' => @$PAGE->theme->settings->leftfooter,
-    'midfooter' => @$PAGE->theme->settings->midfooter,
-    'rightfooter' => @$PAGE->theme->settings->rightfooter,
+    'leftfooter' => $PAGE->theme->settings->leftfooter ?? '',
+    'midfooter' => $PAGE->theme->settings->midfooter ?? '',
+    'rightfooter' => $PAGE->theme->settings->rightfooter ?? '',
     'hasdoclink' => !empty($pagedoclink) && (preg_match('/[a-z]/', strip_tags($pagedoclink))),
     'pagedoclink' => $pagedoclink,
 
-    'useaccessibility' => @$PAGE->theme->settings->usedyslexicfont || @$PAGE->theme->settings->usehighcontrastfont,
-    'usedyslexicfont' => @$PAGE->theme->settings->usedyslexicfont,
-    'usehighcontrastfont' => @$PAGE->theme->settings->usehighcontrastfont,
+    'useaccessibility' => ($PAGE->theme->settings->usedyslexicfont ?? false) || ($PAGE->theme->settings->usehighcontrastfont ?? false),
+    'usedyslexicfont' => $PAGE->theme->settings->usedyslexicfont ?? false,
+    'usehighcontrastfont' => $PAGE->theme->settings->usehighcontrastfont ?? false,
     'dyslexicurl' => $OUTPUT->get_dyslexic_url(),
     'highcontrasturl' => $OUTPUT->get_highcontrast_url(),
     'dyslexicactive' => ($dysstate) ? 'active' : '',
@@ -188,7 +196,12 @@ if (is_dir($CFG->dirroot.'/local/my')) {
 if (!isloggedin()) {
     theme_klassplace_render_slots('homepage_structure_uncon', $templatecontext);
 } else {
-    theme_klassplace_render_slots('homepage_structure_con', $templatecontext);
+    $ismydashboard = preg_match('/my-index|user-profile/', $PAGE->pagetype);
+    if ($ismydashboard) {
+        theme_klassplace_render_slots('homepage_structure_my', $templatecontext);
+    } else {
+        theme_klassplace_render_slots('homepage_structure_con', $templatecontext);
+    }
 }
 
 // Moodle 4.0 : flatnav deprecated

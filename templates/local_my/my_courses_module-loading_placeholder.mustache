@@ -15,6 +15,7 @@
         <div class="title">
             <h2>{{modulename}}</h2>
         </div>
+
         {{#buttons}}
         <div class="area-buttons">
             {{{buttons}}}
@@ -22,11 +23,12 @@
         {{/buttons}}
     </div>
 
+    <!-- sortfilters -->
     {{#hassortorfilter}}
     <div class="local-my-course-filters d-flex justify-content-between flex-wrap">
+
         {{#showstates}}
-        <div class="filter-states">
-        </div>
+        <div class="filter-states"></div>
         {{/showstates}}
 
         <div class="local-my-course-sortanddisplay d-flex justify-content-between">
@@ -58,8 +60,8 @@
         </div>
     </div>
     {{/hassortorfilter}}
+    <!-- /sortfilters -->
 
-    </div>
     <div id="area-courses-{{uid}}">
         {{#aslist}}
         <div class="content" id="content-{{uid}}">

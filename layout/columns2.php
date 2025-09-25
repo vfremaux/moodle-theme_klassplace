@@ -40,6 +40,7 @@ $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserR
 });");
 
 require_once($CFG->libdir . '/behat/lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 
 // Add block button in editing mode. M4
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -57,8 +58,10 @@ if (@$PAGE->theme->settings->breadcrumbstyle == '1') {
 
 $extraclasses = [];
 
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $hasmobilename = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -102,6 +105,9 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
+
 // Footer elements.
 $footnote = $OUTPUT->footnote();
 $pagedoclink = $OUTPUT->page_doc_link();
@@ -123,6 +129,8 @@ $templatecontext = [
     'hasfpblockregion' => $hasfpblockregion,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
 
     'navdraweropen' => $navdraweropen,
     'hasnavdrawer' => $hasnavdrawer,
@@ -168,7 +176,11 @@ if (function_exists('debug_blocks')) {
     $templatecontext['blocksdebuginfo'] = debug_blocks();
 }
 
-theme_klassplace_process_texts($templatecontext);
+if (!($OUTPUT instanceof core_renderer_maintenance)) {
+    theme_klassplace_load_social_settings($templatecontext);
+    theme_klassplace_pass_layout_options($templatecontext);
+    theme_klassplace_process_texts($templatecontext);
+}
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     $templatecontext['technicalsignals'] = local_print_administrator_message();

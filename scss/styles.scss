@@ -108,10 +108,24 @@ body.mediumwidth #page.drawers .main-inner {
     color: #000;
 }
 
-
 .courseindex .courseindex-item .courseindex-link,
 .courseindex .courseindex-item .courseindex-chevron {
   color: $brandprimaryalt;
+}
+
+/*fond et couleurs interverties pour élément actif*/
+.courseindex .courseindex-item.pageitem {
+  background-color: $brandprimaryalt;
+  color: $brandprimary;
+}
+
+.courseindex .courseindex-item.pageitem a {
+  color: $brandprimary !important;
+}
+
+.courseindex .courseindex-item.pageitem[aria-selected="true"]:hover a,
+.courseindex .courseindex-item.pageitem[aria-selected="true"] a:hover {
+  color: $brandprimaryalt !important;
 }
 
 @media (min-width: 768px) {
@@ -357,6 +371,8 @@ body.limitedwidth #page.drawers .footer-popover {
 
 #page-footer {
 
+    margin-top: $learningcontentvoffset;
+
     .container {
         background-color: $footer-bg;
         color: $footer-fg;
@@ -413,6 +429,16 @@ body.limitedwidth #page.drawers .footer-popover {
 
 .stage .captions p a:hover {
     color: $brandsecondary;
+}
+
+.bg-secondary {
+    background-color: $brandsecondary !important;
+    color: $brandsecondaryalt !important;
+}
+
+.bg-secondary.text-dark {
+    background-color: $brandsecondary !important;
+    color: $brandsecondaryalt !important;
 }
 
 .carousel-caption.d-none.d-md-block {
@@ -1889,7 +1915,6 @@ div#fordson_fellogin {
 
 #questionscontainer .dropdown-menu.show {
     z-index: 10000;
-    position: relative !important;
 }
 
 #search-form .header h2{
@@ -1936,4 +1961,40 @@ div#fordson_fellogin {
     transform: rotate(-10deg);
     font-size: 0.8em;
     text-indent: 0;
+}
+
+/* TinyMCE style fixes */
+.tox .tox-tbtn svg {
+    display: block;
+    fill: $brandprimaryalt !important;
+}
+
+.tox .tox-tbtn--disabled svg,
+.tox .tox-tbtn--disabled:hover svg,
+.tox .tox-tbtn:disabled svg,
+.tox .tox-tbtn:disabled:hover svg {
+    fill: rgba(250, 250, 250, 0.5) !important;
+}
+
+.tox .tox-tbtn--active svg,
+.tox .tox-tbtn--enabled svg,
+.tox .tox-tbtn--enabled:hover svg,
+.tox .tox-tbtn--enabled:focus svg {
+    fill: $brandprimaryalt;
+}
+
+.tox-icon image {
+    filter: invert(100%);
+}
+
+.tox .tox-statusbar button {
+    padding: .1rem .5rem !important;
+}
+
+.tox .tox-statusbar {
+    height: 24px !important;
+}
+
+.tox .tox-statusbar__text-container {
+    height: 20px !important;
 }

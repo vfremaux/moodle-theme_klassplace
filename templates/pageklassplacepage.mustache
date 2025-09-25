@@ -40,7 +40,6 @@
 {{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
-{{{technicalsignals}}}
 
 <!-- accessibility add-ons -->
 <style>
@@ -71,6 +70,10 @@
     </div>
 
     {{{ output.standard_after_main_region_html }}}
+
+    {{#hasmobilenav}}
+    {{> theme_klassplace/mobile-nav-drawer }}
+    {{/hasmobilenav}}
 
 </div>
 

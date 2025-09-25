@@ -81,6 +81,7 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
     $nonavdrawer = false;
     $isshop = preg_match('/^local-shop/', $PAGE->pagetype);
     $islibrary = preg_match('/^local-sharedresources-explore/', $PAGE->pagetype);
+    $isconfigdisabled = !empty($PAGE->theme->layouts[$PAGE->pagelayout]['options']['nonavdrawer']);
 
     $nonavdrawer = $isshop;
 
@@ -88,10 +89,10 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
         $hasnavdrawer = isset($PAGE->theme->settings->shownavdrawer) && $PAGE->theme->settings->shownavdrawer == 1 && ($COURSE->format != 'page');
         $hasnavdrawer = $hasnavdrawer && !$nonavdrawer;
         $hasnavdrawer = $hasnavdrawer && !$isdashboard;
-        $hasnavdrawer = $hasnavdrawer && !$iscms;
+        $hasnavdrawer = $hasnavdrawer && !$iscms && !$isconfigdisabled;
 
-        if ($hasnavdrawer && isset($PAGE->theme->settings->shownavclosed) && $PAGE->theme->settings->shownavclosed == 0) {
-            $navdraweropen = (get_user_preferences('drawer-open-index', 'true') == 'true');
+        if ($hasnavdrawer && empty($PAGE->theme->settings->shownavclosed)) {
+            $navdraweropen = (get_user_preferences('drawer-open-index', false));
         }
     }
 
@@ -105,6 +106,7 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
             Is dashboard : $isdashboard
             Is base layout : $isbaselayout
             Is paged formatted : $ispageformat
+            Is config disabled : $isconfigdisabled
             Has some blocks : ".!empty($checkspblocks)."
             Is editing : ".!empty($PAGE->user_is_editing())."
             </pre>
@@ -128,8 +130,19 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
                                                         !$ispageformat;
 
         if ($hasspdrawer) {
-            $spdraweropen = (get_user_preferences('spdrawer-open-nav', 'true') == 'true');
+            $spdraweropen = (get_user_preferences('drawer-open-block', false));
         }
+    }
+
+    if ($debug) {
+        echo "
+            <pre>
+                Has nav drawer: $hasnavdrawer
+                Nav drawer open: $navdraweropen
+                Has sp drawer: $hasspdrawer
+                Sp drawer open: $spdraweropen
+            </pre>
+        ";
     }
 
     return [$hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen];
@@ -140,3 +153,4 @@ function theme_klassplace_debug_trace($msg, $level = THEME_KLASSPLACE_TRACE_DEBU
         debug_trace($msg, $level, $label, $stacktracelevel);
     }
 }
+

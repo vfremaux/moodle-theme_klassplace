@@ -54,7 +54,6 @@
 {{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
-{{{technicalsignals}}}
 
 <!-- accessibility add-ons -->
 <style>
@@ -200,6 +199,10 @@
     {{#hasspdrawer}}
     {{> theme_klassplace/side-post-drawer }}
     {{/hasspdrawer}}
+
+    {{#hasmobilenav}}
+    {{> theme_klassplace/mobile-nav-drawer }}
+    {{/hasmobilenav}}
 
 </div>
 

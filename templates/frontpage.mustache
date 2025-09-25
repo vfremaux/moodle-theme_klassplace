@@ -54,7 +54,6 @@
 <!-- /boost:head -->
 
 <body {{{ bodyattributes }}}>
-{{{technicalsignals}}}
 
 <!-- accessibility add-ons -->
 <style>
@@ -94,6 +93,10 @@
     {{> theme_boost/nav-drawer }}
     <!-- /boost:navdrawer -->
     {{/hasnavdrawer}}
+
+    {{#hasmobilenav}}
+    {{> theme_klassplace/mobile-nav-drawer }}
+    {{/hasmobilenav}}
 </div>
 
 <a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_klassplace{{/str}}"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>

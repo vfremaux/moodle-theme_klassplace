@@ -1,3 +1,14 @@
+
+.navbar.fixed-top .yui3-menuitem:hover {
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt !important;
+    filter: none;
+    
+    * {
+        filter: none;
+    }
+}
+
 nav.navbar {
     background-color: $topnavbar-bg;
     color: $topnavbar-fg;
@@ -76,11 +87,13 @@ nav.navbar {
     }
 
     .accessibility-toggle.active a {
+        background-color: $topnavbar-bg !important;
         color: $topnavbar-fg;
     }
 
     .accessibility-toggle.active {
         background-color: $topnavbar-bg;
+        color: $topnavbar-fg;
     }
 
     .userbutton {
@@ -130,10 +143,6 @@ nav.navbar a.dropdown-toggle::after {
 
     .yui3-menuitem:hover {
         background-color: #cccccc;
-        color: #000000;
-    }
-
-    .yui3-menuitem:hover .yui3-menuitem-content {
         color: #000000;
     }
 

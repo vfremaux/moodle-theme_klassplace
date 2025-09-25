@@ -85,6 +85,12 @@ ul.breadcrumb.style3 li.active, .breadcrumb.style4 li:hover {
     color: $breadcrumb-fg;
 }
 
+@if $coursenavbar-hide == 1 {
+    .path-course-view.breadcrumb {
+        display: none;
+    }
+}
+
 .breadcrumb.style1 li:hover a,
 .breadcrumb.style4 li:hover a {
     color: $breadcrumb-bg;
