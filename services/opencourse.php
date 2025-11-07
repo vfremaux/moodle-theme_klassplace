@@ -19,7 +19,7 @@ include('../../../config.php');
 $courseid = required_param('id', PARAM_INT);
 
 if (!$course = $DB->get_record('course', array('id' => $courseid))) {
-    print_error(get_string('coursemisconfig'));
+    throw new moodle_exception('coursemisconfig');
 }
 
 $context = context_course::instance($courseid);

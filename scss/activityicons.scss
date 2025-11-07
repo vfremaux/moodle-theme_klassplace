@@ -1,5 +1,79 @@
 
+img.activityimage,
+img.activityicon {
+    width: $activityiconsize;
+    height: $activityiconsize;
+}
+
+.activityiconcontainer {
+    width: $activityiconsize;
+    height: $activityiconsize;
+    max-width: $activityiconsize;
+    max-height: $activityiconsize;
+    padding: 8px;
+
+    img.activityicon {
+        width: $activityiconsize;
+        height: $activityiconsize;
+        max-width: $activityiconsize;
+        max-height: $activityiconsize;
+    }
+}
+
+.activityiconcontainer.small {
+    width: $activityiconsize;
+    height: $activityiconsize;
+    max-width: $activityiconsize;
+    max-height: $activityiconsize;
+    padding: 8px;
+
+    img.activityicon {
+        width: $activityiconsize;
+        height: $activityiconsize;
+        max-width: $activityiconsize;
+        max-height: $activityiconsize;
+    }
+}
+
+.activityiconcontainer.smaller {
+    width: $activityiconsize;
+    height: $activityiconsize;
+    max-width: $activityiconsize;
+    max-height: $activityiconsize;
+    padding:8px;
+
+    img.activityimage,
+    img.activityicon {
+        width: $activityiconsize;
+        height: $activityiconsize;
+        max-width: $activityiconsize;
+        max-height: $activityiconsize;
+    }
+}
+
+/* disable filtering on resources */
+.activity-wrapper.resource .activity-icon img {
+    filter: none !important;
+}
+
+/* disable filtering on resources in page format */
+.page-module-resource img {
+    filter: none !important;
+}
+
 @if $monochrome == 1 {
+
+    .activityiconcontainer {
+        background-color: $brandprimary;
+        color: $brandprimaryalt;
+        width: 50px;
+        height: 50px;
+        padding: 0.7rem;
+    }
+
+    .activityiconcontainer.smaller .activityicon {
+        filter: invert(100%) brightness(100) !important;
+    }
 
     .activityiconcontainer.content {
         background-color: $brandprimary;
@@ -30,4 +104,7 @@
         background-color: $brandprimary;
         color: $brandprimaryalt;
     }
+
+    /* force all icons to be white */
+    .activityicon{ filter: brightness(0) invert(100) !important }
 }

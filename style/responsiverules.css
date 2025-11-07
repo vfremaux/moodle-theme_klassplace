@@ -33,6 +33,7 @@
         padding: 3px;
         font-size: 11px;
         right: 10px;
+        z-index: 10000;
     }
 
     /* login */
@@ -209,6 +210,11 @@
         content: "\f040";
         font-family: "Font Awesome 6 Free";
         font-size: 20px;
+    }
+
+    /* User profile */
+    .userprofile .page-context-header {
+        flex-direction: column;
     }
 }
 

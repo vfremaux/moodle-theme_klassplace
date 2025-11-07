@@ -83,10 +83,6 @@
     top: -1px;
 }
 
-.navbar .courseedit > form > div > label {
-    margin-top: 3px;
-}
-
 .navbar #menu-list-1 {
     display: flex;
     flex-direction: row;

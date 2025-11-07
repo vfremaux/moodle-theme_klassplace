@@ -29,6 +29,7 @@ require_once($CFG->dirroot.'/theme/klassplace/lib/mobile_detect_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     require_once($CFG->dirroot.'/local/technicalsignals/lib.php');
@@ -95,8 +96,10 @@ $extraclasses = ['uses-drawers'];
 if ($courseindexopen) {
     $extraclasses[] = 'drawer-open-index';
 }
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $hasmobilenav = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -116,32 +119,36 @@ $extraclasses[] = 'section-layout-'.$PAGE->theme->settings->sectionlayout;
  
 
 $preblockshtml = $OUTPUT->blocks('side-pre');
+$courseindex = '';
 
 // Has blocks if side-pre zone is not empty or we can add blocks.
 $hasblocks = (strpos($preblockshtml, 'data-block=') !== false || !empty($addblockbutton));
 
 // Wrap to old 3.9 resolver.
-list($hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen) = theme_klassplace_resolve_drawers(false, is_mobile());
+list($hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen) = theme_klassplace_resolve_drawers($hasblocks, is_mobile());
 
 if (!$hasblocks) {
     $blockdraweropen = false;
 } else {
-    $blockdraweropen = $hasspdrawer;
+    $blockdraweropen = $hasspdrawer && $spdraweropen;
 }
 $forceblockdraweropen = $spdraweropen;
 
+$courseindexopen = false;
+$courseindex = false;
 if ($hasnavdrawer) {
+    // Navdrawer and courseindex drawer seems being the same thing.
     $courseindex = core_course_drawer();
     $courseindexopen = $navdraweropen;
 }
 
-if (!$courseindex) {
+if (!isset($courseindex)) {
     $courseindexopen = false;
+    $courseindex = '';
 }
 
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $forceblockdraweropen = $forceblockdraweropen || $OUTPUT->firstview_fakeblocks();
-
 $secondarynavigation = false;
 $overflow = '';
 if ($PAGE->has_secondary_navigation()) {
@@ -168,6 +175,9 @@ $footnote = $OUTPUT->footnote();
 $pagedoclink = $OUTPUT->page_doc_link();
 $coursefooter = $OUTPUT->course_footer();
 
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
+
 $OUTPUT->check_dyslexic_state();
 $OUTPUT->check_highcontrast_state();
 $dysstate = $OUTPUT->get_dyslexic_state();
@@ -193,6 +203,8 @@ $templatecontext = [
     'overflow' => $overflow,
     'headercontent' => $headercontent,
     'forceblockdraweropen' => $forceblockdraweropen,
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
 
     'addblockbutton' => $addblockbutton,
     'hasfootnote' => !empty($footnote) && (preg_match('/[A-Za-z0-9]/', preg_replace('/<\\/?(p|div|span|br)*?>/', '', $footnote))),
@@ -221,7 +233,11 @@ $templatecontext = [
     'dynamiccss' => $OUTPUT->get_dynamic_css($PAGE->theme)
 ];
 
-theme_klassplace_process_texts($templatecontext);
+if (!($OUTPUT instanceof core_renderer_maintenance)) {
+    theme_klassplace_load_social_settings($templatecontext);
+    theme_klassplace_pass_layout_options($templatecontext);
+    theme_klassplace_process_texts($templatecontext);
+}
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     $templatecontext['technicalsignals'] = local_print_administrator_message();

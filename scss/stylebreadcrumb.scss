@@ -5,6 +5,18 @@
 * Style 3 has uppercased items.
 */
 
+@if $coursenavbar-hide == 1 {
+    .path-course-view .breadcrumb {
+        display: none !important;
+    }
+}
+
+@if $breadcrumbstyle == -1 {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+
 nav[role="navigation"] ol.breadcrumb.style1 li a,
 nav[role="navigation"] ol.breadcrumb.style4 li a {
     color: $breadcrumb-fg !important;

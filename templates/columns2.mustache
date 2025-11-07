@@ -55,7 +55,6 @@
 <!-- boost:head -->
 
 <body {{{ bodyattributes }}}>
-{{{technicalsignals}}}
 {{> core/local/toast/wrapper}}
 
 <!-- accessibility add-ons -->
@@ -117,14 +116,14 @@
                                 {{/output.display_ilearn_secure_alert}}
                                 {{{ output.customcoursedashboardimage }}}
                                 {{{ output.course_content_header }}}
-			                    {{#headercontent}}
-			                        {{> core/activity_header }}
-			                    {{/headercontent}}
-			                    {{#overflow}}
-			                        {{> core/url_select}}
-			                    {{/overflow}}
+                                {{#headercontent}}
+                                    {{> core/activity_header }}
+                                {{/headercontent}}
+                                {{#overflow}}
+                                    {{> core/url_select}}
+                                {{/overflow}}
                                 {{{ output.main_content }}}
-			                    {{{ output.activity_navigation }}}
+                                {{{ output.activity_navigation }}}
                                 {{{ output.course_content_footer }}}
                             </div>
                         </div>
@@ -146,6 +145,10 @@
     {{> theme_boost/nav-drawer }}
     <!-- /boost:nav-drawer -->
     {{/hasnavdrawer}}
+
+    {{#hasmobilenav}}
+    {{> theme_klassplace/mobile-nav-drawer }}
+    {{/hasmobilenav}}
 
     {{#hasactivitynav}}
         {{{ output.activity_navigation }}}

@@ -360,13 +360,13 @@ trait course_renderer_commons {
 
         // TODO check completion to avoid signal bothering student.
 
-        $timemodified = $DB->get_field($mod->modname, 'timemodified', array('id' => $mod->instance));
+        $timemodified = $DB->get_field($mod->modname, 'timemodified', ['id' => $mod->instance]);
         $now = time();
         $freshnesssignal = '';
         if ($now < ($mod->added + $config->signalitemsnewerthan * HOURSECS)) {
-            $freshnesssignal = html_writer::tag('span', get_string('newitem', 'theme_klassplace'), array('class' => 'new-item'));
+            $freshnesssignal = html_writer::tag('span', get_string('newitem', 'theme_klassplace'), ['class' => 'new-item']);
         } else if ($now < ($timemodified + $config->signalitemsnewerthan * HOURSECS)) {
-            $freshnesssignal = html_writer::tag('span', get_string('updateditem', 'theme_klassplace'), array('class' => 'updated-item'));
+            $freshnesssignal = html_writer::tag('span', get_string('updateditem', 'theme_klassplace'), ['class' => 'updated-item']);
         }
 
         return $freshnesssignal;
@@ -380,6 +380,8 @@ trait course_renderer_commons {
      *
      * Note, that for course modules that never have separate pages (i.e. labels)
      * this function return an empty string
+     *
+     * Deprecated since moodle 4.0
      *
      * @param cm_info $mod
      * @param array $displayoptions
@@ -430,7 +432,7 @@ trait course_renderer_commons {
         return $output;
     }
 
-    public function course_section_cm_thumb($mod) {
+    public function course_section_cm_thumb(\cm_info $mod) {
         global $DB, $COURSE, $PAGE;
 
         $cmoutput = '';

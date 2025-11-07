@@ -29,7 +29,7 @@ $bootstrap-sass-asset-helper: false !default;
         top: $navbar-height;
         margin-left: 10px;
         margin-right: 10px;
-        box-shadow: 2px 1px 8px $brandprimary, -2px -1px 8px #fff;
+        box-shadow: none;
     }
 }
 

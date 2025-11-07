@@ -771,6 +771,10 @@ table.wrapper tr td span.tst-wrap {
     float: none;
 }
 
+.format-topcoll .course-section {
+    float: none;
+}
+
 .frontpage-course-list-all {
     margin-top: 3em;
 }

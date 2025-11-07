@@ -27,6 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/theme/klassplace/lib/mobile_detect_lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 
 if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     require_once($CFG->dirroot.'/local/technicalsignals/lib.php');
@@ -36,7 +37,7 @@ if ($PAGE->theme->settings->breadcrumbstyle == '1') {
     $PAGE->requires->js_call_amd('theme_klassplace/jBreadCrumb', 'init');
 }
 
-$flag = 'drawer-open-nav';
+$flag = 'drawer-open-index';
 $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
     const flag = '$flag';
     const n = document.querySelector('.block-xp-rocks');
@@ -52,8 +53,10 @@ $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserR
 require_once($CFG->libdir . '/behat/lib.php');
 
 $extraclasses = [];
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $hasmobilenav = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -84,6 +87,9 @@ $primary = new core\navigation\output\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
+
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
 
 // Footer elements
 if ($OUTPUT instanceof core_renderer_maintenance) {
@@ -122,6 +128,8 @@ $templatecontext = [
     'langmenu' => $primarymenu['lang'],
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
 
     'hasfootnote' => !empty($footnote) && (preg_match('/[A-Za-z0-9]/', preg_replace('/<\\/?(p|div|span|br)*?>/', '', $footnote))),
     'custommenupullright' => $PAGE->theme->settings->custommenupullright,
@@ -154,6 +162,7 @@ $templatecontext = [
 ];
 
 if (!($OUTPUT instanceof core_renderer_maintenance)) {
+    theme_klassplace_load_social_settings($templatecontext);
     theme_klassplace_pass_layout_options($templatecontext);
     theme_klassplace_process_texts($templatecontext);
 }

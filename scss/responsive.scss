@@ -1,5 +1,10 @@
 @media only screen and (min-width: 0px) and (max-width: 767px) {
 
+    /* override boost */
+    .popover-region-messages, .popover-region-notifications {
+        display: block !important;
+    }
+
     ul.social {
         background-color: $brandsecondary;
     }
@@ -7,7 +12,7 @@
     .stage ul, .stage ul li{
         height: calc(#{$slideshowheight / 2});
     }
-    
+
     .row-fluid {
         margin-right:0 !important;
         margin-left:0 !important;
@@ -17,7 +22,7 @@
         margin-right:0 !important;
         margin-left:0 !important;
     }
-    
+
     .row-fluid-logo-partner {
         margin-right:0 !important;
         margin-left:0 !important;
@@ -127,6 +132,7 @@
 
     nav[role="navigation"] ol.breadcrumb.style1 li a {
         color: $brandprimary !important;
+        background-color: $brandprimaryalt !important;
     }
 
     nav[role="navigation"] ol.breadcrumb.style1 li span {
@@ -248,8 +254,6 @@
         display:none;
     }
 
-    div#nav-message-popover-container {display: none;}
-    div#nav-notification-popover-container {display: none;}
     div#page-content {
         padding: 0;
     }
@@ -372,4 +376,51 @@
     .userbutton .usertext{
         font-size: .75rem;
     }
+}
+
+/* drawers */
+@media all and (max-width: 480px) {
+    .drawer-left {
+        top: 60px;
+    }
+    .drawer-right {
+        top: 60px;
+    }
+
+    .path-course-view {
+        [data-region="right-hand-drawer"].drawer {
+            right: 30px;
+        }
+    }
+}
+
+/* special formats fixing */
+
+@media all and (max-width: 480px) {
+    .course-content ul.ctopics li.section.main > .content,
+    .course-content ul.ctopics li.tcsection .content {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* adjust navigation */
+
+@media all and (max-width: 480px) {
+    .secondary-navigation .nav-tabs {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.mobiletheme #format_menutopic_menu .navbar-toggler .navbar-toggler-icon:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f077";
+    font-weight: bold;
+}
+
+.mobiletheme #format_menutopic_menu .navbar-toggler.collapsed .navbar-toggler-icon:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f078";
+    font-weight: bold;
 }

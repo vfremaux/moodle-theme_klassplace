@@ -26,6 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/theme/klassplace/lib/mobile_detect_lib.php');
 require_once($CFG->dirroot.'/theme/klassplace/lib.php');
+require_once($CFG->dirroot.'/theme/klassplace/classes/flat_navigation.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 
@@ -77,10 +78,10 @@ $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserR
 
 $extraclasses = [];
 
-$hasnavdrawer = false;
+$hasmobilenav = false;
 if (is_mobile()) {
-    $hasnavdrawer = true;
-    $extraclasses[] = 'is-mobile';
+    $hasmobilenav = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';
@@ -116,6 +117,8 @@ if (!$courseindex) {
     $courseindexopen = false;
 }
 
+// Drawer and top elements.
+list($hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen) = theme_klassplace_resolve_drawers(false, is_mobile());
 $forceblockdraweropen = $OUTPUT->firstview_fakeblocks();
 // /From drawers.php
 
@@ -137,6 +140,9 @@ $OUTPUT->check_highcontrast_state();
 $dysstate = $OUTPUT->get_dyslexic_state();
 $hcstate = $OUTPUT->get_highcontrast_state();
 
+$flatnav = new \theme_klassplace\flat_navigation($PAGE);
+$flatnav->initialise();
+
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
@@ -149,6 +155,8 @@ $templatecontext = [
     'hasnavdrawer' => $hasnavdrawer,
     'courseindex' => $courseindex,
     'bodyattributes' => $bodyattributes,
+    'hasmobilenav' => $hasmobilenav,
+    'flatnavigation' => $flatnav,
 
     'headerlogo' => $headerlogo,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
@@ -182,7 +190,11 @@ if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
     $templatecontext['technicalsignals'] = local_print_administrator_message();
 }
 
-theme_klassplace_process_texts($templatecontext);
+if (!($OUTPUT instanceof core_renderer_maintenance)) {
+    theme_klassplace_load_social_settings($templatecontext);
+    theme_klassplace_pass_layout_options($templatecontext);
+    theme_klassplace_process_texts($templatecontext);
+}
 
 $PAGE->requires->jquery();
 $PAGE->requires->js_call_amd('theme_klassplace/pagescroll', 'init');

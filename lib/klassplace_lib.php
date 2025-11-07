@@ -18,8 +18,7 @@
  * FileSettings Lib file.
  *
  * @package    theme_klassplace
- * @copyright  2016 Chris Kenniburg
- * @credits    theme_boost - MoodleHQ
+ * @author     valery.fremaux <valery.fremaux@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -110,7 +109,7 @@ function theme_klassplace_strip_html_tags($text) {
             "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
             "\n\$0", "\n\$0",
             ),
-        $text
+        $text ?? ''
         );
 return strip_tags( $text );
 }
@@ -250,6 +249,8 @@ function theme_klassplace_process_texts(&$templatecontext) {
             } else {
                 $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
             }
+        } else {
+            $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
         }
 
         if (!$usertoursloaded) {

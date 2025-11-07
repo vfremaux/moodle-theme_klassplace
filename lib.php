@@ -66,6 +66,10 @@ function theme_klassplace_page_init() {
 function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
     global $PAGE, $COURSE;
 
+
+    $prefindex = get_user_preferences('drawer-open-index', 'true');
+    $prefblock = get_user_preferences('drawer-open-block', 'true');
+
     $navdraweropen = false;
     $hasnavdrawer = false;
 
@@ -81,6 +85,7 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
     $nonavdrawer = false;
     $isshop = preg_match('/^local-shop/', $PAGE->pagetype);
     $islibrary = preg_match('/^local-sharedresources-explore/', $PAGE->pagetype);
+    $isconfigdisabled = !empty($PAGE->theme->layouts[$PAGE->pagelayout]['options']['nonavdrawer']);
 
     $nonavdrawer = $isshop;
 
@@ -88,10 +93,10 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
         $hasnavdrawer = isset($PAGE->theme->settings->shownavdrawer) && $PAGE->theme->settings->shownavdrawer == 1 && ($COURSE->format != 'page');
         $hasnavdrawer = $hasnavdrawer && !$nonavdrawer;
         $hasnavdrawer = $hasnavdrawer && !$isdashboard;
-        $hasnavdrawer = $hasnavdrawer && !$iscms;
+        $hasnavdrawer = $hasnavdrawer && !$iscms && !$isconfigdisabled;
 
-        if ($hasnavdrawer && isset($PAGE->theme->settings->shownavclosed) && $PAGE->theme->settings->shownavclosed == 0) {
-            $navdraweropen = (get_user_preferences('drawer-open-index', 'true') == 'true');
+        if ($hasnavdrawer && empty($PAGE->theme->settings->shownavclosed)) {
+            $navdraweropen = !empty($prefindex);
         }
     }
 
@@ -105,8 +110,11 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
             Is dashboard : $isdashboard
             Is base layout : $isbaselayout
             Is paged formatted : $ispageformat
+            Is config disabled : $isconfigdisabled
             Has some blocks : ".!empty($checkspblocks)."
             Is editing : ".!empty($PAGE->user_is_editing())."
+            Preference index : $prefindex
+            Preference block : $prefblock
             </pre>
         ";
     }
@@ -128,7 +136,7 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
                                                         !$ispageformat;
 
         if ($hasspdrawer) {
-            $spdraweropen = (get_user_preferences('spdrawer-open-nav', 'true') == 'true');
+            $spdraweropen = !empty($prefblock);
         }
     }
 
@@ -140,3 +148,4 @@ function theme_klassplace_debug_trace($msg, $level = THEME_KLASSPLACE_TRACE_DEBU
         debug_trace($msg, $level, $label, $stacktracelevel);
     }
 }
+

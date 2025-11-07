@@ -217,9 +217,20 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $filterednavbar->styleclass = 'style'.$breadcrumbstyle;
         }
 
-        $namedtypes = array(0 => 'system', 10 => 'category', 11 => 'mycategory', 20 => 'course', 30 => 'structure', 40 => 'activity',
-                              50 => 'resource', 60 => 'custom', 70 => 'setting', 71 => 'siteadmin', 80 => 'user',
-                              90 => 'container');
+        $namedtypes = [
+            0 => 'system',
+            10 => 'category',
+            11 => 'mycategory',
+            20 => 'course',
+            30 => 'structure',
+            40 => 'activity',
+            50 => 'resource',
+            60 => 'custom',
+            70 => 'setting',
+            71 => 'siteadmin',
+            80 => 'user',
+            90 => 'container',
+        ];
 
         if (is_dir($CFG->dirroot.'/local/my')) {
             include_once($CFG->dirroot.'/local/my/lib.php');
@@ -820,14 +831,18 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $jscode = "(function(){{$jscode}})";
         $this->page->requires->yui_module('node-menunav', $jscode);
         // Build the root nodes as required by YUI
-        $attrs = array(
+        $width = '';
+        if ($menucount == 1) {
+            $width = 'w-100';
+        }
+        $attrs = [
             'id'=>'custom_menu_'.$menucount,
             'style' => 'display:none',
-            'class'=>'yui3-menu yui3-menu-horizontal javascript-disabled custom-menu'
-        );
+            'class'=> "yui3-menu yui3-menu-horizontal javascript-disabled custom-menu $width",
+        ];
         $content = \html_writer::start_tag('div', $attrs);
         $content .= \html_writer::start_tag('div', array('class'=>'yui3-menu-content'));
-        $content .= \html_writer::start_tag('ul', array('id' => 'menu-list-'.$menucount));
+        $content .= \html_writer::start_tag('ul', ['id' => 'menu-list-'.$menucount]);
         // Render each child
         foreach ($menu->get_children() as $item) {
             $content .= $this->render_custom_menu_item($item);
@@ -1974,8 +1989,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         // Prepare return to course button.
 
-        $returnablemodules = array('resource', 'forum', 'folder', 'page', 'quiz', 'hvp', 'assign',
-        'url', 'questionnaire', 'workshop', 'bigbluebuttonbn');
+        $returnablemodules = ['resource', 'forum', 'folder', 'page', 'hvp', 'assign',
+        'url', 'questionnaire', 'workshop', 'bigbluebuttonbn'];
         $pagetypeexceptions = array('page-mod-quiz-attempt');
 
         $button = '';

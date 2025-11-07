@@ -18,6 +18,7 @@
  * Library to detect mobile and device types.
  *
  * @package    theme_klassplace
+ * @author     valery.fremaux <valery.fremaux@gmail.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

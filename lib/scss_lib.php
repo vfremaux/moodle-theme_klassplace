@@ -18,7 +18,7 @@
  * SCSS Lib file.
  *
  * @package    theme_klassplace
- * @copyright  2016 Chris Kenniburg
+ * @copyright  2024 Valery Fremaux et Nicolas Maligue
  *
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -50,7 +50,9 @@ function theme_klassplace_get_main_scss_content($theme) {
     $fs = get_file_storage();
 
     // Start with fontawesome and variables before everything runs.
-    $scss .= file_get_contents($CFG->dirroot . '/theme/boost/scss/fontawesome.scss');
+    $scss .= file_get_contents($CFG->dirroot . '/theme/klassplace/scss/fontawesome.scss');
+
+    // Desactivates imports
 
     $context = context_system::instance();
     $iterator = new DirectoryIterator($CFG->dirroot . '/theme/klassplace/scss/preset/');
@@ -239,6 +241,8 @@ function theme_klassplace_get_pre_scss($theme) {
     'borderbigradius' => ['border-big-radius'],
 
     'monochrome' => ['monochrome'],
+    'coursenavbarhide' => ['coursenavbar-hide'],
+    'breadcrumbstyle' => ['breadcrumbstyle'],
     'usecustomfonts' => ['usecustomfonts'],
     'generalaltccsselector' => ['altfontselector'],
     ];
@@ -265,6 +269,11 @@ function theme_klassplace_get_pre_scss($theme) {
             // Allow some settings "defaulting" other settings.
             if (empty($value)) {
                 $value = $theme->settings->brandprimaryalt;
+            }
+        } else if ($configkey == 'monochrome') {
+            // Allow some settings "defaulting" other settings.
+            if (empty($value)) {
+                $value = 0;
             }
         } else if (empty($value)) {
             // $value = 'undefined';

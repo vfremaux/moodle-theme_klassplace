@@ -32,8 +32,10 @@ if (is_dir($CFG->dirroot.'/local/technicalsignals')) {
 
 $extraclasses = [];
 
+$hasmobilenav = false;
 if (is_mobile()) {
-    $extraclasses[] = 'is-mobile';
+    $hasmobilenav = true;
+    $extraclasses[] = 'is-mobile mobiletheme';
 }
 if (is_tablet()) {
     $extraclasses[] = 'is-tablet';

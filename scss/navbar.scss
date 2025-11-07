@@ -1,3 +1,18 @@
+
+.navbar.fixed-top .yui3-menuitem:hover {
+    background-color: $brandprimary !important;
+    color: $brandprimaryalt !important;
+    filter: none;
+    
+    * {
+        filter: none;
+    }
+}
+
+.navbar.fixed-top .fa-message::before,  .navbar.fixed-top .fa-bell::before {
+    font-size: 28px;
+}
+
 nav.navbar {
     background-color: $topnavbar-bg;
     color: $topnavbar-fg;
@@ -73,14 +88,17 @@ nav.navbar {
         /* Do NOT affect submenus. */
         background-color: $topnavbar-bg !important;
         color: $topnavbar-fg !important;
+        filter: none;
     }
 
     .accessibility-toggle.active a {
+        background-color: $topnavbar-bg !important;
         color: $topnavbar-fg;
     }
 
     .accessibility-toggle.active {
         background-color: $topnavbar-bg;
+        color: $topnavbar-fg;
     }
 
     .userbutton {
@@ -97,6 +115,10 @@ nav.navbar {
         background-color: #00C000;
     }
 
+}
+
+.secondary-navigation a.nav-link:focus {
+    color: $brandprimary;
 }
 
 nav.navbar a.dropdown-toggle::after {
@@ -130,10 +152,6 @@ nav.navbar a.dropdown-toggle::after {
 
     .yui3-menuitem:hover {
         background-color: #cccccc;
-        color: #000000;
-    }
-
-    .yui3-menuitem:hover .yui3-menuitem-content {
         color: #000000;
     }
 

@@ -2,10 +2,12 @@
     @template theme_klassplace/mobile-nav-drawer
     
     A drawer template to let mobile access to a alternative navigation
-    but navbar menu.
+    but navbar menu. Always closed at screen loading.
 
     Example context (json): {}
 }}
-<div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex {{^navdraweropen}}closed{{/navdraweropen}}" aria-hidden="{{#navdraweropen}}false{{/navdraweropen}}{{^navdraweropen}}true{{/navdraweropen}}" tabindex="-1">
+<!-- theme_klassplace/mobile-nav-drawer -->
+<div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
     {{> theme_klassplace/flat_navigation }}
 </div>
+<!-- /theme_klassplace/mobile-nav-drawer -->

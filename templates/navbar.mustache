@@ -135,9 +135,9 @@
 <nav class="fixed-top navbar navbar-expand moodle-has-zindex align-items-center for-mobile"
     role="navigation" aria-label="{{#str}}mainmenu, theme_klassplace{{/str}}">
 
-    {{! #hasnavdrawer}}
+    {{#hasmobilenav}}
     <div data-region="drawer-toggle" class="d-inline-block mr-3">
-        <a aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
+        <a aria-expanded="false"
                 aria-controls="nav-drawer"
                 type="button"
                 class="btn float-sm-left mr-1 btn-secondary"
@@ -145,7 +145,7 @@
                 data-side="left"
                 data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></a>
     </div>
-    {{! /hasnavdrawer}}
+    {{/hasmobilenav}}
 
     <!-- homelink -->
     <div class="coursecontrols nav-item align-items-center">

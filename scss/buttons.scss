@@ -93,11 +93,10 @@ body:not(.path-message) .btn-primary:focus {
 
 .aalink.focus,
 .arrow_link.focus, 
-a:not([class]).focus, 
+/* a:not([class]).focus,  glitch on course titles */
 .activityinstance > a.focus, 
 .aalink:focus, 
 .arrow_link:focus, 
-a:not([class]):focus, 
 .activityinstance > a:focus {
     background-color: transparent;
     box-shadow: none;
@@ -121,14 +120,20 @@ a:not([class]):focus,
 
 .btn:hover, .btn:focus, .btn:active {
     background-color: $brandsecondary;
+    color: $brandsecondaryalt;
 }
 
 .section-modchooser-link.btn.btn-link {
     background-color: $brandprimary;
+    color: $brandsecondaryalt;
 }
 
 .btn-success {
     background-color: $brandsuccess;
+}
+
+.moodle-dialogue-base .closebutton::before {
+    font-weight: bold; // find the appropriate glyphs
 }
 
 span.section-modchooser-link

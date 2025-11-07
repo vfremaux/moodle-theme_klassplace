@@ -157,12 +157,24 @@
         a {
             color: $brandprimaryalt;
         }
+
+        > span > i.icon.fa.fa-caret-up.fa-fw:visited,
+        > span > i.icon.fa.fa-caret-up.fa-fw,
+        > span > i.icon.fa.fa-caret-down.fa-fw:visited,
+        > span > i.icon.fa.fa-caret-down.fa-fw {
+            color: $brandprimaryalt;
+        }
     }
 
     .category-name:hover {
         background-color: $brandprimaryalt !important;
 
         > a {
+            color: $brandprimary !important;
+        }
+
+        > span > i.icon.fa.fa-caret-up.fa-fw,
+        > span > i.icon.fa.fa-caret-down.fa-fw {
             color: $brandprimary !important;
         }
 
@@ -269,7 +281,7 @@ td.course-category {
     color: $brandprimaryalt !important;
 }
 
-/*on intervertit les couleur du bouton actif*/
+/* on intervertit les couleurs du bouton actif */
 a[title="J'administre"].nav-link.active,
 a[title="Administrator"].nav-link.active,
 a[title="Je coordonne"].nav-link.active,
@@ -290,6 +302,7 @@ a[title="Administrator"]::before {
     content: "\f108";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="Je coordonne"]::before,
@@ -300,6 +313,7 @@ a[title="Course manager"]::before {
     content: "\f005";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="J'enseigne"]::before,
@@ -311,6 +325,7 @@ a[title="Teacher"]::before {
     content: "\f0d0";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="J'apprends"]::before,
@@ -321,6 +336,7 @@ a[title="Student"]::before {
     content: "\f02d";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 a[title="Plan du site"]::before {
@@ -330,6 +346,7 @@ a[title="Plan du site"]::before {
     content: "\f276";
     font-size: 35px;
     font-weight: 900;
+    line-height: 45px;
 }
 
 /* sharedresources */
@@ -683,4 +700,74 @@ ul.ctopics {
     nav {
         position: absolute;
     }
+}
+
+/* SCORMS */
+
+#page-mod-scorm-player  .flex-row-reverse {
+    justify-content: center;
+}
+
+#page-mod-scorm-player a.btn.btn-secondary {
+    font-size: large;
+    background-color: red;
+    border-radius: 40px;
+}
+
+/*centrer le bouton d'entrée ds le scorm*/
+#scormviewform {
+    text-align: center;
+}
+
+#page-mod-scorm-player #page-header {
+   display: none;
+}
+
+#page-mod-scorm-player #scormpage {
+   height: initial;
+}
+
+#page-mod-scorm-player #tocbox {
+   height: initial;
+}
+
+#page-mod-scorm-player #page {
+   overflow-y: visible;
+   padding-top: 0;
+}
+
+#page-mod-scorm-player #page-content > div > section > h2 {
+   display: none;
+}
+
+#page-mod-scorm-player #page-inner {
+   top: 0px !important;
+}
+
+#page-mod-scorm-player header[role="banner"] {
+   display: none;
+}
+
+#page-mod-scorm-player .activity-navigation,
+#page-mod-scorm-player footer {
+   display: none;
+}
+
+
+/*masquer bouton aller bas de page*/
+#page-mod-scorm-player #go-to-bottom.show {
+    display: none;
+}
+
+/*masquer bouton aller en haut de page*/
+#page-mod-scorm-player #back-to-top {
+    display: none;
+}
+
+#page-mod-scorm-player #page {
+        margin-top: 10px
+}
+
+#page-mod-scorm-player .headerbkg {
+    display: none
 }

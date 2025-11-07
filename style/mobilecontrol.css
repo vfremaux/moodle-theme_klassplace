@@ -59,3 +59,10 @@ body:not(.is-tablet) .for-tablet {
     }
 }
 
+.for-mobile .userinitials {
+    font-size: 2em;
+}
+
+.for-mobile .navbar-expand .navbar-nav .nav-link {
+    margin-top: 0 !important;
+}
