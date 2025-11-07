@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$flag = 'drawer-open-nav';
+$flag = 'drawer-open-index';
 $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
     const flag = '$flag';
     const n = document.querySelector('.block-xp-rocks');

@@ -1,6 +1,10 @@
 
 /*===Bouton d'affichage bloc latéral droit===*/
 
+.drawerheader i.icon.fa.fa-xmark.fa-fw {
+    width: initial;
+}
+
 [data-action="toggle-spdrawer"].btn.nav-link.float-sm-left.mr-1.btn-secondary,
 .drawer-toggles .drawer-toggler .btn {
     background-color: #86d000;
@@ -37,6 +41,9 @@
 }
 
 /* boost override @see style/moodle.css§20473 */
+.drawer-toggles .drawer-left-toggle,
+.drawer-toggles .drawer-right-toggle,
 .drawer-toggles .drawer-toggler {
-    top: calc(150px + 0.7rem);
+    top: calc(150px + 0.7rem) !important;
+    z-index: 10000 !important;
 }

@@ -1989,8 +1989,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         // Prepare return to course button.
 
-        $returnablemodules = array('resource', 'forum', 'folder', 'page', 'quiz', 'hvp', 'assign',
-        'url', 'questionnaire', 'workshop', 'bigbluebuttonbn');
+        $returnablemodules = ['resource', 'forum', 'folder', 'page', 'hvp', 'assign',
+        'url', 'questionnaire', 'workshop', 'bigbluebuttonbn'];
         $pagetypeexceptions = array('page-mod-quiz-attempt');
 
         $button = '';

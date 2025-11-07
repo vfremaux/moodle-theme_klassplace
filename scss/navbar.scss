@@ -9,6 +9,10 @@
     }
 }
 
+.navbar.fixed-top .fa-message::before,  .navbar.fixed-top .fa-bell::before {
+    font-size: 28px;
+}
+
 nav.navbar {
     background-color: $topnavbar-bg;
     color: $topnavbar-fg;
@@ -84,6 +88,7 @@ nav.navbar {
         /* Do NOT affect submenus. */
         background-color: $topnavbar-bg !important;
         color: $topnavbar-fg !important;
+        filter: none;
     }
 
     .accessibility-toggle.active a {
@@ -110,6 +115,10 @@ nav.navbar {
         background-color: #00C000;
     }
 
+}
+
+.secondary-navigation a.nav-link:focus {
+    color: $brandprimary;
 }
 
 nav.navbar a.dropdown-toggle::after {

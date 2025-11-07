@@ -45,10 +45,11 @@ require(['core/config'], function(cfg) {
 
     // Onload process : scans all activityiconcontainers and ask for replacement image.
     $('.activityiconcontainer img').each(function(index, elm) {
+        /*
         var that = $(this);
 
-        var url = cfg.wwwroot + '/theme/klassplace/services/cmicon.php';
-        url += 'cmid=' + that.attr('data-cmid');
+        var url = cfg.wwwroot + '/theme/klassplace/services/cmicon.php?';
+        url += '?cmid=' + that.attr('data-cmid');
         $.get(url, function(data) {
             if (data.src != '') {
                 that.src = data.src;
@@ -56,6 +57,7 @@ require(['core/config'], function(cfg) {
                 that.addClass('activityimage');
             }
         }, 'json');
+        */
     });
 
 });

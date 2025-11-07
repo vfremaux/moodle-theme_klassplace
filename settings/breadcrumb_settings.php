@@ -39,7 +39,7 @@ $choices = array(
     4 => get_string('breadcrumbstylednocollapse', 'theme_klassplace'),
     2 => get_string('breadcrumbsimple', 'theme_klassplace'),
     3 => get_string('breadcrumbthin', 'theme_klassplace'),
-    -1 => get_string('nobreadcrumb', 'theme_klassplace')
+    -1 => get_string('nobreadcrumb', 'theme_klassplace'),
 );
 $images = array(
     0 => 'breadcrumbstandard',

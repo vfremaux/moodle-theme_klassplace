@@ -21,6 +21,10 @@ body {
     margin: 0;
 }
 
+.alert { 
+    border-radius: $border-big-radius; 
+}
+
 /* Overrides Boost value */
 #page.drawers {
     /* Find better . Alters footer */
@@ -106,6 +110,10 @@ body.mediumwidth #page.drawers .main-inner {
 
 .message-app {
     color: #000;
+}
+
+.path-mod #region-main h2 {
+    margin-left: 20px;
 }
 
 .courseindex .courseindex-item .courseindex-link,
@@ -1089,7 +1097,7 @@ ul.teacherscourseview {
     position: fixed;
     top: 65px;
     right: 50px;
-    z-index: 2;
+    z-index: 10000;
     cursor: pointer;
     transition: opacity 0.2s ease-out;
     opacity: 0;

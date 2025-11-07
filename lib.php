@@ -66,6 +66,10 @@ function theme_klassplace_page_init() {
 function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
     global $PAGE, $COURSE;
 
+
+    $prefindex = get_user_preferences('drawer-open-index', 'true');
+    $prefblock = get_user_preferences('drawer-open-block', 'true');
+
     $navdraweropen = false;
     $hasnavdrawer = false;
 
@@ -92,7 +96,7 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
         $hasnavdrawer = $hasnavdrawer && !$iscms && !$isconfigdisabled;
 
         if ($hasnavdrawer && empty($PAGE->theme->settings->shownavclosed)) {
-            $navdraweropen = (get_user_preferences('drawer-open-index', false));
+            $navdraweropen = !empty($prefindex);
         }
     }
 
@@ -109,6 +113,8 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
             Is config disabled : $isconfigdisabled
             Has some blocks : ".!empty($checkspblocks)."
             Is editing : ".!empty($PAGE->user_is_editing())."
+            Preference index : $prefindex
+            Preference block : $prefblock
             </pre>
         ";
     }
@@ -130,19 +136,8 @@ function theme_klassplace_resolve_drawers($checkspblocks, $ismobile = false) {
                                                         !$ispageformat;
 
         if ($hasspdrawer) {
-            $spdraweropen = (get_user_preferences('drawer-open-block', false));
+            $spdraweropen = !empty($prefblock);
         }
-    }
-
-    if ($debug) {
-        echo "
-            <pre>
-                Has nav drawer: $hasnavdrawer
-                Nav drawer open: $navdraweropen
-                Has sp drawer: $hasspdrawer
-                Sp drawer open: $spdraweropen
-            </pre>
-        ";
     }
 
     return [$hasnavdrawer, $navdraweropen, $hasspdrawer, $spdraweropen];

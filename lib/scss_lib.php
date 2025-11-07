@@ -242,6 +242,7 @@ function theme_klassplace_get_pre_scss($theme) {
 
     'monochrome' => ['monochrome'],
     'coursenavbarhide' => ['coursenavbar-hide'],
+    'breadcrumbstyle' => ['breadcrumbstyle'],
     'usecustomfonts' => ['usecustomfonts'],
     'generalaltccsselector' => ['altfontselector'],
     ];
@@ -268,6 +269,11 @@ function theme_klassplace_get_pre_scss($theme) {
             // Allow some settings "defaulting" other settings.
             if (empty($value)) {
                 $value = $theme->settings->brandprimaryalt;
+            }
+        } else if ($configkey == 'monochrome') {
+            // Allow some settings "defaulting" other settings.
+            if (empty($value)) {
+                $value = 0;
             }
         } else if (empty($value)) {
             // $value = 'undefined';

@@ -109,7 +109,7 @@ function theme_klassplace_strip_html_tags($text) {
             "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
             "\n\$0", "\n\$0",
             ),
-        $text
+        $text ?? ''
         );
 return strip_tags( $text );
 }
@@ -249,6 +249,8 @@ function theme_klassplace_process_texts(&$templatecontext) {
             } else {
                 $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
             }
+        } else {
+            $templatecontext[$tz] = str_replace('{{resettourlink}}', '', $templatecontext[$tz]);
         }
 
         if (!$usertoursloaded) {

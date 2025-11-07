@@ -469,3 +469,11 @@ body#page-calendar-view .maincalendar .controls .arrow_link.next .arrow_text::af
 .pull-left {
   float: left;
 }
+
+.path-mod-assign .initialsdropdown {
+    width: 570px;
+}
+
+.modchooser .modal-footer {
+   display: none;
+}

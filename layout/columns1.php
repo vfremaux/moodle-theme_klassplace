@@ -37,7 +37,7 @@ if ($PAGE->theme->settings->breadcrumbstyle == '1') {
     $PAGE->requires->js_call_amd('theme_klassplace/jBreadCrumb', 'init');
 }
 
-$flag = 'drawer-open-nav';
+$flag = 'drawer-open-index';
 $PAGE->requires->js_amd_inline("require(['core_user/repository'], function(UserRepo) {
     const flag = '$flag';
     const n = document.querySelector('.block-xp-rocks');

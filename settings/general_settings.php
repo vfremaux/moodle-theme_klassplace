@@ -251,6 +251,7 @@ $choices = array(
         '4px' => '4px',
         '8px' => '8px',
         '12px' => '12px',
+        '15px' => '15px',
     );
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -265,6 +266,7 @@ $choices = array(
         '10px' => '10px',
         '15px' => '15px',
         '20px' => '20px',
+        '25px' => '25px',
         '30px' => '30px',
         '40px' => '40px',
     );

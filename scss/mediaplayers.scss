@@ -1,0 +1,53 @@
+
+
+/*============== LECTURE AUDIO Vido-js ============*/
+
+.video-js{
+    background-color: transparent;
+}
+
+/*lecteur son*/
+
+/*couleur de fond lecteur audio */
+
+.video-js .vjs-control-bar {
+               background-color: $brandsecondary;
+}
+
+/* couleur avancée de la barre de lecture */
+
+.video-js .vjs-slider {
+    background-color: $brandprimary;
+}
+
+/*taille des boutons pour être ronds largeur passée de 4 a 3.5*/
+
+.video-js .vjs-control {
+    width: 3.5em;
+}
+
+/* liste des rates possibles*/
+
+.vjs-menu li {
+    background: $brandsecondary;
+}
+
+/* item de liste fond couleur PRIMAIRE du thème */
+
+.vjs-menu li.vjs-menu-item:focus, .vjs-menu li.vjs-menu-item:hover, .js-focus-visible .vjs-menu li.vjs-menu-item:hover {
+    background-color: rgba(4, 73, 132);
+}
+
+/* couleur texte item en selection */
+
+.vjs-menu li.vjs-selected{
+    color: $brandprimary;
+    display: none;
+}
+
+/* couleur texte item rate au hover  en blanc */
+
+.vjs-menu li.vjs-selected:hover{
+    color: $bransprimaryalt;
+    display: none;
+}
